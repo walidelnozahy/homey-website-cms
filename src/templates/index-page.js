@@ -5,6 +5,7 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
+import HeaderCarousel from '../components/HeaderCarousel/HeaderCarousel'
 
 export const IndexPageTemplate = ({
   image,
@@ -16,6 +17,7 @@ export const IndexPageTemplate = ({
   intro,
 }) => (
   <div>
+    <HeaderCarousel carouselItems={intro.blurbs}/>
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -64,6 +66,7 @@ export const IndexPageTemplate = ({
         </h3>
       </div>
     </div>
+    
     <section className="section section--gradient">
       <div className="container">
         <div className="section">
@@ -92,7 +95,7 @@ export const IndexPageTemplate = ({
                     <Link className="btn" to="/products">
                       See all products
                     </Link>
-                  </div>
+                  </div> 
                 </div>
                 <div className="column is-12">
                   <h3 className="has-text-weight-semibold is-size-2">
