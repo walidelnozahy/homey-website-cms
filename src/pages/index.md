@@ -9,30 +9,39 @@ intro:
       link: project slid 2
       text: project slide 2
 projectCategories:
-  categories:
-    - link: seaview
-      text: >-
-        Love a great cup of coffee, but never knew how to make one? Bought a
-        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
-        to help. 
-      title: Seaview
-      image: /img/seaview.png
-    - link: testting
-      text: >-
-        We believe that good coffee has the power to bring people tog required
-        ether. That’s why we decided to turn a corner of our shop into a cozy
-        meeting space 
-      title: Downtown
-      image: /img/downtown.png
-    - link: test
-      text: >-
-        We believe that good coffee has the power to bring people tog required
-        ether. That’s why we decided to turn a corner of our shop into a cozy
-        meeting space
-      title: Guaranty and Offices
-      image: /img/garanti.png
   heading: Our goal is to help you choose
   subheading: the best investment possible
+aboutCompany:
+  firstDescription: >-
+    Kaldi is the coffee store for everyone who believes that great coffee
+    shouldn't just taste good, it should do good too. We source all of our beans
+    directly from small scale sustainable farmers and make sure part of the
+    profits are reinvested in their communities.
+  firstHeading: first heading
+  secondDescription: >-
+    Kaldi is the coffee store for everyone who believes that great coffee
+    shouldn't just taste good, it should do good too. We source all of our beans
+    directly from small scale sustainable farmers and make sure part of the
+    profits are reinvested in their communities.
+  secondHeading: second heading
+  sections:
+    - text: >-
+        Kaldi is the ultimate spot for coffee lovers who want to learn about
+        their java’s origin and support the farmers that grew it. We take coffee
+        production, roasting 
+      title: title 1
+    - text: >-
+        Kaldi is the ultimate spot for coffee lovers who want to learn about
+        their java’s origin and support the farmers that grew it. We take coffee
+        production, roasting 
+      title: title 2
+    - text: >-
+        Kaldi is the ultimate spot for coffee lovers who want to learn about
+        their java’s origin and support the farmers that grew it. We take coffee
+        production, roasting 
+      title: title 3
+  thirdHeading: third heading
+  videoLink: 'https://www.youtube.com/watch?v=jrc4aOfu7aQ'
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
