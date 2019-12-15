@@ -46,15 +46,13 @@ collections:
               default: "index-page",
             }
           - {
-              label: Intro,
+              label: Carousel,
               name: intro,
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
                   {
-                    label: Blurbs,
+                    label: Slides,
                     name: blurbs,
                     widget: list,
                     fields:
