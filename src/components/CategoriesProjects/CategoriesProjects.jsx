@@ -112,6 +112,9 @@ const CategoriesProjects = ({ t, projectCategories }) => {
     font-size: 13px;
     color: black;
   `;
+  if (!projectCategories) {
+    return null;
+  }
   return (
     <CategoriesProjectsWrapper>
       <Container>
