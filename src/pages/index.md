@@ -34,6 +34,14 @@ intro:
         about coffee making techniques. All of the artwork on display there is
         for sale. The full price you pay goes to the artist.
 projectCategories:
+  categories:
+    - link: seaview
+      text: >-
+        Love a great cup of coffee, but never knew how to make one? Bought a
+        fancy new Chemex but have no clue how to use it? Don't worry, we’re here
+        to help. 
+      title: Seaview
+      image: /img/seaview.png
   heading: Our goal is to help you choose
   subheading: the best investment possible
 title: Great coffee with a conscience
