@@ -30,6 +30,7 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
+    "react-i18next": "^11.2.6",
     "react-id-swiper": "^2.4.0",
     "styled-components": "^4.4.1",
     "swiper": "^5.2.1",
