@@ -42,6 +42,13 @@ projectCategories:
         to help. 
       title: Seaview
       image: /img/seaview.png
+    - link: testting
+      text: >-
+        We believe that good coffee has the power to bring people tog required
+        ether. That’s why we decided to turn a corner of our shop into a cozy
+        meeting space 
+      title: Downtown
+      image: /img/downtown.png
   heading: Our goal is to help you choose
   subheading: the best investment possible
 title: Great coffee with a conscience
