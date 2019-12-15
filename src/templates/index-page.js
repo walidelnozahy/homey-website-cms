@@ -6,6 +6,7 @@ import Layout from '../components/Layout'
 import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 import HeaderCarousel from '../components/HeaderCarousel/HeaderCarousel'
+import CategoriesProjects from '../components/CategoriesProjects/CategoriesProjects'
 
 export const IndexPageTemplate = ({
   image,
@@ -15,9 +16,11 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
+  projectCategories
 }) => (
   <div>
     <HeaderCarousel carouselItems={intro.blurbs}/>
+    <CategoriesProjects projectCategories={projectCategories}/>
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -131,7 +134,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
+console.log(frontmatter,'frontmatter')
   return (
     <Layout>
       <IndexPageTemplate
@@ -142,6 +145,7 @@ const IndexPage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         intro={frontmatter.intro}
+        projectCategories={frontmatter.projectCategories}
       />
     </Layout>
   )
@@ -180,7 +184,7 @@ export const pageQuery = graphql`
           blurbs {
             image {
               childImageSharp {
-                fluid(maxWidth: 240, quality: 64) {
+                fluid(maxWidth: 740, quality: 100) {
                   ...GatsbyImageSharpFluid
                 }
               }
@@ -188,7 +192,25 @@ export const pageQuery = graphql`
             text
           }
           heading
-          description
+         
+        }
+        projectCategories {
+          heading
+          subheading
+          categories {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 740, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            title
+            text
+            link
+          }
+          
+          
         }
       }
     }
