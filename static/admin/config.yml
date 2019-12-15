@@ -90,7 +90,7 @@ collections:
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
+                  { label: First Heading, name: firstHeading, widget: string },
                   { label: Description, name: description, widget: markdown },
                   { label: Youtube Link, name: videoLink, widget: string },
                   {
