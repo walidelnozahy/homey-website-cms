@@ -34,8 +34,8 @@ intro:
         about coffee making techniques. All of the artwork on display there is
         for sale. The full price you pay goes to the artist.
 projectCategories:
-  heading: required
-  subheading: required
+  heading: Our goal is to help you choose
+  subheading: the best investment possible
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
