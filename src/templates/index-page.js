@@ -209,8 +209,6 @@ export const pageQuery = graphql`
             text
             link
           }
-          
-          
         }
       }
     }
