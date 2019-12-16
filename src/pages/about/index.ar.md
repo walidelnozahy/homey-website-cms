@@ -1,6 +1,7 @@
 ---
 pageKey: page_about
 locale: ar
+templateKey: "about-page"
 name: about
 seo_title: homey about ar
 seo_desc: homey about arrr
@@ -30,4 +31,5 @@ thirdText: >+
 featuredimage: /img/homey_real_estate_b_xlwp1mek.jpg
 videoLink: "https://www.youtube.com/watch?v=qS8NiCrxpb8"
 ---
+
 test
