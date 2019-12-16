@@ -7,6 +7,7 @@ import Features from '../components/Features'
 import BlogRoll from '../components/BlogRoll'
 import HeaderCarousel from '../components/HeaderCarousel/HeaderCarousel'
 import CategoriesProjects from '../components/CategoriesProjects/CategoriesProjects'
+import WeOffer from '../components/WeOffer/WeOffer'
 
 export const IndexPageTemplate = ({
   image,
@@ -16,11 +17,13 @@ export const IndexPageTemplate = ({
   mainpitch,
   description,
   intro,
-  projectCategories
+  projectCategories,
+  aboutCompany
 }) => (
   <div>
     <HeaderCarousel carouselItems={intro.blurbs}/>
     <CategoriesProjects projectCategories={projectCategories}/>
+    <WeOffer aboutCompany={aboutCompany}/>
     <div
       className="full-width-image margin-top-0"
       style={{
@@ -146,6 +149,7 @@ console.log(frontmatter,'frontmatter')
         description={frontmatter.description}
         intro={frontmatter.intro}
         projectCategories={frontmatter.projectCategories}
+        aboutCompany={frontmatter.aboutCompany}
       />
     </Layout>
   )
@@ -190,9 +194,33 @@ export const pageQuery = graphql`
               }
             }
             text
+           
           }
-          heading
-         
+        }
+        projectCategories {
+          categories {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 740, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+            
+          }
+        }
+        aboutCompany {
+          sections {
+            text
+            
+          }
+          firstDescription
+          firstHeading
+          secondDescription
+          secondHeading
+          thirdHeading
+          videoLink
         }
         
       }
