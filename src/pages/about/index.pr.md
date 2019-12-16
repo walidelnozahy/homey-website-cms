@@ -1,5 +1,6 @@
 ---
 pageKey: page_about
+name: about
 locale: pr
 templateKey: "about-page"
 path: /pr/about
