@@ -31,7 +31,21 @@ collections:
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
-
+  - name: "about"
+    label: "About"
+    folder: "src/pages/about"
+    fields:
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_about",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "SEO Title", name: "seo_title", widget: "string" }
+      - { label: "SEO Description", name: "seo_desc", widget: "string" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
     files:
