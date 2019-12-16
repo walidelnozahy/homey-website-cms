@@ -1,11 +1,12 @@
 ---
 pageKey: page_services
 templateKey: services-page
-title: خدماتنا
 name: services
 locale: ar
+title: خدماتنا
 seo_title: خدماتنا
 seo_desc: خدماتنا خدماتنا
+headerImage: /img/services-char.png
 services:
   blurbs:
     - image: /img/real-estate.png
