@@ -1,35 +1,26 @@
 ---
 pageKey: page_services
 templateKey: services-page
+title: خدماتنا
 name: services
 locale: ar
-seo_title: homey services ar
-seo_desc: homey services arrr err
-headerImage: /img/about-char2.png
-title: من نحن
-firstHeading: our history
-firstText: >+
-  Single-origin coffee is coffee grown within a single known geographic origin.
-  Sometimes, this is a single farm or a specific collection of beans from a
-  single country. The name of the coffee is then usually the place it was grown
-  to whatever degree available.
-
-secondHeading: our mission
-secondText: >+
-  Sustainable agriculture is farming in sustainable ways based on an
-  understanding of ecosystem services, the study of relationships between
-  organisms and their environment. What grows where and how it is grown are a
-  matter of choice and careful consideration for nature and communities.
-
-thirdHeading: our vision
-thirdText: >+
-  Sustainable agriculture is farming in sustainable ways based on an
-  understanding of ecosystem services, the study of relationships between
-  organisms and their environment. What grows where and how it is grown are a
-  matter of choice and careful consideration for nature and communities.
-
-featuredimage: /img/homey_real_estate_b_xlwp1mek.jpg
-videoLink: "https://www.youtube.com/watch?v=qS8NiCrxpb8"
+seo_title: خدماتنا
+seo_desc: خدماتنا خدماتنا
+services:
+  blurbs:
+    - image: /img/real-estate.png
+      text: مستشار عقاري
+      title: >-
+        نوفر فى شركة Homey خدمة الاستشارات العقارية عن طريق عرض مجموعة من
+        المشاريع التى تتيح لعملائنا المقارنة فيما بينها واختيار المشروع المناسب
+        لاحتياجاتهم وامكانياتهم سواء للسكن او للاستثمار
+    - image: /img/managment.png
+      text: ادارة عقارات
+      title: >-
+        خدمة ادارة العقار هى خدمة نقدمها فى شركة Homey لعملائنا المستثمريين حيث
+        نقوم بادارة العقار عن طريق الاعلان عن العقار  البحث عن مستأجر وانهاء
+        كافة الاجراءات القانونية وتحصيل العائد الشهري وايداعة فى حساب المالك بعد
+        دفع الفواتير وايضا الاهتمام بالعناية الدورية بالعقار من ترميم وتجديد
+        ونظافة
 ---
 
-test
