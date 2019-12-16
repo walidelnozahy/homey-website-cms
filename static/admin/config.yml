@@ -44,7 +44,14 @@ collections:
       - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
       - { label: "SEO Title", name: "seo_title", widget: "string" }
       - { label: "SEO Description", name: "seo_desc", widget: "string" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "First Heading", name: "firstHeading", widget: "string" }
+      - { label: "First Text", name: "firstText", widget: "text" }
+      - { label: "Second Heading", name: "secondHeading", widget: "string" }
+      - { label: "Second Text", name: "secondText", widget: "text" }
+      - { label: "Thrid Heading", name: "thirdHeading", widget: "string" }
+      - { label: "Third Text", name: "thirdText", widget: "text" }
+      - { label: "Featured Image", name: "featuredimage", widget: image }
+      - { label: "Video Link", name: "videoLink", widget: "string" }
       - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"

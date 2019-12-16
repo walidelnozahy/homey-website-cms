@@ -2,7 +2,7 @@ const _ = require('lodash')
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
-
+const locales = require("./src/_constants/locales");
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -18,6 +18,10 @@ exports.createPages = ({ actions, graphql }) => {
             frontmatter {
               tags
               templateKey
+              locale
+              path
+              title
+              name
             }
           }
         }
@@ -30,20 +34,31 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const posts = result.data.allMarkdownRemark.edges
-
+    
     posts.forEach(edge => {
-      const id = edge.node.id
-      createPage({
-        path: edge.node.fields.slug,
-        tags: edge.node.frontmatter.tags,
-        component: path.resolve(
-          `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
-        ),
-        // additional data can be passed via context
-        context: {
-          id,
-        },
-      })
+      const locale = edge.node.frontmatter.locale;
+      if (edge.node.frontmatter.templateKey != null) {
+        const id = edge.node.id;
+        const pageLocale = edge.node.frontmatter.locale
+        const getPath = pageLocale !== 'en' ? pageLocale + '/' + edge.node.frontmatter.name : edge.node.frontmatter.name
+
+        console.log('pageLocale',pageLocale,'getPath',getPath)
+        
+
+        createPage({
+          path: getPath || edge.node.fields.slug,
+          tags: edge.node.frontmatter.tags,
+          component: path.resolve(
+            `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
+          ),
+          // additional data can be passed via context
+          context: {
+            id,
+            locale
+          }
+        });
+      }
+     
     })
 
     // Tag pages:
@@ -71,6 +86,28 @@ exports.createPages = ({ actions, graphql }) => {
     })
   })
 }
+exports.onCreatePage = ({ page, actions }) => {
+  const { createPage, deletePage } = actions;
+
+  return new Promise(resolve => {
+    deletePage(page);
+
+    Object.keys(locales).map(lang => {
+      const localizedPath = locales[lang].default
+        ? page.path
+        : locales[lang].path + page.path;
+      // console.log('localizedPath',localizedPath)
+      return createPage({
+        ...page,
+        path: localizedPath,
+        context: {
+          locale: lang
+        }
+      });
+    });
+    resolve();
+  });
+};
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
