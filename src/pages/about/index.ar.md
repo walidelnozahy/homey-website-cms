@@ -6,7 +6,7 @@ locale: ar
 seo_title: homey about ar
 seo_desc: homey about arrr err
 headerImage: /img/about-char2.png
-title: About Us
+title: من نحن
 firstHeading: our history
 firstText: >+
   Single-origin coffee is coffee grown within a single known geographic origin.
