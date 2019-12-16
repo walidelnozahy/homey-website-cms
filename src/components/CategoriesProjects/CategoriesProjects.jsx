@@ -126,7 +126,7 @@ const CategoriesProjects = ({ t, projectCategories }) => {
           {projectCategories.categories.map(
             ({ image, title, text, link }, key) => (
               <CategoriesProjectsEach key={key} data-aos="fade-up">
-                <Link to={`/projects?category=${title}`}>
+                <Link to={`${link}`}>
                   <CategoriesProjectsEachImage>
                     <PreviewCompatibleImage imageInfo={image} />
                   </CategoriesProjectsEachImage>

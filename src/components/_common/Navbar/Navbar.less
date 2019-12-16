@@ -1,0 +1,122 @@
+/* align header of Drawer with header of page */
+.menu {
+    padding: 0 20px;
+    border-bottom: solid 1px #e8e8e8;
+    overflow: auto;
+    box-shadow: 0 0 30px #f3f1f1;
+    display: flex;
+}
+
+.menu__logo {
+    width: 150px;
+    // float: left;
+
+    a {
+        display: inline-block;
+        font-size: 20px;
+        padding: 0;
+
+        img {
+            max-width: 90%;
+        }
+    }
+}
+
+.menu__container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    .ant-menu-item {
+        padding: 0px 5px;
+
+        a {
+            padding: 10px 15px;
+        }
+    }
+
+    .ant-menu-submenu-title {
+        padding: 10px 20px;
+
+        a {
+            padding: 10px 15px;
+        }
+    }
+
+    .ant-menu-horizontal {
+        border-bottom: none;
+    }
+
+    .menu_left {
+        // float: left;
+        margin: auto 0;
+    }
+
+    .menu_rigth {
+        // float: right;
+        margin: auto 0;
+
+        .ant-menu-item {
+            height: 100% !important;
+
+            .ant-select {
+                padding: 15px;
+            }
+        }
+    }
+}
+
+.menu__mobile-button {
+
+    height: 32px;
+    padding: 6px;
+    margin: auto 0 auto auto;
+    display: none !important;
+    background: #3e91f7;
+}
+
+.menu_drawer {
+    .ant-drawer-body {
+        padding: 0 !important;
+    }
+
+    .ant-drawer-header {
+        padding: 14px 24px !important;
+    }
+}
+
+@media (max-width: 767px) {
+    .menu__mobile-button {
+        display: inline-block !important;
+        margin-top: 13px;
+    }
+
+    .menu_left {
+        display: none;
+    }
+
+    .menu_rigth {
+        display: none;
+    }
+
+    .menu__logo {
+        width: 100px;
+
+        a {
+            margin-left: -20px;
+            padding: 10px 20px;
+        }
+    }
+
+    .menu__container {
+        .ant-menu-item {
+            padding: 1px 20px;
+        }
+
+        .ant-menu-submenu-title {
+            padding: 1px 20px;
+        }
+    }
+}
+
+@media (max-width: 992px) {}
