@@ -61,7 +61,6 @@ collections:
       - { label: "Third Text", name: "thirdText", widget: "text" }
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Video Link", name: "videoLink", widget: "string" }
-      - { label: "Body", name: "body", widget: "markdown" }
   - name: "pages"
     label: "Pages"
     files:
