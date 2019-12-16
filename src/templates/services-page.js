@@ -10,26 +10,19 @@ export const ServicesPageTemplate = ({ title, content, contentComponent,
   headerImage,
   seo_title,
   seo_desc,
-  firstHeading,
-  firstText,
-  secondHeading,
-  secondText,
-  thirdHeading,
-  thirdText,
-  featuredimage,
-  videoLink
+  services
 }) => {
   const PageContent = contentComponent || Content
 
   return (
     <div>
-      <HeaderPages
+      {/* <HeaderPages
           title={title}
           image={headerImage}
-        />
+        /> */}
         
         <OurServices 
-       
+        services={services}
         />
     {/* <section className="section section--gradient">
       <div className="container">
@@ -66,6 +59,8 @@ const ServicesPage = ({ data }) => {
         headerImage={post.frontmatter.headerImage}
         seo_title={post.frontmatter.seo_title}
         seo_desc={post.frontmatter.seo_desc}
+        services={post.frontmatter.services}
+        
        
       />
     </Layout>
@@ -93,7 +88,19 @@ export const ServicesPageQuery = graphql`
             }
           }
         }
-       
+        services {
+          blurbs {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 740, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+            title
+          }
+        }
       }
     }
   }

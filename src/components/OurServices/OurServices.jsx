@@ -5,34 +5,35 @@ import { withTranslation } from "react-i18next";
 // import WrappedRegistrationForm from "../ContactForm/ContactForm";
 // import TitleYellow from "../TitleYellow/TitleYellow";
 import company from "../../_company/company";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 
-const OurServices = ({ t }) => {
-  const services = [
-    {
-      name: t("real estate consultant"),
-      text: t("real estate consultant description"),
-      icon:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925884/real-estate.png"
-    },
-    {
-      name: t("property managment"),
-      text: t("property managment description"),
-      icon:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925885/managment.png"
-    },
-    {
-      name: t("legal process"),
-      text: t("legal process description"),
-      icon:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925884/legal.png"
-    },
-    {
-      name: t("university applications"),
-      text: t("university applications description"),
-      icon:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925885/universty.png"
-    }
-  ];
+const OurServices = ({ t, services }) => {
+  // const services = [
+  //   {
+  //     name: t("real estate consultant"),
+  //     text: t("real estate consultant description"),
+  //     icon:
+  //       "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925884/real-estate.png"
+  //   },
+  //   {
+  //     name: t("property managment"),
+  //     text: t("property managment description"),
+  //     icon:
+  //       "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925885/managment.png"
+  //   },
+  //   {
+  //     name: t("legal process"),
+  //     text: t("legal process description"),
+  //     icon:
+  //       "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925884/legal.png"
+  //   },
+  //   {
+  //     name: t("university applications"),
+  //     text: t("university applications description"),
+  //     icon:
+  //       "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571925885/universty.png"
+  //   }
+  // ];
   const iconSize = "130px";
   const OurServicesWrapper = styled.div`
   margin-top 40px;
@@ -91,16 +92,24 @@ const OurServices = ({ t }) => {
       <Container>
         <OurServicesInner>
           <ServicesWrapper>
-            {services.map(({ name, text, icon }, key) => {
+            {services.blurbs.map(({ title, text, image }, key) => {
               return (
                 <ServicesEachDiv key={key}>
                   <IconWrapper data-aos="fade-left">
                     {/* <IconInner> */}
-                    <Image src={icon} />
+
+                    {image &&
+                    image.childImageSharp &&
+                    image.childImageSharp.fluid &&
+                    image.childImageSharp.fluid.src ? (
+                      <Image src={image.childImageSharp.fluid.src} />
+                    ) : (
+                      <PreviewCompatibleImage imageInfo={image} />
+                    )}
                     {/* </IconInner> */}
                   </IconWrapper>
                   <TextWrapper data-aos="fade-right">
-                    <Title>{name}</Title>
+                    <Title>{title}</Title>
                     <Text>{text}</Text>
                   </TextWrapper>
                 </ServicesEachDiv>
