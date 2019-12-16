@@ -2,7 +2,7 @@
 pageKey: page_about
 locale: ar
 seo_title: homey about ar
-seo_desc: homey about arr
+seo_desc: homey about arrr
 headerImage: /img/about-char2.png
 title: About Us
 firstHeading: our history
@@ -29,3 +29,4 @@ thirdText: >+
 featuredimage: /img/homey_real_estate_b_xlwp1mek.jpg
 videoLink: 'https://www.youtube.com/watch?v=qS8NiCrxpb8'
 ---
+test
