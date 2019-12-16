@@ -1,5 +1,8 @@
 ---
+pageKey: page_home
 templateKey: index-page
+name: home
+locale: fr
 intro:
   blurbs:
     - image: /img/homey_real_estate_b_xlwp1mek.jpg
@@ -41,20 +44,20 @@ aboutCompany:
     - text: >-
         Kaldi is the ultimate spot for coffee lovers who want to learn about
         their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting 
+        production, roasting
       title: title 1
     - text: >-
         Kaldi is the ultimate spot for coffee lovers who want to learn about
         their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting 
+        production, roasting
       title: title 2
     - text: >-
         Kaldi is the ultimate spot for coffee lovers who want to learn about
         their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting 
+        production, roasting
       title: title 3
   thirdHeading: third heading
-  videoLink: 'https://www.youtube.com/watch?v=jrc4aOfu7aQ'
+  videoLink: "https://www.youtube.com/watch?v=jrc4aOfu7aQ"
 title: Great coffee with a conscience
 image: /img/home-jumbotron.jpg
 heading: Great coffee with a conscience
@@ -88,4 +91,3 @@ main:
     alt: Coffee beans
     image: /img/products-grid1.jpg
 ---
-
