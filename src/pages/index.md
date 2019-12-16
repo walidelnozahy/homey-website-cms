@@ -9,6 +9,10 @@ intro:
       link: project slid 2
       text: project slide 2
 projectCategories:
+  categories:
+    - text: seaview
+      title: seaview
+      image: /img/seaview.png
   heading: Our goal is to help you choose
   subheading: the best investment possible
 aboutCompany:
