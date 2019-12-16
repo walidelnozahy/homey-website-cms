@@ -194,6 +194,7 @@ export const pageQuery = graphql`
           heading
          
         }
+        
         projectCategories {
           heading
           subheading
