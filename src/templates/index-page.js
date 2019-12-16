@@ -194,7 +194,26 @@ export const pageQuery = graphql`
           heading
          
         }
+<<<<<<< HEAD
         
+=======
+        projectCategories {
+          heading
+          subheading
+          categories {
+            image {
+              childImageSharp {
+                fluid(maxWidth: 740, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            title
+            text
+            link
+          }
+        }
+>>>>>>> added about company
       }
     }
   }
