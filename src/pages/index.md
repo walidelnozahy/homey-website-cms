@@ -10,13 +10,16 @@ intro:
       text: project slide 2
 projectCategories:
   categories:
-    - text: seaview
+    - link: seaview
+      text: seaview
       title: seaview
       image: /img/seaview.png
-    - text: downtown
+    - link: downtown
+      text: downtown
       title: downtown
       image: /img/downtown.png
-    - text: garuanty
+    - link: garuanty
+      text: garuanty
       title: garuanty
       image: /img/garanti.png
   heading: Our goal is to help you choose
