@@ -1,10 +1,20 @@
 ---
 pageKey: page_about
+templateKey: about-page
 name: about
 locale: pr
-templateKey: "about-page"
-path: /pr/about
+seo_title: about us pr
+seo_desc: about us pr
+headerImage: /img/about-char2.png
 title: About our values pr
+firstHeading: about us pr
+firstText: about us pr
+secondHeading: about us pr
+secondText: about us pr
+thirdHeading: about us pr
+thirdText: about us pr
+featuredimage: /img/flavor_wheel.jpg
+videoLink: about us pr
 ---
 
 ### Shade-grown coffee pr
