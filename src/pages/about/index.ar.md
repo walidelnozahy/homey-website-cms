@@ -2,7 +2,7 @@
 pageKey: page_about
 locale: ar
 seo_title: homey about ar
-seo_desc: homey about ar
+seo_desc: homey about arr
 headerImage: /img/about-char2.png
 title: About Us
 firstHeading: our history
