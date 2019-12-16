@@ -61,6 +61,100 @@ collections:
       - { label: "Third Text", name: "thirdText", widget: "text" }
       - { label: "Featured Image", name: "featuredimage", widget: image }
       - { label: "Video Link", name: "videoLink", widget: "string" }
+  - name: "home"
+    label: "Home"
+    folder: "src/pages/home"
+    fields:
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_home",
+        }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "index-page",
+        }
+      - { label: "Name", name: "name", widget: "hidden", default: "home" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "SEO Title", name: "seo_title", widget: "string" }
+      - { label: "SEO Description", name: "seo_desc", widget: "string" }
+
+      - {
+          label: Carousel,
+          name: intro,
+          widget: object,
+          fields:
+            [
+              {
+                label: Slides,
+                name: blurbs,
+                widget: list,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Text, name: text, widget: string },
+                    { label: Link, name: link, widget: string },
+                  ],
+              },
+            ],
+        }
+      - {
+          label: Projects Categories,
+          name: projectCategories,
+          widget: object,
+          fields:
+            [
+              { label: Heading, name: heading, widget: string },
+              { label: Subheading, name: subheading, widget: string },
+              {
+                label: Categories,
+                name: categories,
+                widget: list,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Title, name: title, widget: string },
+                    { label: Text, name: text, widget: text },
+                    { label: Link, name: link, widget: string },
+                  ],
+              },
+            ],
+        }
+      - {
+          label: about company section,
+          name: aboutCompany,
+          widget: object,
+          fields:
+            [
+              { label: First Heading, name: firstHeading, widget: string },
+              {
+                label: First Description,
+                name: firstDescription,
+                widget: markdown,
+              },
+              { label: Youtube Link, name: videoLink, widget: string },
+              { label: Second Heading, name: secondHeading, widget: string },
+              {
+                label: Second Description,
+                name: secondDescription,
+                widget: markdown,
+              },
+              { label: Third Heading, name: thirdHeading, widget: string },
+              {
+                label: Sections,
+                name: sections,
+                widget: list,
+                fields:
+                  [
+                    { label: Title, name: title, widget: string },
+                    { label: Text, name: text, widget: text },
+                  ],
+              },
+            ],
+        }
   - name: "pages"
     label: "Pages"
     files:
@@ -74,6 +168,7 @@ collections:
               widget: "hidden",
               default: "index-page",
             }
+
           - {
               label: Carousel,
               name: intro,
