@@ -13,6 +13,12 @@ projectCategories:
     - text: seaview
       title: seaview
       image: /img/seaview.png
+    - text: downtown
+      title: downtown
+      image: /img/downtown.png
+    - text: garuanty
+      title: garuanty
+      image: /img/garanti.png
   heading: Our goal is to help you choose
   subheading: the best investment possible
 aboutCompany:
