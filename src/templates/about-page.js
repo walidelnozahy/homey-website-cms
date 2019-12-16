@@ -116,7 +116,7 @@ export const aboutPageQuery = graphql`
         thirdText
         featuredimage {
           childImageSharp {
-            fluid(maxWidth: 740, quality: 100) {
+            fluid( quality: 100) {
               ...GatsbyImageSharpFluid
             }
           }
