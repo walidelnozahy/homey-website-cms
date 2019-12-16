@@ -64,9 +64,14 @@ const HeaderPages = ({ title, image, t }) => {
             <H1>{title}</H1>
           </HeaderTitle>
           <CharacterWrapper data-aos="fade-left">
-            {image ? <Character src={image.childImageSharp.fluid.src} /> : null}
-
-            {/* <PreviewCompatibleImage imageInfo={image} /> */}
+            {image &&
+            image.childImageSharp &&
+            image.childImageSharp.fluid &&
+            image.childImageSharp.fluid.src ? (
+              <Character src={image.childImageSharp.fluid.src} />
+            ) : (
+              <PreviewCompatibleImage imageInfo={image} />
+            )}
           </CharacterWrapper>
         </HeaderPagesInner>
       </Container>

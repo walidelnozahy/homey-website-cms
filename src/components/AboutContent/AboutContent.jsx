@@ -3,6 +3,7 @@ import styled from "styled-components";
 import ReactPlayer from "react-player";
 import { Container } from "../_common/Container/Container";
 import { withTranslation } from "react-i18next";
+import PreviewCompatibleImage from "../PreviewCompatibleImage";
 const AboutContent = ({
   t,
   firstHeading,
@@ -56,7 +57,8 @@ const AboutContent = ({
             <p>{firstText}</p>
           </TextDiv>
           {featuredimage ? (
-            <ImageDiv image={featuredimage.childImageSharp.fluid.src} />
+            // <ImageDiv image={featuredimage.childImageSharp.fluid.src} />
+            <PreviewCompatibleImage imageInfo={featuredimage} />
           ) : null}
         </FirstSection>
         <SecondSection>
