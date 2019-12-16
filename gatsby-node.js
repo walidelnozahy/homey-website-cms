@@ -45,7 +45,7 @@ exports.createPages = ({ actions, graphql }) => {
 
            getPath = pageLocale !== 'en' ? pageLocale + '/' + edge.node.frontmatter.name : edge.node.frontmatter.name
         } else {
-          getPath = pageLocale !== 'en' ? pageLocale  : ''
+          getPath = pageLocale !== 'en' ? pageLocale  : '/'
         }
 
         console.log('pageLocale',pageLocale,'getPath',getPath)
