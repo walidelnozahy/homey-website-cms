@@ -90,13 +90,7 @@ export const ServicesPageQuery = graphql`
         }
         services {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 740, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            
             text
             title
           }

@@ -42,7 +42,7 @@ export const EducationPageTemplate = ({ title, content, contentComponent,
   )
 }
 
-ServicesPageTemplate.propTypes = {
+EducationPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
