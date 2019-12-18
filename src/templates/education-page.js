@@ -16,10 +16,10 @@ export const EducationPageTemplate = ({ title, content, contentComponent,
 
   return (
     <div>
-      <HeaderPages
+      {/* <HeaderPages
           title={title}
           image={headerImage}
-        />
+        /> */}
 {/*         
         <OurServices 
         services={services}
