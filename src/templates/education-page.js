@@ -6,7 +6,7 @@ import Content, { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 import OurServices from '../components/OurServices/OurServices'
 
-export const ServicesPageTemplate = ({ title, content, contentComponent,
+export const EducationPageTemplate = ({ title, content, contentComponent,
   headerImage,
   seo_title,
   seo_desc,
@@ -20,10 +20,10 @@ export const ServicesPageTemplate = ({ title, content, contentComponent,
           title={title}
           image={headerImage}
         />
-        
+{/*         
         <OurServices 
         services={services}
-        />
+        /> */}
     {/* <section className="section section--gradient">
       <div className="container">
         <div className="columns">
@@ -48,18 +48,18 @@ ServicesPageTemplate.propTypes = {
   contentComponent: PropTypes.func,
 }
 
-const ServicesPage = ({ data }) => {
+const EducationPage = ({ data }) => {
   const { markdownRemark: post } = data
   console.log('ServicesPage',post)
   return (
     <Layout>
-      <ServicesPageTemplate
+      <EducationPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         headerImage={post.frontmatter.headerImage}
         seo_title={post.frontmatter.seo_title}
         seo_desc={post.frontmatter.seo_desc}
-        services={post.frontmatter.services}
+        
         
        
       />
@@ -88,19 +88,7 @@ export const ServicesPageQuery = graphql`
             }
           }
         }
-        services {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 740, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-            title
-          }
-        }
+      
       }
     }
   }
