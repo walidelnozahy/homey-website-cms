@@ -20,10 +20,10 @@ export const ServicesPageTemplate = ({ title, content, contentComponent,
           title={title}
           image={headerImage}
         />
-        
+{/*         
         <OurServices 
         services={services}
-        />
+        /> */}
     {/* <section className="section section--gradient">
       <div className="container">
         <div className="columns">
@@ -88,13 +88,7 @@ export const ServicesPageQuery = graphql`
             }
           }
         }
-        services {
-          blurbs {
-            
-            text
-            title
-          }
-        }
+        
       }
     }
   }

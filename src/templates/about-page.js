@@ -23,11 +23,11 @@ export const AboutPageTemplate = ({ title, content, contentComponent,
 
   return (
     <div>
-      <HeaderPages
+      {/* <HeaderPages
           title={title}
-          image={headerImage}
-        />
-        <AboutContent 
+          // image={headerImage}
+        /> */}
+        {/* <AboutContent 
         firstHeading={firstHeading}
         firstText={firstText}
         secondHeading={secondHeading}
@@ -36,7 +36,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent,
         thirdText={thirdText}
         featuredimage={featuredimage}
         videoLink={videoLink}
-        />
+        /> */}
     {/* <section className="section section--gradient">
       <div className="container">
         <div className="columns">
