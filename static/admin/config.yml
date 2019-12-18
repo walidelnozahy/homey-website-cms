@@ -194,8 +194,52 @@ collections:
                 fields:
                   [
                     { label: Image, name: image, widget: image },
-                    { label: Text, name: text, widget: string },
                     { label: Title, name: title, widget: string },
+                    { label: Text, name: text, widget: string },
+                  ],
+              },
+            ],
+        }
+
+  - name: "education"
+    label: "Education"
+    folder: "src/pages/education"
+    fields:
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_education",
+        }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "education-page",
+        }
+      - { label: "Name", name: "name", widget: "hidden", default: "education" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "SEO Title", name: "seo_title", widget: "string" }
+      - { label: "SEO Description", name: "seo_desc", widget: "string" }
+      - { label: "Header Image", name: "headerImage", widget: image }
+      - { label: "Content Image", name: "contentImage", widget: image }
+      - { label: "Description", name: "description", widget: markdown }
+      - {
+          label: Universities,
+          name: universities,
+          widget: object,
+          fields:
+            [
+              {
+                label: Service,
+                name: blurbs,
+                widget: list,
+                fields:
+                  [
+                    { label: Image, name: image, widget: image },
+                    { label: Title, name: title, widget: string },
+                    { label: Text, name: text, widget: string },
                   ],
               },
             ],
