@@ -4,7 +4,6 @@ templateKey: education-page
 title: Our education fr
 name: education
 locale: fr
-title: Our education fr
 seo_title: Our services fr
 seo_desc: Our services fr
 headerImage: /img/services-char.png
