@@ -67,14 +67,14 @@ const EducationPage = ({ data }) => {
   )
 }
 
-ServicesPage.propTypes = {
+EducationPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default ServicesPage
+export default EducationPage
 
-export const ServicesPageQuery = graphql`
-  query ServicesPage($id: String!) {
+export const EducationPageQuery = graphql`
+  query EducationPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
