@@ -43,7 +43,8 @@ exports.createPages = ({ actions, graphql }) => {
         let getPath
         if (edge.node.frontmatter.name !== 'home') {
 
-           getPath = pageLocale !== 'en' ? pageLocale + '/' + edge.node.frontmatter.name : edge.node.frontmatter.name
+          //  getPath = pageLocale !== 'en' ? pageLocale + '/' + edge.node.frontmatter.name : edge.node.frontmatter.name
+           getPath = pageLocale + '/' + edge.node.frontmatter.name
         } else {
           getPath = pageLocale !== 'en' ? pageLocale  : '/'
         }

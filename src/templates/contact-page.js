@@ -4,26 +4,26 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
-import OurServices from '../components/OurServices/OurServices'
 
-export const ServicesPageTemplate = ({ title, content, contentComponent,
+
+export const ContactPageTemplate = ({ title, content, contentComponent,
   headerImage,
   seo_title,
   seo_desc,
-  services
+  // services
 }) => {
   const PageContent = contentComponent || Content
 
   return (
     <div>
-      <HeaderPages
+      {/* <HeaderPages
           title={title}
           image={headerImage}
         />
         
         <OurServices 
         services={services}
-        />
+        /> */}
     {/* <section className="section section--gradient">
       <div className="container">
         <div className="columns">
@@ -42,18 +42,18 @@ export const ServicesPageTemplate = ({ title, content, contentComponent,
   )
 }
 
-ServicesPageTemplate.propTypes = {
+ContactPageTemplate.propTypes = {
   title: PropTypes.string.isRequired,
   content: PropTypes.string,
   contentComponent: PropTypes.func,
 }
 
-const ServicesPage = ({ data }) => {
+const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data
   console.log('ServicesPage content',post)
   return (
     <Layout>
-      <ServicesPageTemplate
+      <ContactPageTemplate
         contentComponent={HTMLContent}
         title={post.frontmatter.title}
         headerImage={post.frontmatter.headerImage}
@@ -67,14 +67,14 @@ const ServicesPage = ({ data }) => {
   )
 }
 
-ServicesPage.propTypes = {
+ContactPage.propTypes = {
   data: PropTypes.object.isRequired,
 }
 
-export default ServicesPage
+export default ContactPage
 
-export const ServicesPageQuery = graphql`
-  query ServicesPage($id: String!) {
+export const ContactPageQuery = graphql`
+  query ContactPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
       html
       frontmatter {
@@ -88,19 +88,7 @@ export const ServicesPageQuery = graphql`
             }
           }
         }
-        services {
-          blurbs {
-            image {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
-            text
-            title
-          }
-        }
+       
       }
     }
   }

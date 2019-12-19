@@ -8,6 +8,7 @@ import { initReactI18next } from "react-i18next";
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import "antd/dist/antd.css";
+import "swiper/css/swiper.css";
 import './all.sass'
 
 

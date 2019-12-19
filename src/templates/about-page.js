@@ -23,11 +23,11 @@ export const AboutPageTemplate = ({ title, content, contentComponent,
 
   return (
     <div>
-      {/* <HeaderPages
+      <HeaderPages
           title={title}
-          // image={headerImage}
-        /> */}
-        {/* <AboutContent 
+          image="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571934056/about-char2.png"
+        />
+        <AboutContent 
         firstHeading={firstHeading}
         firstText={firstText}
         secondHeading={secondHeading}
@@ -36,7 +36,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent,
         thirdText={thirdText}
         featuredimage={featuredimage}
         videoLink={videoLink}
-        /> */}
+        />
     {/* <section className="section section--gradient">
       <div className="container">
         <div className="columns">
@@ -92,6 +92,9 @@ AboutPage.propTypes = {
 
 export default AboutPage
 
+
+
+
 export const aboutPageQuery = graphql`
   query AboutPage($id: String!) {
     markdownRemark(id: { eq: $id }) {
@@ -100,24 +103,16 @@ export const aboutPageQuery = graphql`
         title
         seo_title
         seo_desc
-         
-        headerImage {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
         firstHeading
         firstText
         secondHeading
         secondText
         thirdHeading
         thirdText
-        featuredimage {
+        featuredimage { 
           childImageSharp {
-            fluid( quality: 100) {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }

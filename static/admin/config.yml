@@ -50,10 +50,9 @@ collections:
         }
       - { label: "Name", name: "name", widget: "hidden", default: "about" }
       - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "hidden" }
       - { label: "SEO Title", name: "seo_title", widget: "string" }
       - { label: "SEO Description", name: "seo_desc", widget: "string" }
-      - { label: "Header Image", name: "headerImage", widget: image }
       - { label: "First Heading", name: "firstHeading", widget: "string" }
       - { label: "First Text", name: "firstText", widget: "text" }
       - { label: "Second Heading", name: "secondHeading", widget: "string" }
@@ -177,10 +176,9 @@ collections:
         }
       - { label: "Name", name: "name", widget: "hidden", default: "services" }
       - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "hidden" }
       - { label: "SEO Title", name: "seo_title", widget: "string" }
       - { label: "SEO Description", name: "seo_desc", widget: "string" }
-      - { label: "Header Image", name: "headerImage", widget: image }
       - {
           label: Services,
           name: services,
@@ -219,7 +217,7 @@ collections:
         }
       - { label: "Name", name: "name", widget: "hidden", default: "education" }
       - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
-      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Title", name: "title", widget: "hidden" }
       - { label: "SEO Title", name: "seo_title", widget: "string" }
       - { label: "SEO Description", name: "seo_desc", widget: "string" }
       - { label: "Header Image", name: "headerImage", widget: image }

@@ -4,40 +4,37 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
-import OurServices from '../components/OurServices/OurServices'
+import OurPartners from '../components/OurPartners/OurPartners'
+import EducationContent from '../components/EducationContent/EducationContent'
 
 export const EducationPageTemplate = ({ title, content, contentComponent,
   headerImage,
   seo_title,
   seo_desc,
-  services
+  description,
+contentImage,
+universities
+
 }) => {
   const PageContent = contentComponent || Content
 
   return (
     <div>
-      {/* <HeaderPages
+      <HeaderPages
           title={title}
           image={headerImage}
-        /> */}
-{/*         
-        <OurServices 
-        services={services}
-        /> */}
-    {/* <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section> */}
+        />
+        <EducationContent 
+          contentImage={contentImage}
+          description={description}
+        />
+        {universities ? 
+        
+        <OurPartners 
+        universities={universities}
+        />
+        : null}
+    
     </div>
   )
 }
@@ -50,7 +47,7 @@ EducationPageTemplate.propTypes = {
 
 const EducationPage = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log('ServicesPage',post)
+  console.log('education content',post)
   return (
     <Layout>
       <EducationPageTemplate
@@ -59,6 +56,9 @@ const EducationPage = ({ data }) => {
         headerImage={post.frontmatter.headerImage}
         seo_title={post.frontmatter.seo_title}
         seo_desc={post.frontmatter.seo_desc}
+        description={post.frontmatter.description}
+        contentImage={post.frontmatter.contentImage}
+        universities={post.frontmatter.universities}
         
         
        
@@ -81,14 +81,34 @@ export const EducationPageQuery = graphql`
         title
         seo_title
         seo_desc
-        headerImage {
+        headerImage { 
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
             }
           }
         }
-      
+        description
+        contentImage { 
+          childImageSharp {
+            fluid(maxWidth: 700) {
+              ...GatsbyImageSharpFluid_noBase64
+            }
+          }
+        }
+        universities {
+          university {
+            universityImage {
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+            text
+            title
+          }
+        }
       }
     }
   }

@@ -29,7 +29,5 @@ thirdText: >+
   matter of choice and careful consideration for nature and communities.
 
 featuredimage: /img/homey_real_estate_b_xlwp1mek.jpg
-videoLink: 'https://www.youtube.com/watch?v=qS8NiCrxpb8'
+videoLink: "https://www.youtube.com/watch?v=qS8NiCrxpb8"
 ---
-
-test

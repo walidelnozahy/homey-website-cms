@@ -21,9 +21,9 @@ export const IndexPageTemplate = ({
   aboutCompany
 }) => (
   <div>
-    <HeaderCarousel carouselItems={intro.blurbs}/>
+    {/* <HeaderCarousel carouselItems={intro.blurbs}/>
     <CategoriesProjects projectCategories={projectCategories}/>
-    <WeOffer aboutCompany={aboutCompany}/>
+    <WeOffer aboutCompany={aboutCompany}/> */}
 {/*     
     <section className="section section--gradient">
       <div className="container">
@@ -122,25 +122,13 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
       frontmatter {
         title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
+       
         heading
       
         description
         intro {
           blurbs {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 740, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            
             text
             link
           }
@@ -149,13 +137,7 @@ export const pageQuery = graphql`
           heading
           subheading
           categories {
-            image {
-              childImageSharp {
-                fluid(maxWidth: 740, quality: 100) {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            
             text
             title
             link 
