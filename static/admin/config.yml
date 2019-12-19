@@ -243,6 +243,30 @@ collections:
             ],
         }
 
+  - name: "contact"
+    label: "Contact"
+    folder: "src/pages/contact"
+    fields:
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_contact",
+        }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "contact-page",
+        }
+      - { label: "Name", name: "name", widget: "hidden", default: "contact" }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - { label: "Title", name: "title", widget: "hidden" }
+      - { label: "SEO Title", name: "seo_title", widget: "string" }
+      - { label: "SEO Description", name: "seo_desc", widget: "string" }
+      - { label: "Header Image", name: "headerImage", widget: image }
+      - { label: "Main Title", name: "mainTitke", widget: string }
+      - { label: "Description", name: "description", widget: text }
   - name: "pages"
     label: "Pages"
     files:
