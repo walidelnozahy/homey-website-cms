@@ -17,11 +17,6 @@ description: >-
   اوراقك وتوثيقها وتجهيز الملف الخاص بك ومساعدتك فى تقديم اوراقك لدي الجامعات
   والحصول علي القبولات في المجالات التي ترغب في دراستها
 
-
-  # 
-
-
-  #
 universities:
   university:
     - text: university
@@ -40,4 +35,3 @@ universities:
       title: university
       universityImage: /img/group_646.png
 ---
-

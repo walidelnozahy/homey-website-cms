@@ -4,7 +4,7 @@ import { withTranslation } from "react-i18next";
 import { Container } from "../Container/Container";
 import company from "../../../_company/company";
 import PreviewCompatibleImage from "../../PreviewCompatibleImage";
-
+import RenderImage from "../Image/RenderImage";
 const HeaderPages = ({ title, image, t }) => {
   const HeaderPagesWrapper = styled.div`
     background-color: ${company.colorPrimary};
@@ -64,14 +64,16 @@ const HeaderPages = ({ title, image, t }) => {
             <H1>{title}</H1>
           </HeaderTitle>
           <CharacterWrapper data-aos="fade-left">
-            {image &&
+            {/* <Character src={image} /> */}
+            <RenderImage image={image} width="60%" />
+            {/* {image &&
             image.childImageSharp &&
             image.childImageSharp.fluid &&
             image.childImageSharp.fluid.src ? (
               <Character src={image.childImageSharp.fluid.src} />
             ) : (
               <PreviewCompatibleImage imageInfo={image} />
-            )}
+            )} */}
           </CharacterWrapper>
         </HeaderPagesInner>
       </Container>

@@ -6,7 +6,7 @@ locale: pr
 seo_title: about us pr
 seo_desc: about us pr
 headerImage: /img/about-char2.png
-title: About our values pr
+title: About us PR
 firstHeading: about us pr
 firstText: about us pr
 secondHeading: about us pr

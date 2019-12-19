@@ -1,10 +1,11 @@
 export const getLangPath = (toLng, currentPath) => {
   const page = currentPath  ? currentPath.split("/").pop() : ''
-  return toLng !== "en" ? `${toLng}/${page}` : `${page}`;
+  return `${toLng}/${page}`
 };
 
 export const toPath = (currentLng, toPage) => {
-  return currentLng !== "en" ? `${currentLng}/${toPage}` : `${toPage}`;
+  console.log('currentLng',currentLng !== "en" ? `${currentLng}/${toPage}` : `/${toPage}`)
+  return `${currentLng}/${toPage}`
 };
 
 export const flatString = str =>

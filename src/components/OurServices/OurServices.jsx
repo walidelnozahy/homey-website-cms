@@ -84,6 +84,7 @@ const OurServices = ({ t, services }) => {
   const TextWrapper = styled.div``;
   const Title = styled.h1`
     color: ${company.colorPrimary};
+    font-size: 27px;
   `;
   const Text = styled.div``;
   const RightColumn = styled.div``;
@@ -98,14 +99,15 @@ const OurServices = ({ t, services }) => {
                   <IconWrapper data-aos="fade-left">
                     {/* <IconInner> */}
 
-                    {image &&
-                    image.childImageSharp &&
-                    image.childImageSharp.fluid &&
-                    image.childImageSharp.fluid.src ? (
-                      <Image src={image.childImageSharp.fluid.src} />
-                    ) : (
-                      <PreviewCompatibleImage imageInfo={image} />
-                    )}
+                    {image ? (
+                      image.childImageSharp &&
+                      image.childImageSharp.fluid &&
+                      image.childImageSharp.fluid.src ? (
+                        <Image src={image.childImageSharp.fluid.src} />
+                      ) : (
+                        <PreviewCompatibleImage imageInfo={image} />
+                      )
+                    ) : null}
                     {/* </IconInner> */}
                   </IconWrapper>
                   <TextWrapper data-aos="fade-right">
