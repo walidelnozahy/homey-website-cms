@@ -201,7 +201,9 @@ class ContactForm extends React.Component {
               <input name="Lead Source" value="Website" readOnly={true} />
               <input
                 name="LEADCF4"
-                value={window.location.href}
+                value={
+                  global && global.window ? global.window.location.href : ""
+                }
                 readOnly={true}
               />
             </div>
