@@ -1,6 +1,6 @@
 export const getLangPath = (toLng, currentPath) => {
   const page = currentPath  ? currentPath.split("/").pop() : ''
-  return `${toLng}/${page}`
+  return toLng === 'en' ? `/` : `${toLng}/${page}`
 };
 
 export const toPath = (currentLng, toPage) => {

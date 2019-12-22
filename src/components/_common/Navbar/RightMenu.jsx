@@ -33,7 +33,7 @@ const RightMenu = ({ t, mode }) => {
           <Menu.Item key="setting:2" onClick={() => handleChangeLang("ar")}>
             {emojiFlags.countryCode("AL").emoji} العربية
           </Menu.Item>
-          <Menu.Item key="setting:3">
+          <Menu.Item key="setting:3" onClick={() => handleChangeLang("pr")}>
             {emojiFlags.countryCode("iq").emoji} فارسي
           </Menu.Item>
           <Menu.Item key="setting:4" onClick={() => handleChangeLang("fr")}>

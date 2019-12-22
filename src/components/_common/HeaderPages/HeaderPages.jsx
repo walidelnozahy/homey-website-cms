@@ -65,7 +65,7 @@ const HeaderPages = ({ title, image, t }) => {
           </HeaderTitle>
           <CharacterWrapper data-aos="fade-left">
             {/* <Character src={image} /> */}
-            <RenderImage image={image} width="60%" />
+            <RenderImage image={image} width="100%" />
             {/* {image &&
             image.childImageSharp &&
             image.childImageSharp.fluid &&

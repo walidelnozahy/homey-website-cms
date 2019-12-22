@@ -1,0 +1,14 @@
+@font-face {
+    font-family: "arabicFontLight";
+    src: url("../fonts/JF-Flat-light.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "arabicFontMedium";
+    src: url("../fonts/JF-Flat-medium.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "arabicFontRegular";
+    src: url("../fonts/JF-Flat-regular.ttf") format("truetype");
+}

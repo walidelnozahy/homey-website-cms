@@ -5,6 +5,7 @@
   "author": "Austin Green",
   "dependencies": {
     "antd": "^3.26.3",
+    "aos": "^2.3.4",
     "bulma": "^0.8.0",
     "emoji-flags": "^1.2.0",
     "gatsby": "^2.13.31",
@@ -21,6 +22,7 @@
     "gatsby-source-filesystem": "^2.0.26",
     "gatsby-transformer-remark": "^2.6.9",
     "gatsby-transformer-sharp": "^2.1.9",
+    "google-map-react": "^1.1.5",
     "i18next": "^19.0.2",
     "lodash": "^4.17.15",
     "lodash-webpack-plugin": "^0.11.4",
@@ -36,6 +38,7 @@
     "react-i18next": "^11.2.6",
     "react-id-swiper": "^2.4.0",
     "react-player": "^1.14.2",
+    "real-estate-utils": "^1.0.2",
     "styled-components": "^4.4.1",
     "swiper": "^5.2.1",
     "uuid": "^3.2.1"

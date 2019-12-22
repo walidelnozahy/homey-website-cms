@@ -50,8 +50,6 @@ exports.createPages = ({ actions, graphql }) => {
         }
 
         console.log('pageLocale',pageLocale,'getPath',getPath)
-        
-
         createPage({
           path: getPath || edge.node.fields.slug,
           tags: edge.node.frontmatter.tags,

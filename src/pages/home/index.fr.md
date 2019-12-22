@@ -1,5 +1,5 @@
 ---
-pageKey: page_home
+pageKey: page_index
 templateKey: index-page
 title: Home page fr
 name: home
@@ -12,8 +12,8 @@ intro:
       link: project slid 1 fr
       text: project slid 1 fr
     - image: /img/homey_real_estate_pjaxogpu7.jpg
-      link: project slid 2
-      text: project slide 2
+      link: project slid 2 fr
+      text: project slide 2 fr
 projectCategories:
   categories:
     - image: /img/seaview.png
@@ -60,6 +60,5 @@ aboutCompany:
         production, roasting
       title: title 3
   thirdHeading: third heading
-  videoLink: 'https://www.youtube.com/watch?v=jrc4aOfu7aQ'
+  videoLink: "https://www.youtube.com/watch?v=jrc4aOfu7aQ"
 ---
-
