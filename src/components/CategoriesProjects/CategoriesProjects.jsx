@@ -6,6 +6,7 @@ import { Container } from "../_common/Container/Container";
 import styled from "styled-components";
 import company from "../../_company/company";
 import PreviewCompatibleImage from "../PreviewCompatibleImage";
+import RenderImage from "../_common/Image/RenderImage";
 
 const CategoriesProjects = ({ t, projectCategories }) => {
   const space = `70px;`;
@@ -93,6 +94,10 @@ const CategoriesProjects = ({ t, projectCategories }) => {
     z-index: 2;
     width: 100%;
     height: 340px;
+    img {
+      height: 100%;
+      width: auto !important;
+    }
   `;
   const CategoriesProjectsText = styled.div`
     display: grid;
@@ -128,9 +133,8 @@ const CategoriesProjects = ({ t, projectCategories }) => {
               <CategoriesProjectsEach key={key} data-aos="fade-up">
                 <Link to={`${link}`}>
                   <CategoriesProjectsEachImage>
-                    <PreviewCompatibleImage imageInfo={image} />
+                    <RenderImage image={image} width="100%" />
                   </CategoriesProjectsEachImage>
-
                   <CategoriesProjectsText data-aos="fade-right">
                     <Line />
                     <CategoriesProjectsTextInner>

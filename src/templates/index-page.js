@@ -8,6 +8,9 @@ import BlogRoll from '../components/BlogRoll'
 import HeaderCarousel from '../components/HeaderCarousel/HeaderCarousel'
 import CategoriesProjects from '../components/CategoriesProjects/CategoriesProjects'
 import WeOffer from '../components/WeOffer/WeOffer'
+import ContactSection from "../components/ContactSection/ContactSection";
+import SellProperty from "../components/SellProperty/SellProperty";
+import Services from "../components/Services/Services";
 
 export const IndexPageTemplate = ({
   image,
@@ -21,9 +24,13 @@ export const IndexPageTemplate = ({
   aboutCompany
 }) => (
   <div>
-    {/* <HeaderCarousel carouselItems={intro.blurbs}/>
+    <HeaderCarousel carouselItems={intro.blurbs}/>
     <CategoriesProjects projectCategories={projectCategories}/>
-    <WeOffer aboutCompany={aboutCompany}/> */}
+    <Services />
+    <WeOffer aboutCompany={aboutCompany}/>
+
+<SellProperty />
+<ContactSection />
 {/*     
     <section className="section section--gradient">
       <div className="container">
@@ -90,6 +97,7 @@ IndexPageTemplate.propTypes = {
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
 console.log(frontmatter,'frontmatter')
+console.log(data,'data 2')
   return (
     <Layout>
       <IndexPageTemplate
@@ -118,17 +126,21 @@ IndexPage.propTypes = {
 export default IndexPage
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query IndexPageTemplate($id: String!) {
+    markdownRemark(id: { eq: $id })  {
       frontmatter {
         title
-       
         heading
-      
         description
         intro {
           blurbs {
-            
+            image { 
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             text
             link
           }
@@ -137,7 +149,13 @@ export const pageQuery = graphql`
           heading
           subheading
           categories {
-            
+            image { 
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
             text
             title
             link 

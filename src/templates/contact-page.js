@@ -5,25 +5,24 @@ import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 
+import ContactPageContent from "../components/ContactPageContent/ContactPageContent";
 
 export const ContactPageTemplate = ({ title, content, contentComponent,
   headerImage,
   seo_title,
   seo_desc,
-  // services
+  mainTitle,
+description
 }) => {
   const PageContent = contentComponent || Content
 
   return (
     <div>
-      {/* <HeaderPages
+      <HeaderPages
           title={title}
           image={headerImage}
         />
-        
-        <OurServices 
-        services={services}
-        /> */}
+        <ContactPageContent mainTitle={mainTitle} description={description}/>
     {/* <section className="section section--gradient">
       <div className="container">
         <div className="columns">
@@ -50,7 +49,7 @@ ContactPageTemplate.propTypes = {
 
 const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log('ServicesPage content',post)
+  console.log('contactPage content',post)
   return (
     <Layout>
       <ContactPageTemplate
@@ -59,10 +58,10 @@ const ContactPage = ({ data }) => {
         headerImage={post.frontmatter.headerImage}
         seo_title={post.frontmatter.seo_title}
         seo_desc={post.frontmatter.seo_desc}
-        services={post.frontmatter.services}
-        
-       
+        mainTitle={post.frontmatter.mainTitle}
+        description={post.frontmatter.description}
       />
+      
     </Layout>
   )
 }
@@ -88,7 +87,8 @@ export const ContactPageQuery = graphql`
             }
           }
         }
-       
+        mainTitle
+        description
       }
     }
   }

@@ -26,11 +26,44 @@ collections:
         }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
-      - { label: "Description", name: "description", widget: "text" }
       - { label: "Featured Post", name: "featuredpost", widget: "boolean" }
       - { label: "Featured Image", name: "featuredimage", widget: image }
-      - { label: "Body", name: "body", widget: "markdown" }
-      - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: Body List,
+          name: bodyList,
+          widget: object,
+          fields:
+            [
+              { label: Body EN, name: bodyEn, widget: markdown },
+              { label: Body AR, name: bodyAr, widget: markdown },
+              { label: Body PR, name: bodyPr, widget: markdown },
+              { label: Body FR, name: bodyFr, widget: markdown },
+            ],
+        }
+      - {
+          label: Tags List,
+          name: tagsList,
+          widget: object,
+          fields:
+            [
+              { label: Tags EN, name: tagsEn, widget: list },
+              { label: Tags AR, name: tagsAr, widget: list },
+              { label: Tags PR, name: tagsPr, widget: list },
+              { label: Tags FR, name: tagsFr, widget: list },
+            ],
+        }
+      - {
+          label: Title,
+          name: intro,
+          widget: object,
+          fields:
+            [
+              { label: Tags EN, name: titleEn, widget: string },
+              { label: Title AR, name: titleAr, widget: string },
+              { label: Title PR, name: titlePr, widget: string },
+              { label: Title FR, name: titleFr, widget: string },
+            ],
+        }
 
   - name: "about"
     label: "About"
@@ -70,7 +103,7 @@ collections:
           label: "Page Key",
           name: "pageKey",
           widget: "hidden",
-          default: "page_home",
+          default: "page_index",
         }
       - {
           label: "Template Key",
@@ -264,8 +297,9 @@ collections:
       - { label: "Title", name: "title", widget: "hidden" }
       - { label: "SEO Title", name: "seo_title", widget: "string" }
       - { label: "SEO Description", name: "seo_desc", widget: "string" }
+      - { label: "Header Title", name: "headerTitle", widget: string }
       - { label: "Header Image", name: "headerImage", widget: image }
-      - { label: "Main Title", name: "mainTitke", widget: string }
+      - { label: "Main Title", name: "mainTitle", widget: string }
       - { label: "Description", name: "description", widget: text }
   - name: "pages"
     label: "Pages"

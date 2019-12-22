@@ -14,7 +14,7 @@ const CurrencyDropdown = (
     // }
   }, []);
   const options = [
-    <Select.Option value={"TRY"} rate={1}>
+    <Select.Option value={"TRY"} rate={1} key="-1">
       {emojiFlags.countryCode("TR").emoji} TRY
     </Select.Option>
   ];

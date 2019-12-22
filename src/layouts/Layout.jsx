@@ -8,6 +8,8 @@ import styled, { createGlobalStyle } from "styled-components";
 import FloatingContact from "../components/_common/FloatingContact/FloatingContact";
 import withGlobalContext from "../_context/withGlobalContext";
 import ContactForm from "../components/ContactForm/ContactForm";
+import "./global.css";
+
 const Layout = ({ children, projects, GlobalContext }) => {
   const AppWrapper = styled.div`
     overflow: hidden;

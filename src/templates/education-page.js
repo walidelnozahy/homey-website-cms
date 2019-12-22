@@ -29,7 +29,6 @@ universities
           description={description}
         />
         {universities ? 
-        
         <OurPartners 
         universities={universities}
         />
@@ -59,9 +58,6 @@ const EducationPage = ({ data }) => {
         description={post.frontmatter.description}
         contentImage={post.frontmatter.contentImage}
         universities={post.frontmatter.universities}
-        
-        
-       
       />
     </Layout>
   )
@@ -83,16 +79,16 @@ export const EducationPageQuery = graphql`
         seo_desc
         headerImage { 
           childImageSharp {
-            fluid(maxWidth: 700) {
-              ...GatsbyImageSharpFluid_noBase64
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
         description
         contentImage { 
           childImageSharp {
-            fluid(maxWidth: 700) {
-              ...GatsbyImageSharpFluid_noBase64
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }

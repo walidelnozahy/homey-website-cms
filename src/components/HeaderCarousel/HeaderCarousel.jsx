@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 import ArrowLeft from "../../components/_common/Arrows/ArrowLeft";
 import ArrowRight from "../../components/_common/Arrows/ArrowRight";
-import PreviewCompatibleImage from "../PreviewCompatibleImage";
+// import PreviewCompatibleImage from "../PreviewCompatibleImage";
 // import SearchDiv from "../SearchDiv/SearchDiv";
+import RenderImage from "../../components/_common/Image/RenderImage";
 import i18n from "i18next";
 // import company from "../../_company/company";
 // import { isMobile } from "react-device-detect";
@@ -153,7 +154,11 @@ const HeaderCarousel = ({ carouselItems }) => {
                   </Text>
                 </HeaderCarouseLeft>
                 <HeaderCarouseRight data-aos="fade-left">
-                  <PreviewCompatibleImage imageInfo={item} />
+                  {/* <PreviewCompatibleImage imageInfo={item} /> */}
+                  {item.image ? (
+                    <RenderImage image={item.image} width="100%" />
+                  ) : null}
+
                   {/* <Image image={i.coverImage ? i.coverImage.large : ""} /> */}
                 </HeaderCarouseRight>
               </HeaderCarouselEachInner>

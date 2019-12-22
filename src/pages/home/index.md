@@ -1,5 +1,5 @@
 ---
-pageKey: page_home
+pageKey: page_index
 templateKey: index-page
 title: Home page en
 name: home
@@ -60,6 +60,5 @@ aboutCompany:
         production, roasting
       title: title 3
   thirdHeading: third heading
-  videoLink: 'https://www.youtube.com/watch?v=jrc4aOfu7aQ'
+  videoLink: "https://www.youtube.com/watch?v=jrc4aOfu7aQ"
 ---
-

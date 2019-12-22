@@ -1,7 +1,7 @@
 ---
-pageKey: page_home
+pageKey: page_index
 templateKey: index-page
-title: Home page
+title: Home page ar
 name: home
 locale: ar
 seo_title: Home page
@@ -10,10 +10,10 @@ intro:
   blurbs:
     - image: /img/homey_real_estate_b_xlwp1mek.jpg
       link: project slid 1
-      text: project slid 1
+      text: project slid 1 ar
     - image: /img/homey_real_estate_pjaxogpu7.jpg
       link: project slid 2
-      text: project slide 2
+      text: project slide 2 ar
 projectCategories:
   categories:
     - image: /img/seaview.png
@@ -60,6 +60,5 @@ aboutCompany:
         production, roasting
       title: title 3
   thirdHeading: third heading
-  videoLink: 'https://www.youtube.com/watch?v=jrc4aOfu7aQ'
+  videoLink: "https://www.youtube.com/watch?v=jrc4aOfu7aQ"
 ---
-
