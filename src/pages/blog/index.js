@@ -1,5 +1,5 @@
 import React from 'react'
-
+import HeaderPages from '../../components/_common/HeaderPages/HeaderPages'
 import Layout from '../../components/Layout'
 import BlogRoll from '../../components/BlogRoll'
 
@@ -7,12 +7,17 @@ export default class BlogIndexPage extends React.Component {
   render() {
     return (
       <Layout>
-        <div
+         <HeaderPages
+          title="blog"
+          image="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1577041183/char-blog.png"
+        />
+        {/* <div 
           className="full-width-image-container margin-top-0"
           style={{
             backgroundImage: `url('/img/blog-index.jpg')`,
           }}
         >
+          
           <h1
             className="has-text-weight-bold is-size-1"
             style={{
@@ -24,7 +29,7 @@ export default class BlogIndexPage extends React.Component {
           >
             Latest Stories
           </h1>
-        </div>
+        </div> */}
         <section className="section">
           <div className="container">
             <div className="content">

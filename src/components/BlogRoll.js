@@ -83,6 +83,7 @@ export default () => (
               }
               frontmatter {
                 title
+                
                 templateKey
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
@@ -102,3 +103,4 @@ export default () => (
     render={(data, count) => <BlogRoll data={data} count={count} />}
   />
 )
+ 
