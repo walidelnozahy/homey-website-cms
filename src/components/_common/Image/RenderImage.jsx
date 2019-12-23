@@ -5,6 +5,7 @@ import PreviewCompatibleImage from "../../PreviewCompatibleImage";
 const RenderImage = ({ t, image, width }) => {
   const Image = styled.img`
     width: ${width};
+    maxheight: 100% !important;
     position: relative;
     max-width: ${width};
     z-index: 2;
@@ -13,6 +14,9 @@ const RenderImage = ({ t, image, width }) => {
 
   if (!image) {
     return null;
+  }
+  if (typeof image === "string") {
+    return <Image src={image} />;
   }
   if (
     image.childImageSharp &&

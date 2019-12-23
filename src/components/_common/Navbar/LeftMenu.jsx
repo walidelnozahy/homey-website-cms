@@ -32,6 +32,9 @@ const LeftMenu = ({ t, mode }) => {
       <Menu.Item key="education">
         <Link to={toPath(lang, "education")}>{t("education")}</Link>
       </Menu.Item>
+      <Menu.Item key="blog">
+        <Link to={toPath(lang, "blog")}>{t("blog")}</Link>
+      </Menu.Item>
       <Menu.Item key="services">
         <Link to={toPath(lang, "services")}>{t("our services")}</Link>
       </Menu.Item>

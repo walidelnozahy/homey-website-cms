@@ -41,6 +41,18 @@ collections:
             ],
         }
       - {
+          label: Title,
+          name: titleList,
+          widget: object,
+          fields:
+            [
+              { label: Title EN, name: titleEn, widget: string },
+              { label: Title AR, name: titleAr, widget: string },
+              { label: Title PR, name: titlePr, widget: string },
+              { label: Title FR, name: titleFr, widget: string },
+            ],
+        }
+      - {
           label: Tags List,
           name: tagsList,
           widget: object,
@@ -50,18 +62,6 @@ collections:
               { label: Tags AR, name: tagsAr, widget: list },
               { label: Tags PR, name: tagsPr, widget: list },
               { label: Tags FR, name: tagsFr, widget: list },
-            ],
-        }
-      - {
-          label: Title,
-          name: intro,
-          widget: object,
-          fields:
-            [
-              { label: Tags EN, name: titleEn, widget: string },
-              { label: Title AR, name: titleAr, widget: string },
-              { label: Title PR, name: titlePr, widget: string },
-              { label: Title FR, name: titleFr, widget: string },
             ],
         }
 
