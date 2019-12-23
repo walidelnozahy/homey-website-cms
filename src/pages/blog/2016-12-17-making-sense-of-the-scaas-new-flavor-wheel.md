@@ -9,6 +9,11 @@ bodyList:
   bodyEn: body ENGLISH
   bodyFr: body FRENCH
   bodyPr: body PERSIAN
+titleList:
+  titleAr: title ar
+  titleEn: title en
+  titleFr: title fr
+  titlePr: title pr
 tagsList:
   tagsAr:
     - tagar
@@ -18,10 +23,5 @@ tagsList:
     - tagfr
   tagsPr:
     - tagpr
-intro:
-  titleAr: tagsAR
-  titleEn: tagsEN
-  titleFr: tagsFR
-  titlePr: tagsPR
 ---
 
