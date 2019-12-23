@@ -5,6 +5,10 @@ import Helmet from 'react-helmet'
 import { graphql, Link } from 'gatsby'
 import Layout from '../components/Layout'
 import Content, { HTMLContent } from '../components/Content'
+import i18n from "i18next";
+import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
+import ContactSection from "../components/ContactSection/ContactSection";
+import SellProperty from "../components/SellProperty/SellProperty";
 
 export const BlogPostTemplate = ({
   content,
@@ -13,20 +17,28 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
+  titleList,
+  descriptionList,
+  bodyList
 }) => {
   const PostContent = contentComponent || Content
-
+  const currentLang = i18n.language
   return (
-    <section className="section">
+    <section className="">
       {helmet || ''}
+      <HeaderPages
+          title="blog"
+          image="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1577041183/char-blog.png"
+        />
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
+              {titleList[currentLang]}
             </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
+            <p>{descriptionList[currentLang]}</p>
+            {/* <PostContent content={bodyList[currentLang]} /> */}
+            <Content className="content" content={bodyList[currentLang]} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -75,8 +87,11 @@ const BlogPost = ({ data }) => {
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
         titleList={post.frontmatter.titleList}
+        descriptionList={post.frontmatter.descriptionList}
+        bodyList={post.frontmatter.bodyList}
       />
-      
+      <SellProperty />
+      <ContactSection />
     </Layout>
   )
 }
@@ -94,17 +109,27 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
-     
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
+        descriptionList {
+          en
+          ar
+          pr
+          fr
+        }
         titleList {
           en
           ar
           pr
           fr
         }
-       
+        bodyList {
+          en
+          ar
+          pr
+          fr
+        }
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 120, quality: 100) {
