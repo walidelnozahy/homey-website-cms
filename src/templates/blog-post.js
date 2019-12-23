@@ -38,7 +38,7 @@ export const BlogPostTemplate = ({
             </h1>
             <p>{descriptionList[currentLang]}</p>
             {/* <PostContent content={bodyList[currentLang]} /> */}
-            <Content className="content" content={bodyList[currentLang]} />
+            <HTMLContent className="content" content={bodyList[currentLang]} />
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>

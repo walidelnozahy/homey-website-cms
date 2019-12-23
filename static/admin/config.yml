@@ -40,6 +40,7 @@ collections:
               { label: Description FR, name: fr, widget: text },
             ],
         }
+      - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Body EN", name: "bodyEn", widget: "markdown" }
       - { label: "Body AR", name: "bodyAr", widget: "markdown" }
       - { label: "Body PR", name: "bodyPr", widget: "markdown" }
