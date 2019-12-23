@@ -2,14 +2,14 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import  { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 import AboutContent from '../components/AboutContent/AboutContent'
 
 export const AboutPageTemplate = ({ title, content, contentComponent,
-  headerImage,
-  seo_title,
-  seo_desc,
+  // headerImage,
+  // seo_title,
+  // seo_desc,
   firstHeading,
   firstText,
   secondHeading,
@@ -19,7 +19,7 @@ export const AboutPageTemplate = ({ title, content, contentComponent,
   featuredimage,
   videoLink
 }) => {
-  const PageContent = contentComponent || Content
+  // const PageContent = contentComponent || Content
 
   return (
     <div>

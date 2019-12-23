@@ -56,7 +56,7 @@ BlogPostTemplate.propTypes = {
 
 const BlogPost = ({ data }) => {
   const { markdownRemark: post } = data
-
+  console.log('blog post',post)
   return (
     <Layout>
       <BlogPostTemplate
@@ -74,7 +74,9 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        titleList={post.frontmatter.titleList}
       />
+      
     </Layout>
   )
 }
@@ -92,14 +94,23 @@ export const pageQuery = graphql`
     markdownRemark(id: { eq: $id }) {
       id
       html
+     
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        bodyList {
-          bodyEn
-          bodyAr
-          bodyPr
-          bodyFr
+        titleList {
+          en
+          ar
+          pr
+          fr
+        }
+       
+        featuredimage {
+          childImageSharp {
+            fluid(maxWidth: 120, quality: 100) {
+              ...GatsbyImageSharpFluid
+            }
+          }
         }
       }
     }

@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { Link, graphql } from 'gatsby'
+import {  graphql } from 'gatsby'
 
 import Layout from '../components/Layout'
-import Features from '../components/Features'
-import BlogRoll from '../components/BlogRoll'
+// import Features from '../components/Features'
+// import BlogRoll from '../components/BlogRoll'
 import HeaderCarousel from '../components/HeaderCarousel/HeaderCarousel'
 import CategoriesProjects from '../components/CategoriesProjects/CategoriesProjects'
 import WeOffer from '../components/WeOffer/WeOffer'

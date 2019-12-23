@@ -2,17 +2,69 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
+import i18n from "i18next";
+import { withTranslation } from "react-i18next";
+import {truncate } from 'lodash'
+import styled from 'styled-components'
+
+import company from '../_company/company';
 
 class BlogRoll extends React.Component {
   render() {
-    const { data } = this.props
+    const { data, } = this.props
     const { edges: posts } = data.allMarkdownRemark
+    const currentLang = i18n.language
+    console.log('blog data',data)
+    const BlogWrapper = styled.div`
+    article {
+      background-color: whitesmoke;
+      &.is-featured {
+        background-color: whitesmoke;
+        transition: all .2s ease-in-out;
+        
+      }
+      a {
+        text-decoration: none;
+        &.button {
+          color: black;
+        }
+      }
+      &:hover {
+        transform: translateY(-5px);
+        background-color: ${company.colorPrimary};
+        p {
+          color: #fff;
+          a {
+            color: #fff;
+            &.button {
+              color: black;
+            }
+          }
+        }
+        header {
+          p {
+            color: #fff;
+            a {
+              color: #fff !important;
+              
+            }
+          }
+          span {
+            color: #fff;
+          }
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+    `
 
     return (
       <div className="columns is-multiline">
         {posts &&
           posts.map(({ node: post }) => (
-            <div className="is-parent column is-6" key={post.id}>
+            <BlogWrapper className="is-parent column is-6" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
@@ -34,7 +86,7 @@ class BlogRoll extends React.Component {
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
-                      {post.frontmatter.title}
+                      {post.frontmatter.titleList[currentLang]}
                     </Link>
                     <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
@@ -43,15 +95,20 @@ class BlogRoll extends React.Component {
                   </p>
                 </header>
                 <p>
-                  {post.excerpt}
+                  {truncate(post.frontmatter.descriptionList[currentLang], {
+                    'length': 100,
+                    'separator': ' '
+                  })}
+                
                   <br />
                   <br />
                   <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
+                  {/* keep reading */}
+                   →
                   </Link>
                 </p>
               </article>
-            </div>
+            </BlogWrapper>
           ))}
       </div>
     )
@@ -83,8 +140,19 @@ export default () => (
               }
               frontmatter {
                 title
-                
-                templateKey
+                titleList {
+                  en
+                  ar
+                  pr
+                  fr
+                }
+                descriptionList {
+                  ar
+                  en
+                  fr
+                  pr
+                }
+                templateKey 
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost
                 featuredimage {

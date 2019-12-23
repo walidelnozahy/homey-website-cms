@@ -5,15 +5,20 @@ date: 2016-12-17T15:04:10.000Z
 featuredpost: false
 featuredimage: /img/flavor_wheel.jpg
 bodyList:
-  bodyAr: body ARABIC
-  bodyEn: body ENGLISH
-  bodyFr: body FRENCH
-  bodyPr: body PERSIAN
+  ar: body ARABIC
+  en: body ENGLISH
+  fr: body FRENCH
+  pr: body PERSIAN
 titleList:
-  titleAr: title ar
-  titleEn: title en
-  titleFr: title fr
-  titlePr: title pr
+  ar: title ar
+  en: title en
+  fr: title fr
+  pr: title pr
+descriptionList:
+  ar: desc ar
+  en: desc en
+  fr: desc fr
+  pr: desc pr
 tagsList:
   tagsAr:
     - tagar
@@ -24,4 +29,3 @@ tagsList:
   tagsPr:
     - tagpr
 ---
-

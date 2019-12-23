@@ -16,7 +16,7 @@ exports.createPages = ({ actions, graphql }) => {
               slug
             }
             frontmatter {
-              tags
+              
               templateKey
               locale
               path
@@ -38,20 +38,23 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach(edge => {
       const locale = edge.node.frontmatter.locale;
       if (edge.node.frontmatter.templateKey != null) {
+        console.log('templateKEY',edge.node.frontmatter.templateKey)
         const id = edge.node.id;
         const pageLocale = edge.node.frontmatter.locale
         let getPath
-        if (edge.node.frontmatter.name !== 'home') {
-
+        if (edge.node.frontmatter.templateKey === 'blog-post') {
+          getPath = edge.node.fields.slug
+        }
+        else if (edge.node.frontmatter.name !== 'home') {
           //  getPath = pageLocale !== 'en' ? pageLocale + '/' + edge.node.frontmatter.name : edge.node.frontmatter.name
            getPath = pageLocale + '/' + edge.node.frontmatter.name
         } else {
           getPath = pageLocale !== 'en' ? pageLocale  : '/'
         }
 
-        console.log('pageLocale',pageLocale,'getPath',getPath)
+        // console.log('pageLocale',pageLocale,'getPath',getPath)
         createPage({
-          path: getPath || edge.node.fields.slug,
+          path: getPath ,
           tags: edge.node.frontmatter.tags,
           component: path.resolve(
             `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
@@ -67,28 +70,28 @@ exports.createPages = ({ actions, graphql }) => {
     })
 
     // Tag pages:
-    let tags = []
-    // Iterate through each post, putting all found tags into `tags`
-    posts.forEach(edge => {
-      if (_.get(edge, `node.frontmatter.tags`)) {
-        tags = tags.concat(edge.node.frontmatter.tags)
-      }
-    })
-    // Eliminate duplicate tags
-    tags = _.uniq(tags)
+    // let tags = []
+    // // Iterate through each post, putting all found tags into `tags`
+    // posts.forEach(edge => {
+    //   if (_.get(edge, `node.frontmatter.tags`)) {
+    //     tags = tags.concat(edge.node.frontmatter.tags)
+    //   }
+    // })
+    // // Eliminate duplicate tags
+    // tags = _.uniq(tags)
 
-    // Make tag pages
-    tags.forEach(tag => {
-      const tagPath = `/tags/${_.kebabCase(tag)}/`
+    // // Make tag pages
+    // tags.forEach(tag => {
+    //   const tagPath = `/tags/${_.kebabCase(tag)}/`
 
-      createPage({
-        path: tagPath,
-        component: path.resolve(`src/templates/tags.js`),
-        context: {
-          tag,
-        },
-      })
-    })
+    //   createPage({
+    //     path: tagPath,
+    //     component: path.resolve(`src/templates/tags.js`),
+    //     context: {
+    //       tag,
+    //     },
+    //   })
+    // })
   })
 }
 exports.onCreatePage = ({ page, actions }) => {
@@ -101,7 +104,7 @@ exports.onCreatePage = ({ page, actions }) => {
       const localizedPath = locales[lang].default
         ? page.path
         : locales[lang].path + page.path;
-      // console.log('localizedPath',localizedPath)
+      
       return createPage({
         ...page,
         path: localizedPath,

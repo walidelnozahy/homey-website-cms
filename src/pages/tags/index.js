@@ -6,7 +6,7 @@ import Layout from '../../components/Layout'
 
 const TagsPage = ({
   data: {
-    allMarkdownRemark: { group },
+    // allMarkdownRemark: { group },
     site: {
       siteMetadata: { title },
     },
@@ -23,13 +23,13 @@ const TagsPage = ({
           >
             <h1 className="title is-size-2 is-bold-light">Tags</h1>
             <ul className="taglist">
-              {group.map(tag => (
+              {/* {group.map(tag => (
                 <li key={tag.fieldValue}>
                   <Link to={`/tags/${kebabCase(tag.fieldValue)}/`}>
                     {tag.fieldValue} ({tag.totalCount})
                   </Link>
                 </li>
-              ))}
+              ))} */}
             </ul>
           </div>
         </div>
@@ -47,11 +47,12 @@ export const tagPageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(limit: 1000) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
-    }
+   
   }
 `
+// allMarkdownRemark(limit: 1000) {
+//   group(field: frontmatter___tags) {
+//     fieldValue
+//     totalCount
+//   }
+// }

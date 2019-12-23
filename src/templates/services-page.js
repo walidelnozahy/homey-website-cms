@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import  { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 import OurServices from '../components/OurServices/OurServices'
 
 export const ServicesPageTemplate = ({ title, content, contentComponent,
   headerImage,
-  seo_title,
-  seo_desc,
+  // seo_title,
+  // seo_desc,
   services
 }) => {
-  const PageContent = contentComponent || Content
+  // const PageContent = contentComponent || Content
 
   return (
     <div>

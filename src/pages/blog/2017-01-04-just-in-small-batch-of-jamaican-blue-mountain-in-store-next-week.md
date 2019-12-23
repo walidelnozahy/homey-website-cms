@@ -1,31 +1,36 @@
 ---
 templateKey: blog-post
-title: 'Just in: small batch of Jamaican Blue Mountain in store next week'
+title: "Just in: small batch of Jamaican Blue Mountain in store next week"
 date: 2017-01-04T15:04:10.000Z
 featuredpost: true
 featuredimage: /img/chemex.jpg
 bodyList:
-  bodyAr: |-
+  ar: |-
     # body ar
 
     body anr
-  bodyEn: |-
+  en: |-
     # body en
 
     body en
-  bodyFr: |-
+  fr: |-
     # body fr
 
     body fr
-  bodyPr: |-
+  pr: |-
     # body pr
 
     body pr
 titleList:
-  titleAr: title ar
-  titleEn: title en
-  titleFr: title fr
-  titlePr: title pr
+  ar: title ar
+  en: title en
+  fr: title fr
+  pr: title pr
+descriptionList:
+  ar: desc ar
+  en: desc en
+  fr: desc fr
+  pr: desc pr
 tagsList:
   tagsAr:
     - tags ar
@@ -36,4 +41,3 @@ tagsList:
   tagsPr:
     - tags pr
 ---
-

@@ -18,7 +18,7 @@ const Footer = ({
   //   state: { currency }
   // }
 }) => {
-  const gridGap = "20px";
+  // const gridGap = "20px";
   const FooterWrapper = styled.footer`
     position: relative;
     margin-top: 30px;
@@ -37,91 +37,91 @@ const Footer = ({
     @media (max-width: 767px) {
     }
   `;
-  const FirstSection = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: ${gridGap};
-    @media (max-width: 767px) {
-      grid-template-columns: 1fr;
-    }
-  `;
-  const Left = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: ${gridGap};
-    @media (max-width: 767px) {
-      gap: 10px;
-    }
-  `;
-  const Right = styled.div`
-    background-image: url(${props =>
-      props.image ||
-      `https://res.cloudinary.com/drdxjay2t/image/upload/v1553171134/hp-header.jpg`});
-    background-position: center;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    &:hover {
-      div {
-        top: 0;
-      }
-    }
-  `;
-  const ImageSquare = styled.div`
-    overflow: hidden;
-    position: relative;
-    background-image: url(${props =>
-      props.image ||
-      `https://res.cloudinary.com/drdxjay2t/image/upload/v1553171134/hp-header.jpg`});
-    background-position: center;
-    background-size: cover;
-    width: 200px;
-    height: 200px;
-    transition: all 0.3s ease-in-out;
-    @media (max-width: 767px) {
-      width: 100%;
-      height: 100px;
-    }
+  // const FirstSection = styled.div`
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr;
+  //   gap: ${gridGap};
+  //   @media (max-width: 767px) {
+  //     grid-template-columns: 1fr;
+  //   }
+  // `;
+  // const Left = styled.div`
+  //   display: grid;
+  //   grid-template-columns: 1fr 1fr 1fr;
+  //   gap: ${gridGap};
+  //   @media (max-width: 767px) {
+  //     gap: 10px;
+  //   }
+  // `;
+  // const Right = styled.div`
+  //   background-image: url(${props =>
+  //     props.image ||
+  //     `https://res.cloudinary.com/drdxjay2t/image/upload/v1553171134/hp-header.jpg`});
+  //   background-position: center;
+  //   background-size: cover;
+  //   height: 100%;
+  //   width: 100%;
+  //   position: relative;
+  //   overflow: hidden;
+  //   &:hover {
+  //     div {
+  //       top: 0;
+  //     }
+  //   }
+  // `;
+  // const ImageSquare = styled.div`
+  //   overflow: hidden;
+  //   position: relative;
+  //   background-image: url(${props =>
+  //     props.image ||
+  //     `https://res.cloudinary.com/drdxjay2t/image/upload/v1553171134/hp-header.jpg`});
+  //   background-position: center;
+  //   background-size: cover;
+  //   width: 200px;
+  //   height: 200px;
+  //   transition: all 0.3s ease-in-out;
+  //   @media (max-width: 767px) {
+  //     width: 100%;
+  //     height: 100px;
+  //   }
 
-    &:hover {
-      div {
-        top: 0;
-      }
-    }
-  `;
-  const H2 = styled.h2`
-    grid-column: 1/3;
-    font-size: 50px;
-    color: #fff;
-    font-weight: 100;
-    @media (max-width: 767px) {
-      font-size: 30px;
-    }
-  `;
-  const OverLay = styled.div`
-    position: absolute;
-    transition: all 0.3s ease-in-out;
-    left: 0;
-    top: 100%;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    display: flex;
-  `;
-  const OverLayInner = styled.div`
-    margin: auto;
-    text-align: center;
-  `;
-  const InnerH2 = styled.h2`
-    margin: auto;
-    color: ${company.colorSecondary};
-  `;
-  const InnerP = styled.p`
-    margin: auto;
-    color: #fff;
-  `;
+  //   &:hover {
+  //     div {
+  //       top: 0;
+  //     }
+  //   }
+  // `;
+  // const H2 = styled.h2`
+  //   grid-column: 1/3;
+  //   font-size: 50px;
+  //   color: #fff;
+  //   font-weight: 100;
+  //   @media (max-width: 767px) {
+  //     font-size: 30px;
+  //   }
+  // `;
+  // const OverLay = styled.div`
+  //   position: absolute;
+  //   transition: all 0.3s ease-in-out;
+  //   left: 0;
+  //   top: 100%;
+  //   width: 100%;
+  //   height: 100%;
+  //   background-color: rgba(0, 0, 0, 0.6);
+  //   display: flex;
+  // `;
+  // const OverLayInner = styled.div`
+  //   margin: auto;
+  //   text-align: center;
+  // `;
+  // const InnerH2 = styled.h2`
+  //   margin: auto;
+  //   color: ${company.colorSecondary};
+  // `;
+  // const InnerP = styled.p`
+  //   margin: auto;
+  //   color: #fff;
+  // `;
 
   const importantProjects = projects
     ? shuffle(projects.filter(i => i.rate === 3))
