@@ -46,6 +46,12 @@ collections:
       - { label: "Body PR", name: "bodyPr", widget: "markdown" }
       - { label: "Body FR", name: "bodyFr", widget: "markdown" }
       - {
+          label: Body test,
+          name: bodyEN,
+          widget: object,
+          fields: [{ label: Body EN test, name: body, widget: markdown }],
+        }
+      - {
           label: Body List,
           name: bodyList,
           widget: object,

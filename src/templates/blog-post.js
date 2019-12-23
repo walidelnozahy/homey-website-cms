@@ -118,6 +118,7 @@ export const pageQuery = graphql`
           pr
           fr
         }
+        bodyEn
         titleList {
           en
           ar
