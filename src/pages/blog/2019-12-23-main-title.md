@@ -1,17 +1,17 @@
 ---
 templateKey: blog-post
-title: 'main title '
+title: "main title "
 date: 2019-12-23T09:49:35.478Z
 featuredpost: true
 featuredimage: /img/blog-index.jpg
 bodyList:
-  bodyAr: |-
+  ar: |-
     # body ar
 
     body ar
 
     #
-  bodyEn: |-
+  en: |-
     # body en
 
     body en
@@ -19,23 +19,28 @@ bodyList:
     body en
 
     body en
-  bodyFr: |-
+  fr: |-
     # body fr
 
     body fr
 
     #
-  bodyPr: |-
+  pr: |-
     # body pr
 
     body pr
 
     #
 titleList:
-  titleAr: title ar
-  titleEn: title en
-  titleFr: title fr
-  titlePr: title pr
+  ar: title ar
+  en: title en
+  fr: title fr
+  pr: title pr
+descriptionList:
+  ar: desc ar
+  en: desc en
+  fr: desc fr
+  pr: desc pr
 tagsList:
   tagsAr:
     - tags ar
@@ -46,4 +51,3 @@ tagsList:
   tagsPr:
     - tags pr
 ---
-

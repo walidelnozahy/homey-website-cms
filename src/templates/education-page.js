@@ -2,21 +2,21 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
-import Content, { HTMLContent } from '../components/Content'
+import { HTMLContent } from '../components/Content'
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 import OurPartners from '../components/OurPartners/OurPartners'
 import EducationContent from '../components/EducationContent/EducationContent'
 
 export const EducationPageTemplate = ({ title, content, contentComponent,
   headerImage,
-  seo_title,
-  seo_desc,
+  // seo_title,
+  // seo_desc,
   description,
 contentImage,
 universities
 
 }) => {
-  const PageContent = contentComponent || Content
+  // const PageContent = contentComponent || Content
 
   return (
     <div>

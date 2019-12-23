@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Container } from "../_common/Container/Container";
+
 import company from "../../_company/company";
 import ArrowLeft from "../_common/Arrows/ArrowLeft";
 import ArrowRight from "../_common/Arrows/ArrowRight";
