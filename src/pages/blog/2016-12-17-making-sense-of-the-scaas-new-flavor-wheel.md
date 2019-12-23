@@ -2,8 +2,13 @@
 templateKey: blog-post
 title: Making sense of the SCAA’s new Flavor Wheel
 date: 2016-12-17T15:04:10.000Z
-featuredpost: false
+featuredpost: true
 featuredimage: /img/flavor_wheel.jpg
+descriptionList:
+  ar: desc ar
+  en: desc en
+  fr: desc fr
+  pr: desc pr
 bodyList:
   ar: body ARABIC
   en: body ENGLISH
@@ -14,11 +19,6 @@ titleList:
   en: title en
   fr: title fr
   pr: title pr
-descriptionList:
-  ar: desc ar
-  en: desc en
-  fr: desc fr
-  pr: desc pr
 tagsList:
   tagsAr:
     - tagar
@@ -29,3 +29,4 @@ tagsList:
   tagsPr:
     - tagpr
 ---
+
