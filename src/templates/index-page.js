@@ -11,6 +11,8 @@ import WeOffer from '../components/WeOffer/WeOffer'
 import ContactSection from "../components/ContactSection/ContactSection";
 import SellProperty from "../components/SellProperty/SellProperty";
 import Services from "../components/Services/Services";
+import BlogRoll from '../components/BlogRoll'
+import RecentListings from '../components/RecentListings/RecentListings'
 
 export const IndexPageTemplate = ({
   image,
@@ -28,9 +30,10 @@ export const IndexPageTemplate = ({
     <CategoriesProjects projectCategories={projectCategories}/>
     <Services />
     <WeOffer aboutCompany={aboutCompany}/>
-
-<SellProperty />
-<ContactSection />
+    <RecentListings />
+    <SellProperty />
+    <BlogRoll /> 
+    <ContactSection />
 {/*     
     <section className="section section--gradient">
       <div className="container">

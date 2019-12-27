@@ -12,6 +12,98 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  - name: "blog-en"
+    label: "Blog - EN"
+    folder: "src/pages/blog/en"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "en" }
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_blogpost",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog-ar"
+    label: "Blog - AR"
+    folder: "src/pages/blog/ar"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "ar" }
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_blogpost",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog-pr"
+    label: "Blog - PR"
+    folder: "src/pages/blog/pr"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "pr" }
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_blogpost",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
+  - name: "blog-fr"
+    label: "Blog - FR"
+    folder: "src/pages/blog/fr"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "blog-post",
+        }
+      - { label: "Locale", name: "locale", widget: "hidden", default: "fr" }
+      - {
+          label: "Page Key",
+          name: "pageKey",
+          widget: "hidden",
+          default: "page_blogpost",
+        }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Publish Date", name: "date", widget: "datetime" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
   - name: "blog"
     label: "Blog"
     folder: "src/pages/blog"

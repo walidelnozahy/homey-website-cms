@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react'
+import React, {useEffect, useState} from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from './_common/Footer/Footer'
 import styled from 'styled-components'
@@ -11,9 +11,12 @@ import { withPrefix } from 'gatsby'
 import "antd/dist/antd.css";
 import "swiper/css/swiper.css";
 import './all.sass'
+
 const AOS = require("aos");
     
-
+const path = global && global.window ? global.window.location.pathname : "";
+  const locale = path ? path.split('/')[1] : 'en'
+  console.log('locale locale',locale)
 i18n
   // .use(LanguageDetector)
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -261,7 +264,7 @@ i18n
         }
       }
     },
-    lng: "en",
+    lng: locale === 'ar' || locale === 'pr' || locale === 'fr' ? locale : 'en',
     debug: true,
     fallbackLng: "en",
     interpolation: {
@@ -270,12 +273,15 @@ i18n
   });
 
 const TemplateWrapper = ({ children }) => {
-  const { title, description } = useSiteMetadata()
   const path = global && global.window ? global.window.location.pathname : "";
   const locale = path ? path.split('/')[1] : 'en'
+  const [currentLang, setCurrentLang] = useState(locale)
+  const { title, description } = useSiteMetadata()
+
   useEffect(() => {
     AOS.init();
     i18n.changeLanguage(locale); 
+    // handleGetCurrencies
   }, [
     
   ]);

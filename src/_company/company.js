@@ -1,5 +1,5 @@
 
-  const company = {
+  module.exports= {
     companyName: 'Homey Real Estate',
     backend: 'ab2q0qyajhf',
     number:'+905496061000',
@@ -26,5 +26,5 @@
       }
   };
   
-  export default company;
+  
   
