@@ -9,7 +9,8 @@ import i18n from "i18next";
 import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 import ContactSection from "../components/ContactSection/ContactSection";
 import SellProperty from "../components/SellProperty/SellProperty";
-
+import { Container } from "../components/_common/Container/Container";
+import RenderImage from '../components/_common/Image/RenderImage'
 export const BlogPostTemplate = ({
   content,
   contentComponent,
@@ -17,17 +18,20 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  bodyList
+  bodyList,
+  featuredimage
 }) => {
   const PostContent = contentComponent || Content
   const currentLang = i18n.language
   return (
+    
     <section className="">
       {helmet || ''}
       <HeaderPages
           title="blog"
           image="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1577041183/char-blog.png"
         />
+        <Container>
       <div className="container content">
         <div className="columns">
           <div className="column is-10 is-offset-1">
@@ -35,8 +39,9 @@ export const BlogPostTemplate = ({
               {/* {titleList[currentLang]} */}
             </h1>
             <p>{description}</p>
-            <PostContent content={content} />
-            {/* <HTMLContent className="content" content={bodyList[currentLang]} /> */}
+            <RenderImage image={featuredimage} width="100%"/>
+            <PostContent content={content} /> 
+
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -52,6 +57,7 @@ export const BlogPostTemplate = ({
           </div>
         </div>
       </div>
+    </Container>
     </section>
   )
 }
@@ -84,6 +90,7 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
+        featuredimage={post.frontmatter.featuredimage}
         // titleList={post.frontmatter.titleList}
         
         // bodyList={post.frontmatter.bodyList}
