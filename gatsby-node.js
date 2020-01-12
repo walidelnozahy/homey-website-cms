@@ -40,19 +40,7 @@ exports.sourceNodes = async ({
 
 
      await getProjects();
-     const { createTypes } = actions
-  const typeDefs = [
-    schema.buildObjectType({
-      name: "Projects",
-      fields: {
-        types: "String!",
-        installment: "String!",
-      },
-      interfaces: ["Node"],
-    }),
-  ]
-  createTypes(typeDefs)
-
+     
      projects.forEach(project => {
       const node = {
         ...project,
@@ -187,7 +175,7 @@ exports.onCreatePage = ({ page, actions }) => {
       const localizedPath = locales[lang].default
         ? page.path
         : locales[lang].path + page.path;
-        // console.log('localizedPath',localizedPath)
+        console.log('localizedPath',localizedPath)
       return createPage({
         ...page,
         path: localizedPath,

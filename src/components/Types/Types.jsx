@@ -9,6 +9,8 @@ import { isMobile } from "react-device-detect";
 const Types = ({ project, t }) => {
   const TypesWrapper = styled.div`
     margin-top: 50px;
+
+    position: relative;
   `;
   const TypesInner = styled.div`
     margin-top: 50px;

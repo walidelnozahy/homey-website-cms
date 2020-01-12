@@ -1,75 +1,69 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
-import PropTypes from "prop-types";
-import CustomButton from "../_common/CustomButton/CustomButton";
-import { Container } from "../_common/Container/Container";
 import { useTranslation } from "react-i18next";
+import { Container } from "../_common/Container/Container";
+import Listing from "../Listing/Listing";
 
-import ListingsCarousel from "../ListingsCarousel/ListingsCarousel";
+const queryString = require("query-string");
 
-import * as load from "@eahefnawy/functions.js";
-import company from "../../_company/company";
-
-const RecentListings = ({
+const Listings = ({
   data: {
     allProjects: { edges }
   }
 }) => {
   const { t } = useTranslation();
+  const search = queryString.parse(window.location.search);
+  const [projects, setProjects] = useState([]);
+  const [projectsArr, setProjectsArr] = useState([]);
+  const [lastKey, setLastKey] = useState("");
+  const [loading, setLoading] = useState(false);
+  const [properties, setProperties] = useState([]);
 
-  const RecentListings = styled.div``;
-  const FirstDiv = styled.div`
-    display: flex;
-    justify-content: space-between;
-    margin-top: 40px;
-    @media (max-width: 767px) {
-      flex-direction: column;
+  // const getListings = listings;
+  // listings.filter(project => project.category === category);
+  // console.log(getListings, "getListings");
+  const ListingsWrapper = styled.div`
+    margin-top: 30px;
+  `;
+  const ListingsInner = styled.div`
+    .ItemsCards {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 50px;
+      @media (max-width: 992px) {
+        grid-template-columns: 1fr;
+      }
     }
   `;
-  const Text = styled.div`
-    margin: auto 0;
+  const ListingsEach = styled.div`
+    background-color: lightgrey;
   `;
-  const BtnWrapper = styled.div`
-    margin: auto 0;
+  const Title = styled.h1`
+    text-align: center;
   `;
-  const H1 = styled.h1``;
-  const P = styled.p`
-    width: 60vw;
-    @media (max-width: 767px) {
-      width: 100%;
-    }
-  `;
+  console.log("rerenderinggg");
   return (
-    <RecentListings>
+    <ListingsWrapper>
       <Container>
-        <FirstDiv>
-          <Text data-aos="fade-left">
-            <H1>{t("latest projects")}</H1>
-            <P>{t("latest projects description")}</P>
-          </Text>
-          <BtnWrapper data-aos="fade-right">
-            <Link to="projects">
-              <CustomButton text={t("view more")} />
-            </Link>
-          </BtnWrapper>
-        </FirstDiv>
+        {/* <Title>{t(search.category)}</Title> */}
+        <ListingsInner data-aos="fade-up">
+          <div className="ItemsCards">
+            {edges.map(({ node }, key) => (
+              <Listing listing={node} key={key} />
+            ))}
+          </div>
+        </ListingsInner>
       </Container>
-      <ListingsCarousel listings={edges} />
-    </RecentListings>
+    </ListingsWrapper>
   );
 };
-// RecentListings.propTypes = {
-//   t: PropTypes.func.isRequired
-// };
-
-// export default withTranslation()(RecentListings);
 
 export default () => (
   <StaticQuery
     query={graphql`
       {
-        allProjects(filter: { rate: { eq: 3 } }) {
+        allProjects {
           edges {
             node {
               alternative_id
@@ -183,6 +177,6 @@ export default () => (
         }
       }
     `}
-    render={(data, count) => <RecentListings data={data} count={count} />}
+    render={(data, count) => <Listings data={data} count={count} />}
   />
 );

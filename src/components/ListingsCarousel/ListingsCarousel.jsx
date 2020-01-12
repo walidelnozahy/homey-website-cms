@@ -10,9 +10,11 @@ import moment from "moment";
 import { Container } from "../_common/Container/Container";
 import { getMinPrice } from "real-estate-utils";
 import { orderBy } from "lodash";
+import i18n from "i18next";
 // import withGlobalContext from "../../_context/withGlobalContext";
 
 import "swiper/css/swiper.css";
+import { toPath } from "../../_utils/functions";
 
 const ListingsCarousel = ({
   listings
@@ -21,6 +23,9 @@ const ListingsCarousel = ({
   // }
 }) => {
   console.log("listings", listings);
+  const currency = localStorage.currency
+    ? JSON.parse(localStorage.currency)
+    : null;
   const params = {
     loop: true,
     navigation: {
@@ -142,7 +147,7 @@ const ListingsCarousel = ({
       border-right: none;
     }
   `;
-
+  const lang = i18n.language;
   return (
     <ListingsCarouselWrapper dir="ltr">
       <Container>
@@ -151,6 +156,7 @@ const ListingsCarousel = ({
             (
               {
                 node: {
+                  code,
                   coverImage,
                   types,
                   location,
@@ -163,28 +169,27 @@ const ListingsCarousel = ({
             ) => {
               return (
                 <CarouselIEachDiv key={key}>
-                  <Link to={`/projects/${alternative_id}`}>
+                  <Link to={toPath(lang, `${code}`)}>
                     <CarouselImageEach
                       image={
                         coverImage
                           ? isMobile
                             ? coverImage.small
                             : coverImage.medium
-                          : "hello"
+                          : ""
                       }
                     />
                     <Text>
                       <Price>
-                        {/* {types.length
-                            ? getMinPrice({
-                                types,
-                                currencyRate: currency.rate
-                              })
-                            : ""}{" "}
-                          {currency.value} */}
+                        {types.length
+                          ? getMinPrice({
+                              types,
+                              currencyRate: currency ? currency.rate : 1
+                            })
+                          : ""}{" "}
+                        {currency ? currency.value : "TRY"}
                       </Price>
                       <TextGroup>
-                        {/* <P>{location.district}</P> */}
                         {installment ? (
                           <P>{installment.payment}% </P>
                         ) : (
@@ -198,10 +203,6 @@ const ListingsCarousel = ({
                         ) : (
                           <P>Ready</P>
                         )}
-
-                        <P>District</P>
-                        <P>Downpayment</P>
-                        <P>Delivery Date</P>
                       </TextGroup>
                       <TextGroup>
                         <P>

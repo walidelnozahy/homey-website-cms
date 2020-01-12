@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Container } from "../../components/_common/Container/Container";
 import ContactForm from "../../components/ContactForm/ContactForm";
 import ProjectCarousel from "../../components/ProjectCarousel/ProjectCarousel";
-import FourSquares from "../../components/FourSquares/FourSquares";
+import FourSquares from "../FourSquares/FourSquares";
 import Description from "../../components/Description/Description";
 import Types from "../../components/Types/Types";
 import Map from "../../components/Map/Map";
@@ -38,6 +38,7 @@ const ProjectContent = ({ props: { project, locale } }) => {
           </ContactColumn>
           <ProjectColumn>
             <ProjectCarousel project={project} />
+
             <FourSquares item={project} />
             <Description project={project} text="description" />
             <Description project={project} text="nearbyDescription" />

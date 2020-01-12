@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import Navbar from './_common/Navbar/Navbar'
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-// import LanguageDetector from "i18next-browser-languagedetector";
+import company from "../_company/company";
 import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import "antd/dist/antd.css";
@@ -286,6 +286,72 @@ const TemplateWrapper = ({ children }) => {
     
   ]);
   const AppWrapper = styled.div`
+  .swiper-button-next-new,
+  .swiper-button-prev-new {
+    position: absolute;
+    top: 50%;
+    z-index: 99999999 !important;
+    box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    width: 40px;
+    height: 40px;
+    background-color: ${company.colorPrimary};
+    border-radius: 50%;
+    display: flex;
+    justify-content: space-around;
+    cursor: pointer;
+    opacity: 0.5;
+    svg {
+      margin: auto !important;
+      transform: translateY(5px);
+    }
+  }
+  @keyframes moveArrowRight {
+    0% {
+      background-color: rgba(64, 89, 93, 0.247);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+      right: 10px;
+    }
+
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      // background-color: white;
+      right: 15px;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+
+  @keyframes moveArrowLeft {
+    0% {
+      background-color: rgba(64, 89, 93, 0.247);
+      left: 10px;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    50% {
+      left: 15px;
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      // background-color: white;
+      left: 10px;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
+
+  .swiper-button-next-new {
+    animation-name: moveArrowRight;
+  }
+
+  .swiper-button-prev-new {
+    animation-name: moveArrowLeft;
+  }
   h1,
     h2,
     h3,

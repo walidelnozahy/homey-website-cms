@@ -16,3 +16,9 @@ export const flatString = str =>
     .split("/")
     .join("_");
 
+
+
+
+export const getCurrencyRate = () => localStorage.currency
+? JSON.parse(localStorage.currency)
+: null;

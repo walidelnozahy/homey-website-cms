@@ -4,7 +4,8 @@ import { Container } from "../_common/Container/Container";
 import company from "../../_company/company";
 // import SearchDiv from "../SearchDiv/SearchDiv";
 
-const HeaderSearch = ({ props: { project, locale } }) => {
+const HeaderSearch = ({ props }) => {
+  const { project, locale } = props;
   console.log("props title", project);
   const HeaderSearchWrapper = styled.div`
     padding: 30px 0;
@@ -23,16 +24,16 @@ const HeaderSearch = ({ props: { project, locale } }) => {
     justify-content: space-between;
   `;
   const Right = styled.div`
-    // display: grid;
-    // grid-template-columns: 1fr 1fr;
-    // gap: 20px;
+    display: ${!project ? `grid` : `auto`};
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
     @media (max-width: 992px) {
       margin-top: 20px;
     }
   `;
   const SquareImage = styled.div`
     width: 100%;
-    height: 400px;
+    height: ${!project ? `200px` : `400px`};
     background-position: center;
     background-size: cover;
     background-image: ${props =>
@@ -55,19 +56,21 @@ const HeaderSearch = ({ props: { project, locale } }) => {
         <HeaderSearchInner>
           <Left data-aos="fade-right">
             <TextWrapper>
-              <H1>{project[locale].title}</H1>
-              {/* <P>
-                Professional buro with many years of experience, developent and
-                the most daring and audacious projects.
-              </P> */}
+              <H1>{project ? project[locale].title : ""}</H1>
+              {!project ? (
+                <P>
+                  Professional buro with many years of experience, developent
+                  and the most daring and audacious projects.
+                </P>
+              ) : null}
             </TextWrapper>
             {/* <SearchDiv /> */}
           </Left>
           <Right data-aos="fade-left">
-            <SquareImage image={project.coverImage.large} />
-            {/* <SquareImage image />
+            <SquareImage image={project ? project.coverImage.large : null} />
             <SquareImage />
-            <SquareImage image /> */}
+            <SquareImage />
+            <SquareImage />
           </Right>
         </HeaderSearchInner>
       </Container>

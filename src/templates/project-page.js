@@ -14,7 +14,7 @@ import ProjectContent from "../components/ProjectContent/ProjectContent";
 
 const ProjectsPage = (props) => {
   const { pageContext: {project, locale} } = props
-  
+  console.log('project contentt',project)
   const generalProps = {
     project,
     locale

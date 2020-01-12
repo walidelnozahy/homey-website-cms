@@ -3,16 +3,12 @@ import { Divider } from "antd";
 import { getMinPrice, isProperty, withComma } from "real-estate-utils";
 import moment from "moment";
 import { withTranslation } from "react-i18next";
-// import withGlobalContext from "../../_context/withGlobalContext";
-
-const FourSquares = ({
-  item,
-  t
-  // GlobalContext: {
-  //   state: { currency }
-  // }
-}) => {
+import { getCurrencyRate } from "../../_utils/functions";
+import "./FourSquares.css";
+const FourSquares = ({ item, t }) => {
+  console.log("item sqaure", item);
   const checkIsProperty = item ? isProperty(item) : null;
+
   if (item) {
     const { delivery, location, installment, types } = item;
     return (
@@ -58,15 +54,17 @@ const FourSquares = ({
         ) : null}
 
         <div className="each-square darkgrey">
-          {/* {!checkIsProperty ? (
+          {!checkIsProperty ? (
             types && types.length > 0 ? (
-              <h1>{getMinPrice({ types, currencyRate: currency.rate })}</h1>
+              <h1>
+                {getMinPrice({ types, currencyRate: getCurrencyRate() || 1 })}
+              </h1>
             ) : null
           ) : (
-            <h1>{withComma(Math.ceil(item.price / currency.rate))}</h1>
-          )} */}
+            <h1>{withComma(Math.ceil(item.price / getCurrencyRate() || 1))}</h1>
+          )}
 
-          {/* <h4>{currency.value}</h4> */}
+          <h4>{getCurrencyRate() || "TRY"}</h4>
           <div className="name ">
             <Divider orientation="left">{t("price starts")}</Divider>
           </div>
@@ -76,4 +74,4 @@ const FourSquares = ({
   }
   return null;
 };
-export default withTranslation(FourSquares);
+export default withTranslation()(FourSquares);
