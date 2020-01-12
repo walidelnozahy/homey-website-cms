@@ -17,6 +17,7 @@ import { isMobile } from "react-device-detect";
 import { getMinPrice } from "real-estate-utils";
 import * as load from "@eahefnawy/functions.js";
 import company from "../../_company/company";
+import TitleProject from "../TitleProject/TitleProject";
 
 const ImportantProjects = ({
   data: {
@@ -48,6 +49,9 @@ const ImportantProjects = ({
     display: grid;
     grid-template-columns: 1fr 2fr;
     gap: 20px;
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr;
+    }
   `;
   const CarouselImageEach = styled.div`
     background-image: url(${props => props.image});
@@ -72,21 +76,27 @@ const ImportantProjects = ({
     font-size: 60px;
     color: ${company.colorPrimary};
     font-weight: 600;
+    @media (max-width: 992px) {
+      font-size: 30px;
+    }
   `;
   const NearByWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 20px;
+    @media (max-width: 992px) {
+      grid-template-columns: 1fr 1fr;
+    }
   `;
   const NearByEach = styled.div`
     text-align: center;
   `;
   const ImageWrapper = styled.div`
     background-color: ${company.colorPrimary};
-    padding: 20px;
+    padding: 15px;
     border-radius: 50%;
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
     margin: auto;
   `;
   const Image = styled.img`
@@ -106,28 +116,13 @@ const ImportantProjects = ({
   return (
     <ImportantProjectsWrapper>
       <Container>
-        <h1>important projects</h1>
+        <TitleProject title={t("important projects")} center />
+        <br />
+        <br />
+        <br />
         <Swiper {...params}>
           {orderBy(edges, "updatedAt", "desc").map(
-            (
-              {
-                node: {
-                  code,
-                  coverImage,
-                  types,
-                  location,
-                  installment,
-                  delivery,
-                  nearby,
-                  en,
-                  ar,
-                  pr,
-                  fr,
-                  alternative_id
-                }
-              },
-              key
-            ) => {
+            ({ node: { code, coverImage, types, nearby, en } }, key) => {
               return (
                 <Link to={toPath(lang, `${code}`)}>
                   <CarouselIEachDiv key={key}>
@@ -154,13 +149,7 @@ const ImportantProjects = ({
                             return (
                               <NearByEach>
                                 <ImageWrapper>
-                                  <Image
-                                    src={
-                                      e.icon && (e.icon.large || e.icon.medium)
-                                        ? e.icon.large || e.icon.medium
-                                        : "?"
-                                    }
-                                  />
+                                  <Image src={e.icon ? e.icon.medium : null} />
                                 </ImageWrapper>
                                 <P title>{e[lang] || e.en}</P>
                                 <P>

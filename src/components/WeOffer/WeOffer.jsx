@@ -83,7 +83,7 @@ const WeOffer = ({ t, aboutCompany }) => {
     grid-template-columns: 30% 70%;
     gap: 0px;
 
-    @media (max-width: 767px) {
+    @media (max-width: 993px) {
       grid-template-columns: 1fr;
       margin-top: 10px;
     }
@@ -124,6 +124,9 @@ const WeOffer = ({ t, aboutCompany }) => {
     bottom: ${props => (props.right ? `20px` : "auto")};
     transform: rotateZ(${props => (props.right ? `180deg` : `0deg`)});
     z-index: 2;
+    @media (max-width: 993px) {
+      width: 40px;
+    }
   `;
   const GradientBackground = styled.div`
     position: absolute;
@@ -169,10 +172,10 @@ const WeOffer = ({ t, aboutCompany }) => {
           <LeftImage />
         </Right>
       </GridSection>
-      {/* <Testimonials>
+      <Testimonials>
         <Swiper {...params}>
           {aboutCompany.testimonials
-            ? testimonials.map((i, key) => (
+            ? aboutCompany.testimonials.map((i, key) => (
                 <Testimonials_Inner>
                   <Testimonials_Image_wrapper>
                     <RenderImage image={i.image} />
@@ -199,7 +202,7 @@ const WeOffer = ({ t, aboutCompany }) => {
               ))
             : null}
         </Swiper>
-      </Testimonials> */}
+      </Testimonials>
     </WeOfferWrapper>
   );
 };

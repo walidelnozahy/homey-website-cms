@@ -68,9 +68,9 @@ const HeaderSearch = ({ props }) => {
           </Left>
           <Right data-aos="fade-left">
             <SquareImage image={project ? project.coverImage.large : null} />
+            {/* <SquareImage />
             <SquareImage />
-            <SquareImage />
-            <SquareImage />
+            <SquareImage /> */}
           </Right>
         </HeaderSearchInner>
       </Container>

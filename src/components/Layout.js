@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react'
+import React, {useEffect, useState, Component} from 'react'
 import { Helmet } from 'react-helmet'
 import Footer from './_common/Footer/Footer'
 import styled from 'styled-components'
@@ -12,8 +12,6 @@ import "antd/dist/antd.css";
 import "swiper/css/swiper.css";
 import './all.sass'
 
-const AOS = require("aos");
-    
 const path = global && global.window ? global.window.location.pathname : "";
   const locale = path ? path.split('/')[1] : 'en'
   
@@ -264,7 +262,8 @@ i18n
         }
       }
     },
-    lng: locale === 'ar' || locale === 'pr' || locale === 'fr' ? locale : 'en',
+    lng: 'en',
+    // locale === 'ar' || locale === 'pr' || locale === 'fr' ? locale : 'en',
     debug: false,
     fallbackLng: "en",
     interpolation: {
@@ -272,15 +271,16 @@ i18n
     }
   });
 
+
 const TemplateWrapper = ({ children }) => {
-  const path = global && global.window ? global.window.location.pathname : "";
-  const locale = path ? path.split('/')[1] : 'en'
+  // const path = global && global.window ? global.window.location.pathname : "";
+  // const locale = path ? path.split('/')[1] : 'en'
   const [currentLang, setCurrentLang] = useState(locale)
   const { title, description } = useSiteMetadata()
 
   useEffect(() => {
-    AOS.init();
-    i18n.changeLanguage(locale); 
+    
+    i18n.changeLanguage(locale === 'ar' || locale === 'pr' || locale === 'fr' ? locale : 'en'); 
     // handleGetCurrencies
   }, [
     
@@ -371,7 +371,7 @@ const TemplateWrapper = ({ children }) => {
   
   `
   return (
-    <AppWrapper dir={locale === "ar" || locale === "pr" ? "rtl" : "ltr"} arabic={locale === "ar" ? true : false}>
+    <AppWrapper dir={locale === "ar" || locale === "pr" ? "rtl" : "ltr"} arabic={locale === "ar" ? true : false}  >
       <Helmet>
         <html lang="en" />
         <title>{title}</title>
@@ -410,7 +410,8 @@ const TemplateWrapper = ({ children }) => {
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar />
+      <Navbar data-aos="fade-up"/>
+      
       <div>{children}</div>
       <Footer />
     </AppWrapper>

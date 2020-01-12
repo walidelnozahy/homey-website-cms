@@ -3,7 +3,7 @@ import { Link } from "gatsby";
 import PropTypes from "prop-types";
 import moment from "moment";
 import i18n from "i18next";
-import { getCurrencyRate } from "../../_utils/functions";
+import { getCurrencyRate, toPath } from "../../_utils/functions";
 import { withTranslation } from "react-i18next";
 import styled from "styled-components";
 import company from "../../_company/company";
@@ -103,12 +103,9 @@ const Listing = ({ listing, t, property }) => {
     justify-content: space-between;
     padding: 0 5px;
   `;
+  const lang = i18n.language;
   return (
-    <Link
-      to={
-        !property ? `/projects/${listing.id}` : `/otherProperties/${listing.id}`
-      }
-    >
+    <Link to={toPath(lang, listing.code)}>
       <ListingWapper dir="ltr">
         <ListingInner
           image={listing.coverImage ? listing.coverImage.medium : ""}
