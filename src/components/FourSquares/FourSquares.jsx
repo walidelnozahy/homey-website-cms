@@ -6,7 +6,6 @@ import { withTranslation } from "react-i18next";
 import { getCurrencyRate } from "../../_utils/functions";
 import "./FourSquares.css";
 const FourSquares = ({ item, t }) => {
-  console.log("item sqaure", item);
   const checkIsProperty = item ? isProperty(item) : null;
 
   if (item) {

@@ -125,8 +125,7 @@ const HeaderCarousel = ({ carouselItems }) => {
   //   ? projects.filter(i => i.rate === 3)
   //   : null;
   const currenctLang = i18n.language;
-  // console.log(currenctLang, "currenctLang");
-  console.log("carousel items", carouselItems);
+
   return (
     <HeaderCarouselWrapper dir="ltr">
       <SearchWrapper data-aos="fade-right">{/* <SearchDiv /> */}</SearchWrapper>

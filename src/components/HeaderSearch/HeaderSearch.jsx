@@ -6,7 +6,7 @@ import company from "../../_company/company";
 
 const HeaderSearch = ({ props }) => {
   const { project, locale } = props;
-  console.log("props title", project);
+
   const HeaderSearchWrapper = styled.div`
     padding: 30px 0;
     background-color: ${company.colorPrimary};

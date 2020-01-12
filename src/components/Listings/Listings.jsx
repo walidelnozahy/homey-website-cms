@@ -13,16 +13,16 @@ const Listings = ({
   }
 }) => {
   const { t } = useTranslation();
-  const search = queryString.parse(window.location.search);
+  const search =
+    global && global.window
+      ? queryString.parse(global.window.location.search)
+      : "";
   const [projects, setProjects] = useState([]);
   const [projectsArr, setProjectsArr] = useState([]);
   const [lastKey, setLastKey] = useState("");
   const [loading, setLoading] = useState(false);
   const [properties, setProperties] = useState([]);
 
-  // const getListings = listings;
-  // listings.filter(project => project.category === category);
-  // console.log(getListings, "getListings");
   const ListingsWrapper = styled.div`
     margin-top: 30px;
   `;
@@ -42,7 +42,7 @@ const Listings = ({
   const Title = styled.h1`
     text-align: center;
   `;
-  console.log("rerenderinggg");
+
   return (
     <ListingsWrapper>
       <Container>

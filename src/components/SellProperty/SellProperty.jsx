@@ -61,7 +61,7 @@ const SellProperty = ({ t }) => {
     justify-content: flex-end;
     height: auto;
   `;
-  console.log(i18n.language, "sell prop");
+
   return (
     <SellPropertyWrapper>
       <Container>
