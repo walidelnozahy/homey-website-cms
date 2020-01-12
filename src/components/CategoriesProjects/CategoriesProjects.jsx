@@ -10,7 +10,7 @@ import RenderImage from "../_common/Image/RenderImage";
 
 const CategoriesProjects = ({ t, projectCategories }) => {
   const space = `70px;`;
-  console.log("projectCategories", projectCategories);
+
   const categories = [
     {
       image:

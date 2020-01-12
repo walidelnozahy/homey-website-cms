@@ -15,7 +15,7 @@ const Description = ({ project, text, t }) => {
     i18n.language === "fr"
       ? i18n.language
       : "en";
-  console.log(lang, "lang");
+
   return (
     <DescriptionWrapper data-aos="fade-up">
       <TitleProject

@@ -77,53 +77,14 @@ const Types = ({ project, t }) => {
     margin: 5px 0;
     text-align: center;
   `;
-  const property = window.location.href.includes("otherProperties")
-    ? true
-    : false;
 
   return (
     <TypesWrapper>
       <TitleProject title={t("prices & areas")} />
       <TypesInner dir="ltr">
-        {!property ? (
-          project.types.map((type, key) => (
-            <Popover
-              placement={isMobile ? "left" : key % 2 === 0 ? "right" : "left"}
-              visible={true}
-              className="project-popover"
-              content={
-                <PopoverContent>
-                  <PopoverContentInnerEach>
-                    <TypeP color>From</TypeP>
-                    <TypeP color>To</TypeP>
-                  </PopoverContentInnerEach>
-                  <PopoverContentInnerEach>
-                    <TypeP>{withComma(type.minPrice)} TL</TypeP>
-                    <TypeP>{withComma(type.maxPrice)} TL</TypeP>
-                  </PopoverContentInnerEach>
-                  <PopoverContentInnerEach>
-                    <TypeP>
-                      {type.minArea} m <sup>2</sup>
-                    </TypeP>
-                    <TypeP>
-                      {type.maxArea} m <sup>2</sup>
-                    </TypeP>
-                  </PopoverContentInnerEach>
-                </PopoverContent>
-              }
-            >
-              <TypesEach
-                key={key}
-                size={`${!isMobile ? (key + 1) * 70 - key * 40 : 70}px`}
-                color={key % 2 === 0 ? true : false}
-              >
-                <P>{type.type}</P>
-              </TypesEach>
-            </Popover>
-          ))
-        ) : (
+        {project.types.map((type, key) => (
           <Popover
-            placement={"left"}
+            placement={isMobile ? "left" : key % 2 === 0 ? "right" : "left"}
             visible={true}
             className="project-popover"
             content={
@@ -133,24 +94,29 @@ const Types = ({ project, t }) => {
                   <TypeP color>To</TypeP>
                 </PopoverContentInnerEach>
                 <PopoverContentInnerEach>
-                  <TypeP>{withComma(project.price)} TL</TypeP>
+                  <TypeP>{withComma(type.minPrice)} TL</TypeP>
+                  <TypeP>{withComma(type.maxPrice)} TL</TypeP>
                 </PopoverContentInnerEach>
                 <PopoverContentInnerEach>
                   <TypeP>
-                    {project.area} m <sup>2</sup>
+                    {type.minArea} m <sup>2</sup>
+                  </TypeP>
+                  <TypeP>
+                    {type.maxArea} m <sup>2</sup>
                   </TypeP>
                 </PopoverContentInnerEach>
               </PopoverContent>
             }
           >
             <TypesEach
-              size={`${!isMobile ? (2 + 1) * 70 - 2 * 40 : 70}px`}
-              color={true}
+              key={key}
+              size={`${!isMobile ? (key + 1) * 70 - key * 40 : 70}px`}
+              color={key % 2 === 0 ? true : false}
             >
-              <P>{project.category}</P>
+              <P>{type.type}</P>
             </TypesEach>
           </Popover>
-        )}
+        ))}
       </TypesInner>
     </TypesWrapper>
   );

@@ -151,7 +151,6 @@ const ImportantProjects = ({
                       <NearByWrapper>
                         {nearby.map((e, i) => {
                           if (i <= 3) {
-                            console.log("e.icon", e.icon);
                             return (
                               <NearByEach>
                                 <ImageWrapper>

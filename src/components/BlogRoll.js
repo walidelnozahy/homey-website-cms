@@ -17,7 +17,7 @@ class BlogRoll extends React.Component {
     const { data, } = this.props
     const { edges: posts } = data.allMarkdownRemark
     const currentLang = i18n.language
-    console.log('blog data',data)
+    
     const BlogWrapper = styled.div`
     article {
       background-color: whitesmoke;

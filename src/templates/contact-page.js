@@ -49,7 +49,7 @@ ContactPageTemplate.propTypes = {
 
 const ContactPage = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log('contactPage content',post)
+  
   return (
     <Layout>
       <ContactPageTemplate

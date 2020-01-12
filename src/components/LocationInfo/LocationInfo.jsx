@@ -69,7 +69,6 @@ const LocationInfo = ({
       //     info;
       //   });
     }
-    console.log("getLocation", getLocation);
   }
   const fontColorPrimary = {
     color: company.colorPrimary
@@ -80,7 +79,7 @@ const LocationInfo = ({
   const backgroundColor = {
     backgroundColor: company.colorPrimary
   };
-  console.log("item item", item);
+
   if (!locationInfo) {
     return null;
   }

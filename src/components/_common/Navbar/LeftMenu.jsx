@@ -8,7 +8,6 @@ const SubMenu = Menu.SubMenu;
 const MenuItemGroup = Menu.ItemGroup;
 
 const LeftMenu = ({ t, mode }) => {
-  console.log("langgg", i18n.language);
   const lang = i18n.language;
   return (
     <Menu mode={mode}>

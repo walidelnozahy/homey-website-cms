@@ -22,10 +22,10 @@ const ListingsCarousel = ({
   //   state: { currency }
   // }
 }) => {
-  console.log("listings", listings);
-  const currency = localStorage.currency
-    ? JSON.parse(localStorage.currency)
-    : null;
+  const currency =
+    global && global.window && localStorage && localStorage.currency
+      ? JSON.parse(localStorage.currency)
+      : null;
   const params = {
     loop: true,
     navigation: {

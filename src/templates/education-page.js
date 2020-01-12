@@ -46,7 +46,7 @@ EducationPageTemplate.propTypes = {
 
 const EducationPage = ({ data }) => {
   const { markdownRemark: post } = data
-  console.log('education content',post)
+  
   return (
     <Layout>
       <EducationPageTemplate

@@ -15,13 +15,7 @@ const CurrencyDropdown = (
   const [currencies, setCurrencies] = useState(null);
 
   useEffect(() => {
-    // const currentCurrencies = localStorage.currencies
-    //   ? JSON.parse(localStorage.currencies)
-    //   : null;
-    // console.log("currentCurrencies", currentCurrencies);
     hanldeGetCurrencies();
-    // if (!currentCurrencies) {
-    // }
   }, []);
   const hanldeGetCurrencies = async () => {
     const currencies = await getCurrencies();
