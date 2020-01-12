@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import company from "../../_company/company";
 import PropTypes from "prop-types";
-import i18n from "i18next";
+
 import { withTranslation } from "react-i18next";
 const FooterLinks = ({ t }) => {
   const FooterLinksWrapper = styled.div`

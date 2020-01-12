@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import i18n from "i18next";
-import { withTranslation } from "react-i18next";
+
 import {truncate } from 'lodash'
 import styled from 'styled-components'
 import company from '../_company/company';
@@ -17,7 +17,7 @@ class BlogRoll extends React.Component {
     const { data, } = this.props
     const { edges: posts } = data.allMarkdownRemark
     const currentLang = i18n.language
-    
+    console.log('posts',posts)
     const BlogWrapper = styled.div`
     article {
       background-color: whitesmoke;

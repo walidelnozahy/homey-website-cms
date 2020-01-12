@@ -26,13 +26,7 @@ const AboutContent = ({
     }
   `;
   const TextDiv = styled.div``;
-  const ImageDiv = styled.div`
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-image: url(${props => props.image});
-  `;
+
   const SecondSection = styled.div`
     margin-top: 40px;
     display: grid;

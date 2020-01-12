@@ -119,9 +119,17 @@ export const pageQuery = graphql`
           }
         }
         aboutCompany {
-          sections {
-            text
-            
+          testimonials {
+            description
+            name
+            title
+            image { 
+              childImageSharp {
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
           }
           firstDescription
           firstHeading

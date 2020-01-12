@@ -4,9 +4,22 @@ import i18n from "i18next";
 import { withTranslation } from "react-i18next";
 import company from "../../_company/company";
 import CustomButton from "../_common/CustomButton/CustomButton";
-import { CustomP } from "../_common/Elements";
+import RenderImage from "../_common/Image/RenderImage";
 import ReactPlayer from "react-player";
+import Swiper from "react-id-swiper";
 const WeOffer = ({ t, aboutCompany }) => {
+  const params = {
+    loop: false,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev"
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true
+    }
+  };
+  console.log("aboutCompany", aboutCompany);
   const WeOfferWrapper = styled.div`
     margin-top: 40px;
   `;
@@ -53,28 +66,64 @@ const WeOffer = ({ t, aboutCompany }) => {
   const FlexDiv = styled.div`
     margin: auto;
   `;
-  const ThirdSection = styled.div`
-    background-color: ${company.colorSecondary};
+  const Testimonials = styled.div`
+    background-image: url("https://res.cloudinary.com/dqbgnn5hf/image/upload/q_auto:eco/v1578832448/yellow-background.png");
+    background-size: cover;
+    background-position: center;
     width: 90%;
-    padding: 60px;
+    padding: 30px 20px;
     margin: 60px 0 auto auto;
     @media (max-width: 767px) {
       width: 100%;
       padding: 30px;
     }
   `;
-  const ThirdSection_Inner = styled.div`
+  const Testimonials_Inner = styled.div`
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 50px;
-    margin-top: 50px;
+    grid-template-columns: 30% 70%;
+    gap: 0px;
+
     @media (max-width: 767px) {
       grid-template-columns: 1fr;
       margin-top: 10px;
     }
   `;
-  const ThirdSection_Inner_each = styled.div`
+  const H1 = styled.h1`
+    color: ${props => props.color || `#fff`};
+    font-weight: ${props => props.weight || `auto`};
+    font-size: ${props => props.size || `20px`};
+    text-align: ${props => (props.center ? `center` : `auto`)};
+  `;
+  const Testimonials_Image_wrapper = styled.div`
+    text-align: center;
+    img {
+      max-width: 200px;
+    }
+  `;
+
+  const Testimonials_Text = styled.div`
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  `;
+  const TextInner = styled.p`
     color: #fff;
+    background-color: ${company.colorPrimary};
+    width: 80%;
+    margin: auto;
+    border-radius: 10px;
+    line-height: 2.2;
+    box-shadow: 0 0 0 10px ${company.colorPrimary};
+    box-decoration-break: clone;
+  `;
+  const QoutesImage = styled.img`
+    position: absolute;
+    left: ${props => (props.right ? "auto" : `20px`)};
+    right: ${props => (props.right ? `20px` : "auto")};
+    top: ${props => (props.right ? "auto" : `20px`)};
+    bottom: ${props => (props.right ? `20px` : "auto")};
+    transform: rotateZ(${props => (props.right ? `180deg` : `0deg`)});
+    z-index: 2;
   `;
   const GradientBackground = styled.div`
     position: absolute;
@@ -120,27 +169,35 @@ const WeOffer = ({ t, aboutCompany }) => {
           <LeftImage />
         </Right>
       </GridSection>
-      <ThirdSection>
-        <h1
-          style={{
-            color: `#fff`,
-            textAlign: `center`,
-            fontSize: `35px`,
-            fontWeight: `300`
-          }}
-          data-aos="fade-down"
-        >
-          {aboutCompany.thirdHeading}
-        </h1>
-        <ThirdSection_Inner>
-          {aboutCompany.sections.map((i, key) => (
-            <ThirdSection_Inner_each data-aos="fade-up" key={key}>
-              <h3 style={{ color: `#fff` }}>{i.title}</h3>
-              <CustomP color="#fff">{i.text}</CustomP>
-            </ThirdSection_Inner_each>
+      <Testimonials>
+        <Swiper {...params}>
+          {aboutCompany.testimonials.map((i, key) => (
+            <Testimonials_Inner>
+              <Testimonials_Image_wrapper>
+                <RenderImage image={i.image} />
+
+                <H1 color="#fff" weight="800">
+                  {i.name}
+                </H1>
+                <H1 color={company.colorPrimary} weight="600">
+                  {i.title}
+                </H1>
+              </Testimonials_Image_wrapper>
+              <Testimonials_Text>
+                <H1 color="#fff" weight="800" size="30px" center>
+                  They Say About Us ,
+                </H1>
+                <QoutesImage src="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1578833909/doubleqoutes.png" />
+                <TextInner>{i.description}</TextInner>
+                <QoutesImage
+                  src="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1578833909/doubleqoutes.png"
+                  right
+                />
+              </Testimonials_Text>
+            </Testimonials_Inner>
           ))}
-        </ThirdSection_Inner>
-      </ThirdSection>
+        </Swiper>
+      </Testimonials>
     </WeOfferWrapper>
   );
 };

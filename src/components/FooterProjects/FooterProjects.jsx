@@ -138,7 +138,7 @@ const FooterProjects = ({
                       </Link>
                     );
                   }
-                  return;
+                  return null;
                 }
               )
             ) : (
