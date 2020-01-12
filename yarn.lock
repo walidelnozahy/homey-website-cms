@@ -788,6 +788,13 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
+"@eahefnawy/functions.js@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@eahefnawy/functions.js/-/functions.js-1.0.0.tgz#c1cf358ab6f00b7b799cc1f82def3d6afec62038"
+  integrity sha512-nhIeXPUNyB7kVcrf9TCX9sfLdDoLTN/1638JObHWbhhBr1e2oA6cqBFXYCy4IDMfps5M2o5isgKLFAoiDF8WIg==
+  dependencies:
+    axios "^0.19.0"
+
 "@emotion/babel-utils@^0.6.4":
   version "0.6.10"
   resolved "https://registry.yarnpkg.com/@emotion/babel-utils/-/babel-utils-0.6.10.tgz#83dbf3dfa933fae9fc566e54fbb45f14674c6ccc"

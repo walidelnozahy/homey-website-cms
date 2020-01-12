@@ -3,9 +3,83 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 const locales = require("./src/_constants/locales");
-exports.createPages = ({ actions, graphql }) => {
-  const { createPage } = actions
+const load = require("@eahefnawy/functions.js")
+const company = require('./src/_company/company')
+const { getCurrencies, queryProjectsString, queryProjectsLocations, queryProjects, updateProperty, uploadFile, updateProject, getProperty, login, listUsers, createUser, deleteUser, updateUser, listProjects, listNearby, createNearby, listFeatures, createFeature, listTypes, createType, uploadImage, updateFeature, updateNearby, listLocations, createLocation, updateLocation, getProject, deleteProject, listProperties } = load(company.backend);
 
+
+
+let projects = null
+
+const getProjects = async () => {
+  projects = await listProjects()
+}
+// exports.createSchemaCustomization = ({ actions, schema }) => {
+//   const { createTypes } = actions
+//   const typeDefs = [
+//     schema.buildObjectType({
+//       name: "Projects",
+//       fields: {
+//         types: "String!",
+//         installment: "String!",
+//       },
+//       interfaces: ["Node"],
+//     }),
+//   ]
+//   createTypes(typeDefs)
+// }
+
+
+exports.sourceNodes = async ({
+  actions,
+  createNodeId,
+  createContentDigest,
+  schema
+}) => {
+  try {
+
+
+     await getProjects();
+     
+     projects.forEach(project => {
+      const node = {
+        ...project,
+        alternative_id: project.id,
+        id: createNodeId(`project-${project.id}`),
+        internal: {
+          type: "Projects",
+          contentDigest: createContentDigest(project)
+        }
+      };
+      
+      actions.createNode(node);
+    });
+    
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+
+exports.createPages = async ({ actions, graphql }) => {
+  const { createPage } = actions
+  const projects = await listProjects()
+  // console.log(projects[0],'tesstt')
+    Object.keys(locales).map(lang => {
+       projects.map(project => {
+        const localizedPath = locales[lang].path + '/' + project.code;
+          // console.log('localizedPath',localizedPath)
+         createPage({
+          
+          path: localizedPath,
+          component: require.resolve("./src/templates/project-page.js"),
+          context: {
+            locale: lang,
+            project
+          }
+        });
+      })
+    });
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {
@@ -38,7 +112,7 @@ exports.createPages = ({ actions, graphql }) => {
     posts.forEach(edge => {
       const locale = edge.node.frontmatter.locale;
       if (edge.node.frontmatter.templateKey != null) {
-        console.log('templateKEY',edge.node.frontmatter.templateKey)
+        // console.log('templateKEY',edge.node.frontmatter.templateKey)
         const id = edge.node.id;
         const pageLocale = edge.node.frontmatter.locale
         let getPath
@@ -46,20 +120,17 @@ exports.createPages = ({ actions, graphql }) => {
           getPath = edge.node.fields.slug
         }
         else if (edge.node.frontmatter.name !== 'home') {
-          //  getPath = pageLocale !== 'en' ? pageLocale + '/' + edge.node.frontmatter.name : edge.node.frontmatter.name
+
            getPath = pageLocale + '/' + edge.node.frontmatter.name
         } else {
           getPath = pageLocale !== 'en' ? pageLocale  : '/'
         }
-
-        // console.log('pageLocale',pageLocale,'getPath',getPath)
         createPage({
           path: getPath ,
           tags: edge.node.frontmatter.tags,
           component: path.resolve(
             `src/templates/${String(edge.node.frontmatter.templateKey)}.js`
           ),
-          // additional data can be passed via context
           context: {
             id,
             locale
@@ -104,7 +175,7 @@ exports.onCreatePage = ({ page, actions }) => {
       const localizedPath = locales[lang].default
         ? page.path
         : locales[lang].path + page.path;
-      
+        console.log('localizedPath',localizedPath)
       return createPage({
         ...page,
         path: localizedPath,

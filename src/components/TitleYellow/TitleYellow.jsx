@@ -10,6 +10,7 @@ const TitleYellow = ({ title }) => {
     display: table;
     margin: 10px auto;
     padding: 3px 13px;
+    text-align: center;
   `;
   return (
     <TitleYellowWrapper>

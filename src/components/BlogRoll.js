@@ -6,8 +6,11 @@ import i18n from "i18next";
 import { withTranslation } from "react-i18next";
 import {truncate } from 'lodash'
 import styled from 'styled-components'
-
 import company from '../_company/company';
+import { Container } from './_common/Container/Container';
+import TitleYellow from './TitleYellow/TitleYellow';
+
+
 
 class BlogRoll extends React.Component {
   render() {
@@ -62,8 +65,11 @@ class BlogRoll extends React.Component {
 
     return (
       <div className="columns is-multiline">
+        <TitleYellow title="blog" />
+        <Container>
         {posts &&
-          posts.map(({ node: post }) => (
+          posts.filter(({node: post}) => post.frontmatter.locale === currentLang)
+          .map(({ node: post }) => (
             <BlogWrapper className="is-parent column is-6" key={post.id}>
               <article
                 className={`blog-list-item tile is-child box notification ${
@@ -86,7 +92,7 @@ class BlogRoll extends React.Component {
                       className="title has-text-primary is-size-4"
                       to={post.fields.slug}
                     >
-                      {post.frontmatter.titleList[currentLang]}
+                      {post.frontmatter.title}
                     </Link>
                     <span> &bull; </span>
                     <span className="subtitle is-size-5 is-block">
@@ -95,7 +101,7 @@ class BlogRoll extends React.Component {
                   </p>
                 </header>
                 <p>
-                  {truncate(post.frontmatter.descriptionList[currentLang], {
+                  {truncate(post.frontmatter.description, {
                     'length': 100,
                     'separator': ' '
                   })}
@@ -110,6 +116,7 @@ class BlogRoll extends React.Component {
               </article>
             </BlogWrapper>
           ))}
+        </Container>
       </div>
     )
   }
@@ -140,18 +147,8 @@ export default () => (
               }
               frontmatter {
                 title
-                titleList {
-                  en
-                  ar
-                  pr
-                  fr
-                }
-                descriptionList {
-                  ar
-                  en
-                  fr
-                  pr
-                }
+                locale
+                description
                 templateKey 
                 date(formatString: "MMMM DD, YYYY")
                 featuredpost

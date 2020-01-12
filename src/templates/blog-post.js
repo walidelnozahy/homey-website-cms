@@ -17,8 +17,6 @@ export const BlogPostTemplate = ({
   tags,
   title,
   helmet,
-  titleList,
-  descriptionList,
   bodyList
 }) => {
   const PostContent = contentComponent || Content
@@ -34,11 +32,11 @@ export const BlogPostTemplate = ({
         <div className="columns">
           <div className="column is-10 is-offset-1">
             <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {titleList[currentLang]}
+              {/* {titleList[currentLang]} */}
             </h1>
-            <p>{descriptionList[currentLang]}</p>
-            {/* <PostContent content={bodyList[currentLang]} /> */}
-            <HTMLContent className="content" content={bodyList[currentLang]} />
+            <p>{description}</p>
+            <PostContent content={content} />
+            {/* <HTMLContent className="content" content={bodyList[currentLang]} /> */}
             {tags && tags.length ? (
               <div style={{ marginTop: `4rem` }}>
                 <h4>Tags</h4>
@@ -86,9 +84,9 @@ const BlogPost = ({ data }) => {
         }
         tags={post.frontmatter.tags}
         title={post.frontmatter.title}
-        titleList={post.frontmatter.titleList}
-        descriptionList={post.frontmatter.descriptionList}
-        bodyList={post.frontmatter.bodyList}
+        // titleList={post.frontmatter.titleList}
+        
+        // bodyList={post.frontmatter.bodyList}
       />
       <SellProperty />
       <ContactSection />
@@ -112,25 +110,7 @@ export const pageQuery = graphql`
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
         title
-        descriptionList {
-          en
-          ar
-          pr
-          fr
-        }
-        bodyEn
-        titleList {
-          en
-          ar
-          pr
-          fr
-        }
-        bodyList {
-          en
-          ar
-          pr
-          fr
-        }
+        description
         featuredimage {
           childImageSharp {
             fluid(maxWidth: 120, quality: 100) {

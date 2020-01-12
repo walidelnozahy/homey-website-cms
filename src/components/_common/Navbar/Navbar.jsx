@@ -5,6 +5,8 @@ import LeftMenu from "./LeftMenu";
 import RightMenu from "./RightMenu";
 import { Drawer, Button, Icon } from "antd";
 import company from "../../../_company/company";
+import { toPath } from "../../../_utils/functions";
+import i18n from "i18next";
 import "./Navbar.css";
 class Navbar extends Component {
   state = {
@@ -24,10 +26,11 @@ class Navbar extends Component {
   };
 
   render() {
+    const lang = i18n.language;
     return (
       <nav className="menu" dir={isMobile ? `ltr` : ``}>
         <div className="menu__logo">
-          <Link to="/">
+          <Link to={toPath(lang, "")}>
             <img src={company.logo} alt="" />
           </Link>
         </div>
