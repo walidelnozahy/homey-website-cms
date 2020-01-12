@@ -5,37 +5,12 @@ import { withTranslation } from "react-i18next";
 import { Container } from "../_common/Container/Container";
 import styled from "styled-components";
 import company from "../../_company/company";
-import PreviewCompatibleImage from "../PreviewCompatibleImage";
+
 import RenderImage from "../_common/Image/RenderImage";
 
 const CategoriesProjects = ({ t, projectCategories }) => {
   const space = `70px;`;
 
-  const categories = [
-    {
-      image:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571482130/seaview.png",
-      title: t("seaview"),
-      value: "seaview",
-      text: t("sea view projects description")
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571482129/downtown.png",
-      title: t("downtown"),
-      value: "downtown",
-      text:
-        "Miona specializes in creating objects and spaces that emphasize the now process of construction."
-    },
-    {
-      image:
-        "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571482129/garanti.png",
-      title: t("guaranty"),
-      value: "guaranty",
-      text:
-        "Miona specializes in creating objects and spaces that emphasize the now process of construction."
-    }
-  ];
   const CategoriesProjectsWrapper = styled.div`
     padding: 30px;
   `;

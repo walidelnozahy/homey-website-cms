@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Container } from "../_common/Container/Container";
 import { withTranslation } from "react-i18next";
 import RenderImage from "../_common/Image/RenderImage";
-import Content, { HTMLContent } from "../Content";
+import Content from "../Content";
 const EducationContent = ({ t, contentImage, description }) => {
   const EducationContentWrapper = styled.div``;
   const EducationContentInner = styled.div`
@@ -19,9 +19,6 @@ const EducationContent = ({ t, contentImage, description }) => {
   const ImageWrapper = styled.div`
     width: 100%;
     height: 100%;
-  `;
-  const Image = styled.img`
-    max-width: 100%;
   `;
 
   const TextWrapper = styled.div``;

@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Container } from "../_common/Container/Container";
-import i18n from "i18next";
+
 import { withTranslation } from "react-i18next";
 import company from "../../_company/company";
 import WrappedRegistrationForm from "../ContactForm/ContactForm";
@@ -26,9 +26,7 @@ const ContactSection = ({ t }) => {
   const Right = styled.div`
     background-color: ${company.colorPrimary};
   `;
-  const H1 = styled.h1`
-    text-align: center;
-  `;
+
   return (
     <ContactSectionWrapper>
       <Container>

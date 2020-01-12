@@ -265,7 +265,7 @@ i18n
       }
     },
     lng: locale === 'ar' || locale === 'pr' || locale === 'fr' ? locale : 'en',
-    debug: true,
+    debug: false,
     fallbackLng: "en",
     interpolation: {
       escapeValue: false

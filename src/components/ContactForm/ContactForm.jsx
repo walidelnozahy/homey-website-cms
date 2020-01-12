@@ -1,12 +1,10 @@
 import React from "react";
-import styled from "styled-components";
-import PropTypes from "prop-types";
-import i18n from "i18next";
+
 import { withTranslation } from "react-i18next";
 
 import { Form, Input, Select, Button } from "antd";
 import countryOptions from "./countryOptions";
-import company from "../../_company/company";
+
 import TitleYellow from "../TitleYellow/TitleYellow";
 import { ContactFormWrapper, FormWrapper } from "./FormStyles";
 var emojiFlags = require("emoji-flags");
