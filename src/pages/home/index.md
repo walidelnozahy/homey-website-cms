@@ -43,22 +43,26 @@ aboutCompany:
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
   secondHeading: second heading
-  sections:
-    - text: >-
-        Kaldi is the ultimate spot for coffee lovers who want to learn about
-        their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting
-      title: title 1
-    - text: >-
-        Kaldi is the ultimate spot for coffee lovers who want to learn about
-        their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting
-      title: title 2
-    - text: >-
-        Kaldi is the ultimate spot for coffee lovers who want to learn about
-        their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting
-      title: title 3
+  testimonials:
+    - description: >-
+        It is a long established fact that a reader will be distracted by the
+        readabl
+
+        content of a page when looking at its layout. The point of using Lorem
+
+        Ipsum is that it has a more-or-less normal distribution of letters,
+        Content
+
+        here content here making it look like readable English.
+
+
+        Today we have more than 150 people in London, Hong Kong and Sydney
+
+        providing architecture interior and urban design services.
+      image: /img/raslan.png
+      title: Civil Engineer
+      name: Mr Ahmed Mohamed
   thirdHeading: third heading
-  videoLink: "https://www.youtube.com/watch?v=jrc4aOfu7aQ"
+  videoLink: 'https://www.youtube.com/watch?v=jrc4aOfu7aQ'
 ---
+
