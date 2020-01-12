@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {Button} from 'antd'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import i18n from "i18next";
@@ -17,15 +18,14 @@ class BlogRoll extends React.Component {
     const { data, } = this.props
     const { edges: posts } = data.allMarkdownRemark
     const currentLang = i18n.language
-    console.log('posts',posts)
+    
     const BlogWrapper = styled.div`
+    
+
     article {
-      background-color: whitesmoke;
-      &.is-featured {
-        background-color: whitesmoke;
-        transition: all .2s ease-in-out;
-        
-      }
+      
+      
+      
       a {
         text-decoration: none;
         &.button {
@@ -45,6 +45,9 @@ class BlogRoll extends React.Component {
           }
         }
         header {
+          h1 {
+            color: #fff;
+          }
           p {
             color: #fff;
             a {
@@ -62,62 +65,103 @@ class BlogRoll extends React.Component {
       }
     }
     `
+    const BlogRollWrapper = styled.div`
+  
+    ` 
+    const BlogRollWrapperInner = styled.div`
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    @media (max-width: 993px) {
+      
+      grid-template-columns: 1fr ;
+    }
+    ` 
+    const Article = styled.article`
+    border-radius: 0px;
+    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+    background-color: whitesmoke;
+    transition: all .3s ease-in;
+    `
+    const Header = styled.header`
+      display: flex;
+  margin-bottom: 1em;
+    `
 
+    const Thumbnail = styled.div`
+      flex-basis: 35%;
+  margin: 0 1.5em 0 0;
+    `
+    const PostTitle = styled.div``
+const H1 = styled.h1`
+font-size: 19px;
+`
+const P = styled.p`
+color: black;
+`
     return (
-      <div className="columns is-multiline">
-        <TitleYellow title="blog" />
+      <BlogRollWrapper>
+        <TitleYellow title="Blog & News" />
+        <br />
+        <br />
         <Container>
+      <BlogRollWrapperInner> 
+
         {posts &&
           posts.filter(({node: post}) => post.frontmatter.locale === currentLang)
           .map(({ node: post }) => (
-            <BlogWrapper className="is-parent column is-6" key={post.id}>
-              <article
+            <Link
+            className="title has-text-primary is-size-4"
+            to={post.fields.slug}
+          >
+            <BlogWrapper  key={post.id}>
+              <Article
                 className={`blog-list-item tile is-child box notification ${
                   post.frontmatter.featuredpost ? 'is-featured' : ''
                 }`}
               >
-                <header>
+                <Header>
                   {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
+                    <Thumbnail className="featured-thumbnail">
                       <PreviewCompatibleImage
                         imageInfo={{
                           image: post.frontmatter.featuredimage,
                           alt: `featured image thumbnail for post ${post.frontmatter.title}`,
                         }}
                       />
-                    </div>
+                    </Thumbnail>
                   ) : null}
-                  <p className="post-meta">
-                    <Link
-                      className="title has-text-primary is-size-4"
-                      to={post.fields.slug}
-                    >
-                      {post.frontmatter.title}
-                    </Link>
-                    <span> &bull; </span>
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
-                  </p>
-                </header>
-                <p>
+                  <PostTitle>
+
+                   
+                      <H1>{post.frontmatter.title}</H1>
+                    
+                  
+                    <P className="">
+                    {post.frontmatter.date}
+                  </P>
+                  </PostTitle>
+                </Header>
+                <P>
                   {truncate(post.frontmatter.description, {
-                    'length': 100,
+                    'length': 120,
                     'separator': ' '
                   })}
                 
                   <br />
                   <br />
-                  <Link className="button" to={post.fields.slug}>
-                  {/* keep reading */}
-                   →
-                  </Link>
-                </p>
-              </article>
+                  <Button icon="arrow-right">
+                  keep reading
+                  </Button>
+                </P>
+              </Article>
             </BlogWrapper>
+            </Link>
           ))}
+      </BlogRollWrapperInner>
         </Container>
-      </div>
+      </BlogRollWrapper>
     )
   }
 }

@@ -9,6 +9,7 @@ const MenuItemGroup = Menu.ItemGroup;
 
 const LeftMenu = ({ t, mode }) => {
   const lang = i18n.language;
+  console.log("lang", lang);
   return (
     <Menu mode={mode}>
       <SubMenu

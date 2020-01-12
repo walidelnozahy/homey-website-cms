@@ -15,6 +15,11 @@ import BlogRoll from '../components/BlogRoll'
 import RecentListings from '../components/RecentListings/RecentListings'
 import ImportantProjects from '../components/ImportantProjects/ImportantProjects'
 
+
+ 
+
+
+
 export const IndexPageTemplate = ({
   image,
   title,
@@ -33,8 +38,8 @@ export const IndexPageTemplate = ({
     <ImportantProjects />
     <WeOffer aboutCompany={aboutCompany}/>
     <RecentListings />
-    <SellProperty />
     <BlogRoll /> 
+    <SellProperty />
     <ContactSection />
 
   </div>
@@ -57,6 +62,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+      
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}

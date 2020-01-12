@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { withTranslation } from "react-i18next";
 import company from "../../_company/company";
+import TitleProject from "../TitleProject/TitleProject";
 
 const Services = ({ t }) => {
   const services = [
@@ -34,11 +35,10 @@ const Services = ({ t }) => {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
-
     position: relative;
-
     @media (max-width: 992px) {
       grid-template-columns: 1fr;
+      gap: 150px;
       &::before {
         display: none;
       }
@@ -90,10 +90,14 @@ const Services = ({ t }) => {
     position: relative;
     z-index: 3;
     color: ${company.colorSecondary};
+    font-weight: 100;
   `;
   return (
     <LandingServices>
-      <h1>{t("our services")}</h1>
+      <TitleProject title={t("our services")} center />
+      <br />
+      <br />
+      <br />
       <LandingServicesInner>
         {services.map(({ name, icon }, key) => (
           <EachDiv key={key} data-aos="fade-down">

@@ -5,8 +5,9 @@ export const getLangPath = (toLng, currentPath) => {
 };
 
 export const toPath = (currentLng, toPage) => {
-  
-  return !toPage ?   `/${toPage}` : `/${currentLng}/${toPage}`
+  // const currentPath = global && global.window && global.window.location ? global.window.location : ''
+  // const hasBlog = currentPath.includes('blog') 
+  return !toPage ||(( toPage === 'blog'  || toPage === 'projects') && currentLng === 'en' ) ?   `/${toPage}` : `/${currentLng}/${toPage}`
 };
 
 export const flatString = str =>
