@@ -7,7 +7,7 @@ import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
 import AboutContent from '../components/AboutContent/AboutContent'
 
 export const AboutPageTemplate = ({ title, content, contentComponent,
-  // headerImage,
+  headerImage,
   // seo_title,
   // seo_desc,
   firstHeading,
@@ -25,7 +25,8 @@ export const AboutPageTemplate = ({ title, content, contentComponent,
     <div>
       <HeaderPages
           title={title}
-          image="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571934056/about-char2.png"
+          image={headerImage}
+          // "https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571934056/about-char2.png"
         />
         <AboutContent 
         firstHeading={firstHeading}
@@ -104,6 +105,13 @@ export const aboutPageQuery = graphql`
         seo_title
         seo_desc
         firstHeading
+        headerImage { 
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
         firstText
         secondHeading
         secondText

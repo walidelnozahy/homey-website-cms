@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { withTranslation } from "react-i18next";
 import { Container } from "../Container/Container";
 import company from "../../../_company/company";
-// import PreviewCompatibleImage from "../../PreviewCompatibleImage";
+
 import RenderImage from "../Image/RenderImage";
+
 const HeaderPages = ({ title, image, t }) => {
   const HeaderPagesWrapper = styled.div`
     background-color: ${company.colorPrimary};
@@ -47,15 +48,9 @@ const HeaderPages = ({ title, image, t }) => {
   const CharacterWrapper = styled.div`
     text-align: center;
     height: 50vh;
+    overflow: hidden;
   `;
-  // const Character = styled.img`
-  //   max-width: 100%;
-  //   height: 100%;
-  //   margin: auto;
-  //   @media (max-width: 992px) {
-  //     height: 300px;
-  //   }
-  // `;
+
   return (
     <HeaderPagesWrapper>
       <Container>
