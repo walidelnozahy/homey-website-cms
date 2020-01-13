@@ -12,6 +12,87 @@ import { Container } from './_common/Container/Container';
 import TitleYellow from './TitleYellow/TitleYellow';
 
 
+const BlogWrapper = styled.div`
+    
+
+article {
+  
+  
+  
+  a {
+    text-decoration: none;
+    &.button {
+      color: black;
+    }
+  }
+  &:hover {
+    transform: translateY(-5px);
+    background-color: ${company.colorPrimary};
+    p {
+      color: #fff;
+      a {
+        color: #fff;
+        &.button {
+          color: black;
+        }
+      }
+    }
+    header {
+      h1 {
+        color: #fff;
+      }
+      p {
+        color: #fff;
+        a {
+          color: #fff !important;
+          
+        }
+      }
+      span {
+        color: #fff;
+      }
+      a {
+        color: #fff;
+      }
+    }
+  }
+}
+`
+const BlogRollWrapper = styled.div`
+
+` 
+const BlogRollWrapperInner = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 20px;
+@media (max-width: 993px) {
+  
+  grid-template-columns: 1fr ;
+}
+` 
+const Article = styled.article`
+border-radius: 0px;
+box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
+padding: 30px;
+background-color: whitesmoke;
+transition: all .3s ease-in;
+`
+const Header = styled.header`
+  display: flex;
+margin-bottom: 1em;
+`
+
+const Thumbnail = styled.div`
+  flex-basis: 35%;
+margin: 0 1.5em 0 0;
+`
+const PostTitle = styled.div``
+const H1 = styled.h1`
+font-size: 19px;
+`
+const P = styled.p`
+color: black;
+`
 
 class BlogRoll extends React.Component {
   render() {
@@ -19,87 +100,7 @@ class BlogRoll extends React.Component {
     const { edges: posts } = data.allMarkdownRemark
     const currentLang = i18n.language
     
-    const BlogWrapper = styled.div`
-    
-
-    article {
-      
-      
-      
-      a {
-        text-decoration: none;
-        &.button {
-          color: black;
-        }
-      }
-      &:hover {
-        transform: translateY(-5px);
-        background-color: ${company.colorPrimary};
-        p {
-          color: #fff;
-          a {
-            color: #fff;
-            &.button {
-              color: black;
-            }
-          }
-        }
-        header {
-          h1 {
-            color: #fff;
-          }
-          p {
-            color: #fff;
-            a {
-              color: #fff !important;
-              
-            }
-          }
-          span {
-            color: #fff;
-          }
-          a {
-            color: #fff;
-          }
-        }
-      }
-    }
-    `
-    const BlogRollWrapper = styled.div`
-  
-    ` 
-    const BlogRollWrapperInner = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    @media (max-width: 993px) {
-      
-      grid-template-columns: 1fr ;
-    }
-    ` 
-    const Article = styled.article`
-    border-radius: 0px;
-    box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-    padding: 30px;
-    background-color: whitesmoke;
-    transition: all .3s ease-in;
-    `
-    const Header = styled.header`
-      display: flex;
-  margin-bottom: 1em;
-    `
-
-    const Thumbnail = styled.div`
-      flex-basis: 35%;
-  margin: 0 1.5em 0 0;
-    `
-    const PostTitle = styled.div``
-const H1 = styled.h1`
-font-size: 19px;
-`
-const P = styled.p`
-color: black;
-`
+   
     return (
       <BlogRollWrapper>
         <TitleYellow title="Blog & News" />
