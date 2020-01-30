@@ -2,6 +2,8 @@ import React from "react";
 import { Link, graphql, StaticQuery } from "gatsby";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { Carousel } from "antd";
+
 import ArrowLeft from "../_common/Arrows/ArrowLeft";
 import ArrowRight from "../_common/Arrows/ArrowRight";
 import CustomButton from "../_common/CustomButton/CustomButton";
@@ -17,7 +19,7 @@ import { isMobile } from "react-device-detect";
 import { getMinPrice } from "real-estate-utils";
 import * as load from "@eahefnawy/functions.js";
 import company from "../../_company/company";
-import TitleProject from "../TitleProject/TitleProject";
+import TitleYellow from "../TitleYellow/TitleYellow";
 
 const ImportantProjects = ({
   data: {
@@ -26,6 +28,7 @@ const ImportantProjects = ({
 }) => {
   const { t } = useTranslation();
   const lang = i18n.language;
+  console.log("lang impornta t", lang);
   const currency = getCurrencyRate();
   const params = {
     loop: true,
@@ -114,72 +117,82 @@ const ImportantProjects = ({
   `;
 
   return (
-    <ImportantProjectsWrapper>
+    <ImportantProjectsWrapper dir="ltr">
       <Container>
-        <TitleProject title={t("important projects")} center />
+        <TitleYellow title="important projects" center />
         <br />
         <br />
         <br />
         <Swiper {...params}>
-          {orderBy(edges, "updatedAt", "desc").map(
-            ({ node: { code, coverImage, types, nearby, en } }, key) => {
-              return (
-                <Link to={toPath(lang, `${code}`)}>
-                  <CarouselIEachDiv key={key}>
-                    <CarouselImageEach
-                      image={
-                        coverImage
-                          ? isMobile
-                            ? coverImage.small
-                            : coverImage.medium
-                          : ""
-                      }
-                    />
-                    <Text>
-                      <P>
-                        {" "}
-                        {truncate([lang].description || en.description, {
-                          length: 300,
+          {orderBy(edges, "updatedAt", "desc").map(({ node }, key) => {
+            const { code, coverImage, types, nearby, en } = node;
+            console.log("node", node);
+            return (
+              <Link
+                to={toPath(lang, `${code}`)}
+                dir={lang === `ar` || lang === `pr` ? `rtl` : `ltr`}
+              >
+                <CarouselIEachDiv key={key}>
+                  <CarouselImageEach
+                    image={
+                      coverImage
+                        ? isMobile
+                          ? coverImage.small
+                          : coverImage.medium
+                        : ""
+                    }
+                  />
+                  <Text>
+                    <P>
+                      {" "}
+                      {truncate(
+                        node[lang] && node[lang].description
+                          ? node[lang].description
+                          : en.description,
+                        {
+                          length: 280,
                           separator: " "
-                        })}
-                      </P>
-                      <NearByWrapper>
-                        {nearby.map((e, i) => {
-                          if (i <= 3) {
-                            return (
-                              <NearByEach>
+                        }
+                      )}
+                    </P>
+                    <NearByWrapper>
+                      {nearby.map((e, i) => {
+                        if (i <= 3 && e.icon) {
+                          return (
+                            <NearByEach>
+                              {e.icon ? (
                                 <ImageWrapper>
-                                  <Image src={e.icon ? e.icon.medium : null} />
+                                  <Image src={e.icon ? e.icon.large : null} />
                                 </ImageWrapper>
-                                <P title>{e[lang] || e.en}</P>
-                                <P>
-                                  {e.distance}
-                                  {e.unit}
-                                </P>
-                              </NearByEach>
-                            );
-                          }
-                          return null;
-                        })}
-                      </NearByWrapper>
-                      <Price>
-                        {types.length
-                          ? getMinPrice({
-                              types,
-                              currencyRate: currency ? currency.rate : 1
-                            })
-                          : ""}{" "}
-                        {currency ? currency.value : "TRY"}
-                      </Price>
-                      <SeeMore>
-                        <p>SEE MORE</p>
-                      </SeeMore>
-                    </Text>
-                  </CarouselIEachDiv>
-                </Link>
-              );
-            }
-          )}
+                              ) : null}
+                              <P title>{e[lang] || e.en}</P>
+                              <P>
+                                {e.distance}
+                                {e.unit}
+                              </P>
+                            </NearByEach>
+                          );
+                        }
+                        return null;
+                      })}
+                    </NearByWrapper>
+                    <Price>
+                      {types.length
+                        ? getMinPrice({
+                            types,
+                            currencyRate: currency ? currency.rate : 1
+                          })
+                        : ""}{" "}
+                      {currency ? currency.value : "TRY"}
+                    </Price>
+                    <SeeMore>
+                      <p>SEE MORE</p>
+                    </SeeMore>
+                  </Text>
+                </CarouselIEachDiv>
+              </Link>
+            );
+          })}
         </Swiper>
       </Container>
     </ImportantProjectsWrapper>
@@ -223,6 +236,19 @@ export default () => (
                 nearbyDescription
                 title
               }
+              fr {
+                description
+                nearbyDescription
+              }
+              pr {
+                description
+                nearbyDescription
+              }
+              ar {
+                description
+                nearbyDescription
+                title
+              }
               features {
                 ar
                 createdAt
@@ -238,10 +264,7 @@ export default () => (
                 pr
                 updatedAt
               }
-              fr {
-                description
-                nearbyDescription
-              }
+
               geoLocation {
                 city
                 district
@@ -286,10 +309,7 @@ export default () => (
                 unit
                 updatedAt
               }
-              pr {
-                description
-                nearbyDescription
-              }
+
               published
               ready
               types {

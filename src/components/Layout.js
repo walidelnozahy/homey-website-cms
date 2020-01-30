@@ -108,7 +108,24 @@ i18n
           "1 month change": "1 Month Change",
           "3 year change": "3 Year Change",
           "5 year change": "5 Year Change",
-          "location details": "Location Details"
+          "location details": "Location Details",
+          "resale": "Resale",
+          "articles": "Articles",
+          "add your property": "Add your Property",
+          "company": "Company",
+          "status": "Status",
+          "category": "category",
+          "ready": "Ready",
+          "under construction": "Under Construction",
+          "seaview": "Seaview",
+          "downtown": "Downtown",
+          "guaranty": "Guaranty",
+          "search": "Search",
+          "all": "All",
+          "no search results": "No Search Results",
+          "reset search": "Reset Search",
+          "see recomended projects": "See Recomended Projects",
+          "sorry, no projects matching your search": "Sorry, no projects matching your search",
 
         }
       },
@@ -154,13 +171,13 @@ i18n
           "ready": "جاهز",
           "downpayment": "دفعة اولى",
           "our services": "خدماتنا",
-          "real estate consultant":"مستشار عقاري",
+          "real estate consultant":"استشارات عقارية",
           "real estate consultant description":"نوفر فى شركة Homey خدمة الاستشارات العقارية عن طريق عرض مجموعة من المشاريع التى تتيح لعملائنا المقارنة فيما بينها واختيار المشروع المناسب لاحتياجاتهم وامكانياتهم سواء للسكن او للاستثمار ",
-          "property managment":"ادارة عقارات",
+          "property managment":"إدارة العقار",
           "property managment description": "خدمة ادارة العقار  هى خدمة نقدمها فى شركة Homey لعملائنا المستثمريين حيث نقوم بادارة العقار عن طريق الاعلان عن العقار  البحث عن مستأجر وانهاء كافة الاجراءات القانونية وتحصيل العائد الشهري وايداعة فى حساب المالك بعد دفع الفواتير وايضا الاهتمام بالعناية الدورية بالعقار من ترميم وتجديد ونظافة",
-          "legal process":"خدمات قنونية",
+          "legal process":"خدمات قانونية",
           "legal process description": "الاستشارات القانونية هى خدمة نقدمها لعملائنا تشمل انهاء كافة الامور القانونية المتعلقة بشراء العقار والحصول على الطابو والتقديم على الجنسية التركية . كما نساعد في توضيح الصورة كاملة عن طريق الاجابة على كافة الاسئلة والاستفسارات التى يحتاجها المستثمر حتى يستثمر بشكل امن وقانونى",
-          "university applications": "تقديم جامعات",
+          "university applications": "قبولات جامعية",
           "university applications description": "خدمة القبولات الجامعية تعتبر  من اهم عناصر الاستقرار فى تركيا لذلك فى شركة Homey نوفر لكم كافة الخدمات في مجال القبولات الجامعية والدراسة في تركيا عن طريق مساعدتك ف تحضير  اوراقك وتوثيقها  وتجهيز الملف الخاص بك ومساعدتك فى تقديم اوراقك لدي الجامعات والحصول علي القبولات في المجالات التي ترغب في دراستها ",
           "name": "الاسم",
           "email": "الايميل",
@@ -200,7 +217,24 @@ i18n
           "1 month change": "تغير شهر",
           "3 year change": "تغير ٣ سنوات",
           "5 year change": "تغير ٥ سنوات",
-          "location details": "تفاصيل المنطقة"
+          "location details": "تفاصيل المنطقة",
+          "resale": "اعادة بيع",
+          "articles": "مقالات",
+          "add your property": "اضف عقارك",
+          "company": "عن الشركة",
+          "status": "الحالة",
+          "category": "الميزة",
+          "ready": "جاهز",
+          "under construction": "تحت الانشاء",
+          "seaview": "اطلالة بحرية",
+          "downtown": "وسط المدينة",
+          "guaranty": "ضمان",
+          "search": "بحث",
+          "all": "الكل",
+          "no search results": "لا يوجد نتائج",
+          "reset search": "تعديل البحث",
+          "see recomended projects": "مشاهدة اهم المشاريع",
+          "sorry, no projects matching your search": "عذرا لا يوجد نتائج",
 
         }
       },
@@ -232,7 +266,11 @@ i18n
           "1 month change": "1 ماه تغییر",
           "3 year change": "تغییر سال 3",
           "5 year change": "تغییر سال 5",
-          "location details": "اطلاعات مکان"
+          "location details": "اطلاعات مکان",
+          "resale": "رساله",
+          "articles": "مقالات",
+          "add your property": "اضافه کردن اموال خود را",
+          "company": "عن الشركة",
         }
       },
       fr: {
@@ -252,7 +290,10 @@ i18n
           "project features": "carecteristique du projet",
           "prices & rooms": "prix et pieces",
           "from": "de",
-          "to": "a"
+          "to": "a",
+          "resale": "revente",
+          "articles": "article",
+          "add your property": "ajouter votre propriété",
         }
       },
       tr: {
@@ -286,6 +327,7 @@ const TemplateWrapper = ({ children }) => {
     
   ]);
   const AppWrapper = styled.div`
+  user-select: none;
   .swiper-button-next-new,
   .swiper-button-prev-new {
     position: absolute;
@@ -307,7 +349,12 @@ const TemplateWrapper = ({ children }) => {
       margin: auto !important;
       transform: translateY(5px);
     }
+    &.bottom {
+      bottom: 10px;
+      top: auto;
+    }
   }
+
   @keyframes moveArrowRight {
     0% {
       background-color: rgba(64, 89, 93, 0.247);
@@ -325,6 +372,23 @@ const TemplateWrapper = ({ children }) => {
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
   }
+  @keyframes moveArrowRightCenter {
+    0% {
+      background-color: rgba(64, 89, 93, 0.247);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+      right: 47%;
+    }
+
+    70% {
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      
+      right: 46%;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
 
   @keyframes moveArrowLeft {
     0% {
@@ -333,8 +397,8 @@ const TemplateWrapper = ({ children }) => {
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
     }
 
-    50% {
-      left: 15px;
+    70% {
+     
       box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
     }
 
@@ -344,13 +408,38 @@ const TemplateWrapper = ({ children }) => {
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
     }
   }
+  @keyframes moveArrowLeftCenter {
+    0% {
+      background-color: rgba(64, 89, 93, 0.247);
+      left: 47%;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+    }
+
+    70% {
+     
+      box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+      
+      left: 46%;
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
 
   .swiper-button-next-new {
     animation-name: moveArrowRight;
+    &.bottom {
+      animation-name: moveArrowRightCenter;
+    }
   }
 
   .swiper-button-prev-new {
     animation-name: moveArrowLeft;
+    &.bottom {
+      animation-name: moveArrowLeftCenter;
+    }
+    
   }
   h1,
     h2,

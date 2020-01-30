@@ -1,9 +1,11 @@
 import React from "react";
 import Swiper from "react-id-swiper";
+import { Link } from "gatsby";
 import styled from "styled-components";
-
+import CustomButton from "../../components/_common/CustomButton/CustomButton";
 import ArrowLeft from "../../components/_common/Arrows/ArrowLeft";
 import ArrowRight from "../../components/_common/Arrows/ArrowRight";
+import company from "../../_company/company";
 // import PreviewCompatibleImage from "../PreviewCompatibleImage";
 // import SearchDiv from "../SearchDiv/SearchDiv";
 import RenderImage from "../../components/_common/Image/RenderImage";
@@ -15,6 +17,72 @@ import "swiper/css/swiper.css";
 const seachPadding = `40px`;
 const HeaderCarouselWrapper = styled.div`
   position: relative;
+  // .swiper-next,
+  // .swiper-prev {
+  //   position: absolute;
+  //   b: 50%;
+  //   z-index: 99999999 !important;
+  //   box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  //   animation-duration: 2s;
+  //   animation-iteration-count: infinite;
+  //   animation-timing-function: ease-in-out;
+  //   width: 40px;
+  //   height: 40px;
+  //   background-color: ${company.colorPrimary};
+  //   border-radius: 50%;
+  //   display: flex;
+  //   justify-content: space-around;
+  //   cursor: pointer;
+  //   opacity: 0.5;
+  //   svg {
+  //     margin: auto !important;
+  //     transform: translateY(5px);
+  //   }
+  // }
+  // @keyframes moveArrowRight {
+  //   0% {
+  //     background-color: rgba(64, 89, 93, 0.247);
+  //     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  //     right: 10px;
+  //   }
+
+  //   70% {
+  //     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  //   }
+
+  //   100% {
+  //     // background-color: white;
+  //     right: 15px;
+  //     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  //   }
+  // }
+
+  // @keyframes moveArrowLeft {
+  //   0% {
+  //     background-color: rgba(64, 89, 93, 0.247);
+  //     left: 10px;
+  //     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+  //   }
+
+  //   50% {
+  //     left: 15px;
+  //     box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+  //   }
+
+  //   100% {
+  //     // background-color: white;
+  //     left: 10px;
+  //     box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+  //   }
+  // }
+
+  // .swiper-next {
+  //   animation-name: moveArrowRight;
+  // }
+
+  // .swiper-prev {
+  //   animation-name: moveArrowLeft;
+  // }
 `;
 const HeaderCarouselEach = styled.div``;
 const HeaderCarouselEachInner = styled.div`
@@ -30,6 +98,7 @@ const HeaderCarouselEachInner = styled.div`
     flex-direction: column-reverse;
     height:auto;
   }
+  
 `;
 const HeaderCarouseLeft = styled.div`
   padding: ${seachPadding};
@@ -60,13 +129,17 @@ const Image = styled.div`
 `;
 const Text = styled.div`
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   z-index: 2;
+  height: 100%;
   text-align: ${props =>
     props.currenctLang === `ar` || props.currenctLang === `pr`
       ? `right`
       : `left`} !important;
 `;
-const H1 = styled.h1`
+const Title = styled.h1`
   color: #fff;
   font-size: 50px;
   font-weight: 300;
@@ -112,8 +185,12 @@ const params = {
     delay: 2500,
     disableOnInteraction: false
   },
-  renderPrevButton: () => <ArrowRight className="swiper-button-next-new" />,
-  renderNextButton: () => <ArrowLeft className="swiper-button-prev-new" />
+  renderPrevButton: () => (
+    <ArrowRight className="swiper-button-next-new bottom" />
+  ),
+  renderNextButton: () => (
+    <ArrowLeft className="swiper-button-prev-new bottom" />
+  )
   // pagination: {
   //   el: ".swiper-pagination",
   //   clickable: true
@@ -139,7 +216,7 @@ const HeaderCarousel = ({ carouselItems }) => {
               <HeaderCarouselEachInner>
                 <HeaderCarouseLeft data-aos="fade-right">
                   <Text currenctLang={currenctLang}>
-                    <H1
+                    <Title
                       currenctLang={currenctLang}
                       dir={
                         currenctLang === `ar` || currenctLang === `pr`
@@ -148,16 +225,18 @@ const HeaderCarousel = ({ carouselItems }) => {
                       }
                     >
                       {item.text}
-                    </H1>
+                    </Title>
+                    <Link to={item.link}>
+                      <CustomButton text="more details" />
+                    </Link>
                   </Text>
                 </HeaderCarouseLeft>
                 <HeaderCarouseRight data-aos="fade-left">
-                  {/* <PreviewCompatibleImage imageInfo={item} /> */}
-                  {item.image ? (
-                    <RenderImage image={item.image} width="100%" />
-                  ) : null}
-
-                  {/* <Image image={i.coverImage ? i.coverImage.large : ""} /> */}
+                  <Link to={item.link}>
+                    {item.image ? (
+                      <RenderImage image={item.image} width="100%" />
+                    ) : null}
+                  </Link>
                 </HeaderCarouseRight>
               </HeaderCarouselEachInner>
             </HeaderCarouselEach>
@@ -167,7 +246,7 @@ const HeaderCarousel = ({ carouselItems }) => {
             <HeaderCarouselEachInner>
               <HeaderCarouseLeft data-aos="fade-right">
                 <Text>
-                  <H1>Homey Real Estate</H1>
+                  <Title>Homey Real Estate</Title>
                 </Text>
               </HeaderCarouseLeft>
               <HeaderCarouseRight data-aos="fade-left">

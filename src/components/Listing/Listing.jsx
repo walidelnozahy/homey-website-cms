@@ -111,7 +111,7 @@ const Listing = ({ listing, t, property }) => {
           image={listing.coverImage ? listing.coverImage.medium : ""}
         >
           <ListingType>
-            <h4>{t("for sale")}</h4>
+            <h4>H-{listing.code}</h4>
           </ListingType>
           <TextWrapper>
             <Price>

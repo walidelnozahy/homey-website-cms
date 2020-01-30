@@ -17,7 +17,7 @@ const ContactSection = ({ t }) => {
     }
   `;
   const Left = styled.div`
-    background-image: url("https://res.cloudinary.com/dqbgnn5hf/image/upload/v1569491074/illustration-homey.png");
+    background-image: url("https://res.cloudinary.com/dqbgnn5hf/image/upload/v1580290752/Untitled-2.png");
     background-position: center;
     background-size: cover;
     width: 100%;
@@ -30,7 +30,7 @@ const ContactSection = ({ t }) => {
   return (
     <ContactSectionWrapper>
       <Container>
-        <TitleYellow title={t("let us contact you")} />
+        <TitleYellow title="let us contact you" />
         <ContactSectionInner>
           <Left data-aos="fade-left" />
           <Right data-aos="fade-right">

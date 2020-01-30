@@ -5,29 +5,41 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 const locales = require("./src/_constants/locales");
 const load = require("@eahefnawy/functions.js")
 const company = require('./src/_company/company')
-const { getCurrencies, queryProjectsString, queryProjectsLocations, queryProjects, updateProperty, uploadFile, updateProject, getProperty, login, listUsers, createUser, deleteUser, updateUser, listProjects, listNearby, createNearby, listFeatures, createFeature, listTypes, createType, uploadImage, updateFeature, updateNearby, listLocations, createLocation, updateLocation, getProject, deleteProject, listProperties } = load(company.backend);
+const {listProjects, listNearby, listFeatures } = load(company.backend);
 
-
+// const getProjects = async () => {
+//   const res = await Promise.all([listProjects(),listNearby(),listFeatures()])
+  
+//   const allNearby = res[1]
+//   const allFeatures = res[2]
+  
+//   res[0].forEach(project => {
+//     if (project.nearby && project.nearby.length) {
+//       project.nearby.forEach(nearby => {
+//         nearby = {
+//           ...nearby,
+//           ...allNearby.find(i => i.id === nearby.id)
+//         }
+//       })
+//     }
+//     if (project.features && project.features.length) {
+//       project.features.forEach(feature => {
+//         feature = {
+//           ...feature,
+//           ...allFeatures.find(i => i.id === feature.id)
+//         }
+//       })
+//     }
+//   })
+//   projects = res[0]
+// }
 
 let projects = null
 
 const getProjects = async () => {
   projects = await listProjects()
 }
-// exports.createSchemaCustomization = ({ actions, schema }) => {
-//   const { createTypes } = actions
-//   const typeDefs = [
-//     schema.buildObjectType({
-//       name: "Projects",
-//       fields: {
-//         types: "String!",
-//         installment: "String!",
-//       },
-//       interfaces: ["Node"],
-//     }),
-//   ]
-//   createTypes(typeDefs)
-// }
+
 
 
 exports.sourceNodes = async ({
