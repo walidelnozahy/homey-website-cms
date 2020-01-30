@@ -7,6 +7,7 @@ import CustomButton from "../_common/CustomButton/CustomButton";
 import RenderImage from "../_common/Image/RenderImage";
 import ReactPlayer from "react-player";
 import Swiper from "react-id-swiper";
+
 const WeOffer = ({ t, aboutCompany }) => {
   const params = {
     loop: false,
@@ -120,10 +121,11 @@ const WeOffer = ({ t, aboutCompany }) => {
     position: absolute;
     left: ${props => (props.right ? "auto" : `20px`)};
     right: ${props => (props.right ? `20px` : "auto")};
-    top: ${props => (props.right ? "auto" : `20px`)};
+    top: ${props => (props.right ? "auto" : `50px`)};
     bottom: ${props => (props.right ? `20px` : "auto")};
     transform: rotateZ(${props => (props.right ? `180deg` : `0deg`)});
     z-index: 2;
+    width: 40px;
     @media (max-width: 993px) {
       width: 40px;
     }
@@ -131,7 +133,9 @@ const WeOffer = ({ t, aboutCompany }) => {
   const GradientBackground = styled.div`
     position: absolute;
     width: 100%;
-    height: 150%;
+    height: ${aboutCompany.testimonials && aboutCompany.testimonials.length
+      ? `150%`
+      : `100%`};
     background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
       0% no-repeat padding-box;
     z-index: -1;
@@ -172,37 +176,37 @@ const WeOffer = ({ t, aboutCompany }) => {
           <LeftImage />
         </Right>
       </GridSection>
-      <Testimonials>
-        <Swiper {...params}>
-          {aboutCompany.testimonials
-            ? aboutCompany.testimonials.map((i, key) => (
-                <Testimonials_Inner>
-                  <Testimonials_Image_wrapper>
-                    <RenderImage image={i.image} />
+      {aboutCompany.testimonials && aboutCompany.testimonials.length ? (
+        <Testimonials>
+          <Swiper {...params}>
+            {aboutCompany.testimonials.map((i, key) => (
+              <Testimonials_Inner>
+                <Testimonials_Image_wrapper>
+                  <RenderImage image={i.image} />
 
-                    <H1 color="#fff" weight="800">
-                      {i.name}
-                    </H1>
-                    <H1 color={company.colorPrimary} weight="600">
-                      {i.title}
-                    </H1>
-                  </Testimonials_Image_wrapper>
-                  <Testimonials_Text>
-                    <H1 color="#fff" weight="800" size="30px" center>
-                      They Say About Us ,
-                    </H1>
-                    <QoutesImage src="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1578833909/doubleqoutes.png" />
-                    <TextInner>{i.description}</TextInner>
-                    <QoutesImage
-                      src="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1578833909/doubleqoutes.png"
-                      right
-                    />
-                  </Testimonials_Text>
-                </Testimonials_Inner>
-              ))
-            : null}
-        </Swiper>
-      </Testimonials>
+                  <H1 color="#fff" weight="800">
+                    {i.name}
+                  </H1>
+                  <H1 color={company.colorPrimary} weight="600">
+                    {i.title}
+                  </H1>
+                </Testimonials_Image_wrapper>
+                <Testimonials_Text>
+                  <H1 color="#fff" weight="800" size="30px" center>
+                    They Say About Us ,
+                  </H1>
+                  <QoutesImage src="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1578833909/doubleqoutes.png" />
+                  <TextInner>{i.description}</TextInner>
+                  <QoutesImage
+                    src="https://res.cloudinary.com/dqbgnn5hf/image/upload/v1578833909/doubleqoutes.png"
+                    right
+                  />
+                </Testimonials_Text>
+              </Testimonials_Inner>
+            ))}
+          </Swiper>
+        </Testimonials>
+      ) : null}
     </WeOfferWrapper>
   );
 };

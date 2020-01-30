@@ -70,7 +70,7 @@ class ContactPageContent extends React.Component {
               <H1>{mainTitle}</H1>
             </Right>
           </ContentWrapper>
-          <TitleYellow title="Let us call you" />
+          <TitleYellow title="let us call you" />
           <ContactSction>
             <ContactSctionLeft data-aos="fade-up">
               <Map />

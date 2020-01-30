@@ -13,6 +13,7 @@ const CurrencyDropdown = (
   }
 ) => {
   const [currencies, setCurrencies] = useState(null);
+  const [currency, setCurrency] = useState({ value: "TRY", rate: 1 });
 
   useEffect(() => {
     hanldeGetCurrencies();
@@ -39,8 +40,8 @@ const CurrencyDropdown = (
   }
   return (
     <Select
-      style={{ minWidth: `150px`, margin: `auto 0` }}
-      // value={state.currency.value}
+      style={{ minWidth: `130px`, margin: `auto 0` }}
+      value={currency.value}
       // onChange={(data, props) => setCurrency(data, props)}
       suffixIcon={<Icon type="money-collect" theme="filled" />}
     >

@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import { withTranslation } from "react-i18next";
 import company from "../../_company/company";
-import TitleProject from "../TitleProject/TitleProject";
-
+// import TitleProject from "../TitleProject/TitleProject";
+import TitleYellow from "../TitleYellow/TitleYellow";
 const Services = ({ t }) => {
   const services = [
     {
@@ -94,7 +94,7 @@ const Services = ({ t }) => {
   `;
   return (
     <LandingServices>
-      <TitleProject title={t("our services")} center />
+      <TitleYellow title="our services" center />
       <br />
       <br />
       <br />

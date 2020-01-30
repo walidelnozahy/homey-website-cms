@@ -1,171 +1,115 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {Button} from 'antd'
+import {Button, Icon, Divider} from 'antd'
 import { Link, graphql, StaticQuery } from 'gatsby'
 import PreviewCompatibleImage from './PreviewCompatibleImage'
 import i18n from "i18next";
+import { useTranslation } from 'react-i18next';
 
 import {truncate } from 'lodash'
 import styled from 'styled-components'
 import company from '../_company/company';
 import { Container } from './_common/Container/Container';
 import TitleYellow from './TitleYellow/TitleYellow';
+import BlogDiv from './BlogDiv/BlogDiv'
 
-
-const BlogWrapper = styled.div`
-    
-
-article {
-  
-  
-  
-  a {
-    text-decoration: none;
-    &.button {
-      color: black;
-    }
-  }
-  &:hover {
-    transform: translateY(-5px);
-    background-color: ${company.colorPrimary};
-    p {
-      color: #fff;
-      a {
-        color: #fff;
-        &.button {
-          color: black;
-        }
-      }
-    }
-    header {
-      h1 {
-        color: #fff;
-      }
-      p {
-        color: #fff;
-        a {
-          color: #fff !important;
-          
-        }
-      }
-      span {
-        color: #fff;
-      }
-      a {
-        color: #fff;
-      }
-    }
-  }
-}
-`
 const BlogRollWrapper = styled.div`
 
 ` 
 const BlogRollWrapperInner = styled.div`
 display: grid;
-grid-template-columns: 1fr 1fr;
+grid-template-columns: 2fr 1fr;
 gap: 20px;
 @media (max-width: 993px) {
   
   grid-template-columns: 1fr ;
 }
 ` 
-const Article = styled.article`
-border-radius: 0px;
-box-shadow: 1px 1px 10px rgba(0,0,0,0.1);
-padding: 30px;
-background-color: whitesmoke;
-transition: all .3s ease-in;
-`
-const Header = styled.header`
-  display: flex;
-margin-bottom: 1em;
-`
 
-const Thumbnail = styled.div`
-  flex-basis: 35%;
-margin: 0 1.5em 0 0;
-`
-const PostTitle = styled.div``
 const H1 = styled.h1`
 font-size: 19px;
 `
 const P = styled.p`
 color: black;
 `
+const OtherPostsWrapper = styled.div`
+  
+  
+`
+const OtherPostsInner = styled.div`
+  background-color: whitesmoke;
+  padding: 10px;
+`
+const YellowTitle = styled.h2`
+  color: ${company.colorSecondary};
+  // text-align: center;
+`
+const LatestPostWrapper = styled.div`
+  text-align: center;
+`
+const LatestPostImage = styled.div``
+const LatestPostText = styled.div`
+  background-color: whitesmoke;
+  text-align: center;
+  padding: 10px;
+`
 
-class BlogRoll extends React.Component {
-  render() {
-    const { data, } = this.props
-    const { edges: posts } = data.allMarkdownRemark
-    const currentLang = i18n.language
+const BlogRoll = ({data}) => {
+  const { t, i18n } = useTranslation();
+
+  const { edges: posts } = data.allMarkdownRemark
+  const currentLang = i18n.language
+  const latestPost = posts.shift().node
+    console.log('posts',posts)
+  
     
-   
     return (
       <BlogRollWrapper>
         <TitleYellow title="Blog & News" />
-        <br />
-        <br />
+        {/* <br />
+        <br /> */}
         <Container>
       <BlogRollWrapperInner> 
-
-        {posts &&
-          posts.filter(({node: post}) => post.frontmatter.locale === currentLang)
-          .map(({ node: post }) => (
-            <Link
-            className="title has-text-primary is-size-4"
-            to={post.fields.slug}
+        <Link
+          to={latestPost.fields.slug}
           >
-            <BlogWrapper  key={post.id}>
-              <Article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <Header>
-                  {post.frontmatter.featuredimage ? (
-                    <Thumbnail className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </Thumbnail>
-                  ) : null}
-                  <PostTitle>
-
-                   
-                      <H1>{post.frontmatter.title}</H1>
-                    
-                  
-                    <P className="">
-                    {post.frontmatter.date}
-                  </P>
-                  </PostTitle>
-                </Header>
-                <P>
-                  {truncate(post.frontmatter.description, {
-                    'length': 120,
-                    'separator': ' '
-                  })}
-                
-                  <br />
-                  <br />
-                  <Button icon="arrow-right">
-                  keep reading
-                  </Button>
-                </P>
-              </Article>
-            </BlogWrapper>
-            </Link>
-          ))}
+          <LatestPostWrapper>
+            <LatestPostImage>
+            <PreviewCompatibleImage
+                imageInfo={{
+                  image: latestPost.frontmatter.featuredimage,
+                  alt: `featured image thumbnail for post ${latestPost.frontmatter.title}`,
+                }}
+              />
+            </LatestPostImage>
+              <Button style={{backgroundColor: company.colorPrimary, color: `#fff`, margin: `10px auto`}}>{t('read more')}</Button>
+            <LatestPostText>
+              <H1>{latestPost.frontmatter.title}</H1>
+              <P><Icon type="calendar"/> {latestPost.frontmatter.date}</P>
+              <P>{truncate(latestPost.frontmatter.description, {
+                      'length': 120,
+                      'separator': ' '
+                    })}</P>
+            </LatestPostText>
+          </LatestPostWrapper>
+        </Link>
+        <OtherPostsWrapper>
+          <OtherPostsInner>
+            <YellowTitle>{t('popular posts')}</YellowTitle>
+          {posts &&
+            posts.filter(({node: post}) => post.frontmatter.locale === currentLang)
+            .map(({ node: post }, key) => (
+              <BlogDiv post={post} key={key}/>
+            ))}
+          </OtherPostsInner>
+            
+        </OtherPostsWrapper>
       </BlogRollWrapperInner>
         </Container>
       </BlogRollWrapper>
     )
-  }
 }
+
 
 BlogRoll.propTypes = {
   data: PropTypes.shape({

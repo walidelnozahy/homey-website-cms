@@ -43,9 +43,7 @@ class ContactForm extends React.Component {
     const { t } = this.props;
     return (
       <ContactFormWrapper full={this.props.full ? true : false}>
-        {this.props.title ? (
-          <TitleYellow title={t("let us contact you")} />
-        ) : null}
+        {this.props.title ? <TitleYellow title="let us contact you" /> : null}
         <FormWrapper>
           <Form
             action="https://crm.zoho.com/crm/WebToLeadForm"

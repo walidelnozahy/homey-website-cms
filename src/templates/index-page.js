@@ -41,7 +41,6 @@ export const IndexPageTemplate = ({
     <BlogRoll /> 
     <SellProperty />
     <ContactSection />
-
   </div>
 )
 
@@ -59,7 +58,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark
-
+  console.log('frontmatter',frontmatter)
   return (
     <Layout>
       
