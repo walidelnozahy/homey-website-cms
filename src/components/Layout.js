@@ -10,6 +10,7 @@ import useSiteMetadata from './SiteMetadata'
 import { withPrefix } from 'gatsby'
 import "antd/dist/antd.css";
 import "swiper/css/swiper.css";
+import "./main.css";
 import './all.sass'
 
 const path = global && global.window ? global.window.location.pathname : "";

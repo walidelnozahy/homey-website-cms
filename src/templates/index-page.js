@@ -32,7 +32,7 @@ export const IndexPageTemplate = ({
   aboutCompany
 }) => (
   <div>
-    <HeaderCarousel carouselItems={intro.blurbs}/>
+    
     <CategoriesProjects projectCategories={projectCategories}/>
     <Services />
     <ImportantProjects />
@@ -61,7 +61,7 @@ const IndexPage = ({ data }) => {
   console.log('frontmatter',frontmatter)
   return (
     <Layout>
-      
+      <HeaderCarousel carouselItems={frontmatter.intro.blurbs}/>
       <IndexPageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
