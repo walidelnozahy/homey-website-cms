@@ -13,7 +13,20 @@ const ButtonComp = styled.button`
 `;
 
 const CustomButton = ({ t, text }) => {
-  return <ButtonComp>{t(text)}</ButtonComp>;
+  return (
+    <ButtonComp
+      style={{
+        backgroundColor: `#FBD02B`,
+        padding: `10px 30px`,
+        color: `#fff`,
+        border: `none`,
+        margin: `0px auto`,
+        cursor: `pointer`
+      }}
+    >
+      {t(text)}
+    </ButtonComp>
+  );
 };
 
 export default withTranslation()(CustomButton);

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Swiper from "react-id-swiper";
 import { Link } from "gatsby";
 import { Carousel } from "antd";
@@ -15,7 +15,7 @@ import i18n from "i18next";
 // import company from "../../_company/company";
 // import { isMobile } from "react-device-detect";
 import "swiper/css/swiper.css";
-import "./HeaderCarousel.css";
+// import "./HeaderCarousel.css";
 const seachPadding = `40px`;
 const HeaderCarouselWrapper = styled.div`
   position: relative;
@@ -88,44 +88,44 @@ const HeaderCarouselWrapper = styled.div`
 `;
 const HeaderCarouselEach = styled.div``;
 const HeaderCarouselEachInner = styled.div`
-  display: grid;
-  grid-template-columns: 40% 60%;
-  height: 90vh;
-  width: 100vw;
-  grid-auto-flow: dense;
-  background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
-    0% no-repeat padding-box;
-  @media (max-width: 992px) {
-    display: flex;
-    flex-direction: column-reverse;
-    height: auto;
-  }
+  // display: grid;
+  // grid-template-columns: 40% 60%;
+  // height: 90vh;
+  // width: 100vw;
+  // grid-auto-flow: dense;
+  // background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
+  //   0% no-repeat padding-box;
+  // @media (max-width: 992px) {
+  //   display: flex;
+  //   flex-direction: column-reverse;
+  //   height: auto;
+  // }
 `;
 const HeaderCarouseLeft = styled.div`
-  padding: ${seachPadding};
-  @media (max-width: 992px) {
-    padding: 10px;
-    text-align: center;
-  }
+  // padding: ${seachPadding};
+  // @media (max-width: 992px) {
+  //   padding: 10px;
+  //   text-align: center;
+  // }
 `;
 const HeaderCarouseRight = styled.div`
   position: relative;
 `;
 const Image = styled.div`
-  position: absolute;
-  right: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  background-image: url(${props => props.image});
-  background-position: center;
-  background-size: cover;
-  z-index: 0;
-  @media (max-width: 992px) {
-    position: relative;
-    width: 100%;
-    height: 300px;
-  }
+  // position: absolute;
+  // right: 0;
+  // top: 0;
+  // height: 100%;
+  // width: 100%;
+  // background-image: url(${props => props.image});
+  // background-position: center;
+  // background-size: cover;
+  // z-index: 0;
+  // @media (max-width: 992px) {
+  //   position: relative;
+  //   width: 100%;
+  //   height: 300px;
+  // }
 `;
 const Text = styled.div`
   position: relative;
@@ -212,13 +212,38 @@ const HeaderCarousel = ({ carouselItems }) => {
       <Swiper {...params}>
         {carouselItems ? (
           carouselItems.map((item, key) => (
-            <HeaderCarouselEach key={key}>
-              <HeaderCarouselEachInner className="HeaderCarouselEachInner">
+            <div key={key}>
+              <div
+                className="HeaderCarouselEachInner"
+                style={{
+                  display: `grid`,
+                  gridTemplateColumns: `40% 60%`,
+                  height: `90vh`,
+                  width: `100vw`,
+                  gridAutoFlow: `dense`,
+                  background: `transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
+    0% no-repeat padding-box`
+                }}
+              >
                 <HeaderCarouseLeft
                   data-aos="fade-right"
                   className="HeaderCarouseLeft"
+                  style={{
+                    padding: `40px`
+                  }}
                 >
-                  <Text currenctLang={currenctLang} className="Text">
+                  <Text currenctLang={currenctLang} className="Text" style={{
+                    position: `relative`,
+                    display: `flex`,
+                    flexDirection: `column`,
+                    justifyContent: `center`,
+                    zIndex: 2,
+                    height: `100%`,
+                    textAlign: 
+                      currenctLang === `ar` || currenctLang === `pr`
+                        ? `right`
+                        : `left`
+                  }}>
                     <Title
                       currenctLang={currenctLang}
                       dir={
@@ -226,6 +251,19 @@ const HeaderCarousel = ({ carouselItems }) => {
                           ? `rtl`
                           : `ltr`
                       }
+                      style={{
+                        color: `#fff`,
+                        fontSize: `50px`,
+                        fontWeight: 300,
+                        textAlign: 
+                          currenctLang === `ar` || currenctLang === `pr`
+                            ? `right`
+                            : `left`,
+                        direction: 
+                          currenctLang === `ar` || currenctLang === `pr`
+                            ? `rtl`
+                            : `ltr`
+                      }}
                     >
                       {item.text}
                     </Title>
@@ -241,8 +279,8 @@ const HeaderCarousel = ({ carouselItems }) => {
                     ) : null}
                   </Link>
                 </HeaderCarouseRight>
-              </HeaderCarouselEachInner>
-            </HeaderCarouselEach>
+              </div>
+            </div>
           ))
         ) : (
           <HeaderCarouselEach>
@@ -259,53 +297,6 @@ const HeaderCarousel = ({ carouselItems }) => {
           </HeaderCarouselEach>
         )}
       </Swiper>
-      {/* <Carousel autoPlay={true}>
-        {carouselItems ? (
-          carouselItems.map((item, key) => (
-            <HeaderCarouselEach key={key}>
-              <HeaderCarouselEachInner>
-                <HeaderCarouseLeft data-aos="fade-right">
-                  <Text currenctLang={currenctLang}>
-                    <Title
-                      currenctLang={currenctLang}
-                      dir={
-                        currenctLang === `ar` || currenctLang === `pr`
-                          ? `rtl`
-                          : `ltr`
-                      }
-                    >
-                      {item.text}
-                    </Title>
-                    <Link to={item.link}>
-                      <CustomButton text="more details" />
-                    </Link>
-                  </Text>
-                </HeaderCarouseLeft>
-                <HeaderCarouseRight data-aos="fade-left">
-                  <Link to={item.link}>
-                    {item.image ? (
-                      <RenderImage image={item.image} width="100%" />
-                    ) : null}
-                  </Link>
-                </HeaderCarouseRight>
-              </HeaderCarouselEachInner>
-            </HeaderCarouselEach>
-          ))
-        ) : (
-          <HeaderCarouselEach>
-            <HeaderCarouselEachInner>
-              <HeaderCarouseLeft data-aos="fade-right">
-                <Text>
-                  <Title>Homey Real Estate</Title>
-                </Text>
-              </HeaderCarouseLeft>
-              <HeaderCarouseRight data-aos="fade-left">
-                <Image image="https://res.cloudinary.com/drdxjay2t/image/upload/v1553171134/hp-header.jpg" />
-              </HeaderCarouseRight>
-            </HeaderCarouselEachInner>
-          </HeaderCarouselEach>
-        )}
-      </Carousel> */}
     </HeaderCarouselWrapper>
   );
 };
