@@ -2,11 +2,15 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { Container } from "../_common/Container/Container";
-
+import { RegistrationForm } from "homey-presentation";
 import { withTranslation } from "react-i18next";
 import company from "../../_company/company";
 import WrappedRegistrationForm from "../ContactForm/ContactForm";
 import TitleYellow from "../TitleYellow/TitleYellow";
+const colors = {
+  primary: company.colorPrimary,
+  secondary: company.colorSecondary
+};
 const ContactSection = ({ t }) => {
   const ContactSectionWrapper = styled.div``;
   const ContactSectionInner = styled.div`
@@ -34,7 +38,14 @@ const ContactSection = ({ t }) => {
         <ContactSectionInner>
           <Left data-aos="fade-left" />
           <Right data-aos="fade-right">
-            <WrappedRegistrationForm />
+            <div
+              style={{
+                maxWidth: `100%`
+              }}
+            >
+              <RegistrationForm colors={colors} />
+            </div>
+            {/* <WrappedRegistrationForm /> */}
           </Right>
         </ContactSectionInner>
       </Container>
