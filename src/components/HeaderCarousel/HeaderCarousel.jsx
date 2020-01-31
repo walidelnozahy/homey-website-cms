@@ -15,7 +15,7 @@ import i18n from "i18next";
 // import company from "../../_company/company";
 // import { isMobile } from "react-device-detect";
 import "swiper/css/swiper.css";
-
+import "./HeaderCarousel.css";
 const seachPadding = `40px`;
 const HeaderCarouselWrapper = styled.div`
   position: relative;
@@ -92,19 +92,17 @@ const HeaderCarouselEachInner = styled.div`
   grid-template-columns: 40% 60%;
   height: 90vh;
   width: 100vw;
-  grid-auto-flow: dense
+  grid-auto-flow: dense;
   background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
     0% no-repeat padding-box;
   @media (max-width: 992px) {
     display: flex;
     flex-direction: column-reverse;
-    height:auto;
+    height: auto;
   }
-  
 `;
 const HeaderCarouseLeft = styled.div`
   padding: ${seachPadding};
-
   @media (max-width: 992px) {
     padding: 10px;
     text-align: center;
@@ -215,9 +213,12 @@ const HeaderCarousel = ({ carouselItems }) => {
         {carouselItems ? (
           carouselItems.map((item, key) => (
             <HeaderCarouselEach key={key}>
-              <HeaderCarouselEachInner>
-                <HeaderCarouseLeft data-aos="fade-right">
-                  <Text currenctLang={currenctLang}>
+              <HeaderCarouselEachInner className="HeaderCarouselEachInner">
+                <HeaderCarouseLeft
+                  data-aos="fade-right"
+                  className="HeaderCarouseLeft"
+                >
+                  <Text currenctLang={currenctLang} className="Text">
                     <Title
                       currenctLang={currenctLang}
                       dir={
@@ -258,7 +259,7 @@ const HeaderCarousel = ({ carouselItems }) => {
           </HeaderCarouselEach>
         )}
       </Swiper>
-      <Carousel autoPlay={true}>
+      {/* <Carousel autoPlay={true}>
         {carouselItems ? (
           carouselItems.map((item, key) => (
             <HeaderCarouselEach key={key}>
@@ -304,7 +305,7 @@ const HeaderCarousel = ({ carouselItems }) => {
             </HeaderCarouselEachInner>
           </HeaderCarouselEach>
         )}
-      </Carousel>
+      </Carousel> */}
     </HeaderCarouselWrapper>
   );
 };
