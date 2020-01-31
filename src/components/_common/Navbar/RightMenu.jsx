@@ -16,7 +16,10 @@ const RightMenu = ({ t, mode }) => {
     console.log("lng", lng);
     i18n.changeLanguage(lng);
     const path = global && global.window ? global.window.location.pathname : "";
-    navigate(getLangPath(lng, path));
+    if (global && global.window) {
+      global.window.location = getLangPath(lng, path);
+    }
+    // navigate(getLangPath(lng, path));
   };
   return (
     <Menu mode={mode}>
