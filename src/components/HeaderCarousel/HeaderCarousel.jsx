@@ -1,6 +1,8 @@
 import React from "react";
 import Swiper from "react-id-swiper";
 import { Link } from "gatsby";
+import { Carousel } from "antd";
+
 import styled from "styled-components";
 import CustomButton from "../../components/_common/CustomButton/CustomButton";
 import ArrowLeft from "../../components/_common/Arrows/ArrowLeft";
@@ -256,6 +258,53 @@ const HeaderCarousel = ({ carouselItems }) => {
           </HeaderCarouselEach>
         )}
       </Swiper>
+      <Carousel autoPlay={true}>
+        {carouselItems ? (
+          carouselItems.map((item, key) => (
+            <HeaderCarouselEach key={key}>
+              <HeaderCarouselEachInner>
+                <HeaderCarouseLeft data-aos="fade-right">
+                  <Text currenctLang={currenctLang}>
+                    <Title
+                      currenctLang={currenctLang}
+                      dir={
+                        currenctLang === `ar` || currenctLang === `pr`
+                          ? `rtl`
+                          : `ltr`
+                      }
+                    >
+                      {item.text}
+                    </Title>
+                    <Link to={item.link}>
+                      <CustomButton text="more details" />
+                    </Link>
+                  </Text>
+                </HeaderCarouseLeft>
+                <HeaderCarouseRight data-aos="fade-left">
+                  <Link to={item.link}>
+                    {item.image ? (
+                      <RenderImage image={item.image} width="100%" />
+                    ) : null}
+                  </Link>
+                </HeaderCarouseRight>
+              </HeaderCarouselEachInner>
+            </HeaderCarouselEach>
+          ))
+        ) : (
+          <HeaderCarouselEach>
+            <HeaderCarouselEachInner>
+              <HeaderCarouseLeft data-aos="fade-right">
+                <Text>
+                  <Title>Homey Real Estate</Title>
+                </Text>
+              </HeaderCarouseLeft>
+              <HeaderCarouseRight data-aos="fade-left">
+                <Image image="https://res.cloudinary.com/drdxjay2t/image/upload/v1553171134/hp-header.jpg" />
+              </HeaderCarouseRight>
+            </HeaderCarouselEachInner>
+          </HeaderCarouselEach>
+        )}
+      </Carousel>
     </HeaderCarouselWrapper>
   );
 };
