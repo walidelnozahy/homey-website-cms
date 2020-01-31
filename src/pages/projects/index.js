@@ -27,7 +27,11 @@ const ProjectsIndexPage = () => {
   return (
     <Layout>
       <Header style={{
-        height: `300px`
+        height: `300px`,
+        backgroundPosition: `center`,
+        backgroundSize: `cover`,
+        backgroundImage: `url("https://res.cloudinary.com/dqbgnn5hf/image/upload/v1571475728/background-blue.jpg")`,
+        display: `flex`
       }}>
         {/* <Title>{t('our projects')}</Title> */}
       </Header>
