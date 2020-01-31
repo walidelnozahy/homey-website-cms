@@ -7296,10 +7296,10 @@ homedir-polyfill@^1.0.1:
   dependencies:
     parse-passwd "^1.0.0"
 
-homey-presentation@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/homey-presentation/-/homey-presentation-1.0.2.tgz#484ae6459051b0e4dfeae663a10c3767d88f9d88"
-  integrity sha512-Xx/nko63hmpIH86NHXjvb/T8GcYmKXdkEUVwzAO11hivErwBHZ7Xw69+VE9RAXYXmfwfKo48Pu41Ha72ohuWMQ==
+homey-presentation@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/homey-presentation/-/homey-presentation-1.0.3.tgz#19d20998bdc5f454db3d8a00e9c57d437f40b415"
+  integrity sha512-CmfJoz9ocQCUWyHX97UHRJ904yGrDEa5IYARcvXSEZXA/bbwAV1hpq3YGX1YwwfqlyoS7yqq8y0zziPGUqVsKA==
   dependencies:
     antd "^3.26.7"
     emoji-flags "^1.2.0"
