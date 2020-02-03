@@ -12,8 +12,8 @@ intro:
       link: 'https://www.homey.com.tr/en/207'
       text: 'مشروع في منطقة تقسيم '
     - image: /img/homey_real_estate_pjaxogpu7.jpg
-      link: project slid 2
-      text: project slide 2 ar
+      link: 'https://www.homey.com.tr/en/194'
+      text: 'مشروع حكومي '
 projectCategories:
   categories:
     - image: /img/seaview.png
