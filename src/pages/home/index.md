@@ -9,8 +9,8 @@ seo_desc: Home page en
 intro:
   blurbs:
     - image: /img/homey_real_estate_b_xlwp1mek.jpg
-      link: project slide 1 en
-      text: project slide 1 en
+      link: 'https://www.homey.com.tr/en/207'
+      text: 'Taksim Next To You '
     - image: /img/homey_real_estate_pjaxogpu7.jpg
       link: project slid 2
       text: project slide 2 en
@@ -18,16 +18,16 @@ projectCategories:
   categories:
     - image: /img/seaview.png
       link: seaview
-      text: seaview
-      title: seaview
+      text: 'With Amazing View '
+      title: Sea View
     - image: /img/downtown.png
       link: downtown
-      text: downtown
-      title: downtown
+      text: 'City Center Project '
+      title: 'Down Town '
     - image: /img/garanti.png
       link: garuanty
-      text: garuanty
-      title: garuanty
+      text: 'Rent Guarantee & Profit Guarantee '
+      title: 'Profit Guarantee '
   heading: Our goal is to help you choose
   subheading: the best investment possible
 aboutCompany:
