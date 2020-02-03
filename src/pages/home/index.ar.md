@@ -9,8 +9,8 @@ seo_desc: Home page
 intro:
   blurbs:
     - image: /img/homey_real_estate_b_xlwp1mek.jpg
-      link: project slid 1
-      text: project slid 1 ar
+      link: 'https://www.homey.com.tr/en/207'
+      text: 'مشروع في منطقة تقسيم '
     - image: /img/homey_real_estate_pjaxogpu7.jpg
       link: project slid 2
       text: project slide 2 ar
@@ -18,18 +18,18 @@ projectCategories:
   categories:
     - image: /img/seaview.png
       link: seaview
-      text: seaview
-      title: seaview
+      text: 'مشاريع ذات اطلالات بحرية مميزة '
+      title: 'اطلالات بحرية '
     - image: /img/downtown.png
       link: downtown
-      text: downtown
-      title: downtown
+      text: 'مشاريع تقع في وسط مدينة اسطنبول '
+      title: مركز المدينة
     - image: /img/garanti.png
       link: garuanty
-      text: garuanty
-      title: garuanty
-  heading: Our goal is to help you choose
-  subheading: the best investment possible
+      text: 'مشاريع ضمان عائد ايجار وربح '
+      title: 'ضمان ربحي '
+  heading: 'ارضاء العميل هو هدفنا '
+  subheading: 'من خلال الخدمات والاستشارات التي نقدمها '
 aboutCompany:
   firstDescription: >-
     في لقاء خاص أجرته قناة تي جي ار تي  التركية مع مدير شركة هومي  الأستاذ احمد
