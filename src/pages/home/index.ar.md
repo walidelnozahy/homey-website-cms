@@ -34,7 +34,7 @@ aboutCompany:
   firstDescription: >-
     في لقاء خاص أجرته قناة تي جي ار تي  التركية مع مدير شركة هومي  الأستاذ احمد
     قصاب حول خدمات الشركة وطرق الحصول على الجنسية التركية
-  firstHeading: first heading
+  firstHeading: مدير شركة هومي يتحدث عن خدمات الشركة - قناة تي جي ار تي التركية
   secondDescription: >-
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans
