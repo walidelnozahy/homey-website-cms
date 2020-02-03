@@ -43,22 +43,7 @@ aboutCompany:
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
   secondHeading: second heading
-  sections:
-    - text: >-
-        Kaldi is the ultimate spot for coffee lovers who want to learn about
-        their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting
-      title: title 1
-    - text: >-
-        Kaldi is the ultimate spot for coffee lovers who want to learn about
-        their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting
-      title: title 2
-    - text: >-
-        Kaldi is the ultimate spot for coffee lovers who want to learn about
-        their java’s origin and support the farmers that grew it. We take coffee
-        production, roasting
-      title: title 3
   thirdHeading: third heading
-  videoLink: "https://www.youtube.com/watch?v=jrc4aOfu7aQ"
+  videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
 ---
+
