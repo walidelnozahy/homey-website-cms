@@ -44,11 +44,13 @@ const WeOffer = ({ t, aboutCompany }) => {
     display: flex;
   `;
   const LeftImage = styled.div`
-    background-image: url("https://res.cloudinary.com/dqbgnn5hf/image/upload/q_auto:eco/v1574233957/basssin_area.png");
     background-size: cover;
     background-position: center;
     width: 100%;
     height: 400px;
+    img {
+      max-width: 100%;
+    }
   `;
   const FloatingBtn = styled.div`
     position: absolute;
@@ -173,7 +175,9 @@ const WeOffer = ({ t, aboutCompany }) => {
           </FlexDiv>
         </Left>
         <Right data-aos="fade-left">
-          <LeftImage />
+          <LeftImage>
+            <RenderImage image={aboutCompany.mainImage} />
+          </LeftImage>
         </Right>
       </GridSection>
       {aboutCompany.testimonials && aboutCompany.testimonials.length ? (

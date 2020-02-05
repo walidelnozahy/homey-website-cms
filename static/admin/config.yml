@@ -196,7 +196,7 @@ collections:
                 name: secondDescription,
                 widget: markdown,
               },
-              { label: Third Heading, name: thirdHeading, widget: string },
+              { label: Main Image, name: mainImage, widget: image },
               {
                 label: Testimonials,
                 name: testimonials,

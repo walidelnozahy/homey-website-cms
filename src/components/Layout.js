@@ -315,9 +315,7 @@ i18n
 
 
 const TemplateWrapper = ({ children }) => {
-  // const path = global && global.window ? global.window.location.pathname : "";
-  // const locale = path ? path.split('/')[1] : 'en'
-  const [currentLang, setCurrentLang] = useState(locale)
+  
   const { title, description } = useSiteMetadata()
 
   useEffect(() => {
@@ -378,6 +376,9 @@ const TemplateWrapper = ({ children }) => {
       background-color: rgba(64, 89, 93, 0.247);
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
       right: 47%;
+      @media (max-width: 992px) {
+        right: 0%;
+      }
     }
 
     70% {
@@ -388,6 +389,9 @@ const TemplateWrapper = ({ children }) => {
       
       right: 46%;
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      @media (max-width: 992px) {
+        right: 0%;
+      }
     }
   }
 
@@ -414,6 +418,9 @@ const TemplateWrapper = ({ children }) => {
       background-color: rgba(64, 89, 93, 0.247);
       left: 47%;
       box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+      @media (max-width: 992px) {
+        left: 0%;
+      }
     }
 
     70% {
@@ -424,7 +431,10 @@ const TemplateWrapper = ({ children }) => {
     100% {
       
       left: 46%;
-      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+      box-shadow: 0 0 0 0 rgba(255, 255, 255, 0); 
+      @media (max-width: 992px) {
+        left: 2%;
+      }
     }
   }
 
@@ -470,24 +480,24 @@ const TemplateWrapper = ({ children }) => {
         <link
           rel="apple-touch-icon"
           sizes="180x180"
-          href={`${withPrefix('/')}img/apple-touch-icon.png`}
+          href={`https://res.cloudinary.com/dqbgnn5hf/image/upload/v1580920873/Group_3.png`}
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-32x32.png`}
+          href={`https://res.cloudinary.com/dqbgnn5hf/image/upload/v1580920873/Group_3.png`}
           sizes="32x32"
         />
         <link
           rel="icon"
           type="image/png"
-          href={`${withPrefix('/')}img/favicon-16x16.png`}
+          href={`https://res.cloudinary.com/dqbgnn5hf/image/upload/v1580920873/Group_3.png`}
           sizes="16x16"
         />
 
         <link
           rel="mask-icon"
-          href={`${withPrefix('/')}img/safari-pinned-tab.svg`}
+          href={`https://res.cloudinary.com/dqbgnn5hf/image/upload/v1580920873/Group_3.png`}
           color="#ff4400"
         />
         <meta name="theme-color" content="#fff" />
