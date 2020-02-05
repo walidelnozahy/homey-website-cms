@@ -37,6 +37,7 @@ aboutCompany:
     directly from small scale sustainable farmers and make sure part of the
     profits are reinvested in their communities.
   firstHeading: first heading
+  mainImage: /img/og-image.jpg
   secondDescription: >-
     Kaldi is the coffee store for everyone who believes that great coffee
     shouldn't just taste good, it should do good too. We source all of our beans
@@ -62,7 +63,6 @@ aboutCompany:
       image: /img/raslan.png
       title: Civil Engineer
       name: Mr Ahmed Mohamed
-  thirdHeading: third heading
   videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
 ---
 
