@@ -22,7 +22,7 @@ export const BlogPostTemplate = ({
   featuredimage
 }) => {
   const PostContent = contentComponent || Content
-  const currentLang = i18n.language
+  
   return (
     
     <section className="">

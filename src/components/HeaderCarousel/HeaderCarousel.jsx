@@ -2,20 +2,19 @@ import React, { useEffect } from "react";
 import Swiper from "react-id-swiper";
 import { Link } from "gatsby";
 import { Carousel } from "antd";
-
+import { isMobile } from "react-device-detect";
 import styled from "styled-components";
 import CustomButton from "../../components/_common/CustomButton/CustomButton";
 import ArrowLeft from "../../components/_common/Arrows/ArrowLeft";
 import ArrowRight from "../../components/_common/Arrows/ArrowRight";
 import company from "../../_company/company";
-// import PreviewCompatibleImage from "../PreviewCompatibleImage";
-// import SearchDiv from "../SearchDiv/SearchDiv";
+
 import RenderImage from "../../components/_common/Image/RenderImage";
 import i18n from "i18next";
-// import company from "../../_company/company";
-// import { isMobile } from "react-device-detect";
+
 import "swiper/css/swiper.css";
 // import "./HeaderCarousel.css";
+
 const seachPadding = `40px`;
 const HeaderCarouselWrapper = styled.div`
   position: relative;
@@ -88,44 +87,44 @@ const HeaderCarouselWrapper = styled.div`
 `;
 const HeaderCarouselEach = styled.div``;
 const HeaderCarouselEachInner = styled.div`
-  // display: grid;
-  // grid-template-columns: 40% 60%;
-  // height: 90vh;
-  // width: 100vw;
-  // grid-auto-flow: dense;
-  // background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
-  //   0% no-repeat padding-box;
-  // @media (max-width: 992px) {
-  //   display: flex;
-  //   flex-direction: column-reverse;
-  //   height: auto;
-  // }
+  display: grid;
+  grid-template-columns: 40% 60%;
+  height: 90vh;
+  width: 100vw;
+  grid-auto-flow: dense;
+  background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
+    0% no-repeat padding-box;
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column-reverse;
+    height: auto;
+  }
 `;
 const HeaderCarouseLeft = styled.div`
-  // padding: ${seachPadding};
-  // @media (max-width: 992px) {
-  //   padding: 10px;
-  //   text-align: center;
-  // }
+  padding: ${seachPadding};
+  @media (max-width: 992px) {
+    padding: 10px;
+    text-align: center;
+  }
 `;
 const HeaderCarouseRight = styled.div`
   position: relative;
 `;
 const Image = styled.div`
-  // position: absolute;
-  // right: 0;
-  // top: 0;
-  // height: 100%;
-  // width: 100%;
-  // background-image: url(${props => props.image});
-  // background-position: center;
-  // background-size: cover;
-  // z-index: 0;
-  // @media (max-width: 992px) {
-  //   position: relative;
-  //   width: 100%;
-  //   height: 300px;
-  // }
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url(${props => props.image});
+  background-position: center;
+  background-size: cover;
+  z-index: 0;
+  @media (max-width: 992px) {
+    position: relative;
+    width: 100%;
+    height: 300px;
+  }
 `;
 const Text = styled.div`
   position: relative;
@@ -186,10 +185,14 @@ const params = {
     disableOnInteraction: false
   },
   renderPrevButton: () => (
-    <ArrowRight className="swiper-button-next-new bottom" />
+    <ArrowRight
+      className={`swiper-button-next-new ${!isMobile ? `bottom` : ``}`}
+    />
   ),
   renderNextButton: () => (
-    <ArrowLeft className="swiper-button-prev-new bottom" />
+    <ArrowLeft
+      className={`swiper-button-prev-new ${!isMobile ? `bottom` : ``}`}
+    />
   )
   // pagination: {
   //   el: ".swiper-pagination",
@@ -216,8 +219,9 @@ const HeaderCarousel = ({ carouselItems }) => {
               <div
                 className="HeaderCarouselEachInner"
                 style={{
-                  display: `grid`,
-                  gridTemplateColumns: `40% 60%`,
+                  display: isMobile ? `flex` : `grid`,
+                  flexDirection: isMobile ? `column-reverse` : "",
+                  gridTemplateColumns: isMobile ? `1fr` : `40% 60%`,
                   height: `90vh`,
                   width: `100vw`,
                   gridAutoFlow: `dense`,
@@ -232,18 +236,22 @@ const HeaderCarousel = ({ carouselItems }) => {
                     padding: `40px`
                   }}
                 >
-                  <Text currenctLang={currenctLang} className="Text" style={{
-                    position: `relative`,
-                    display: `flex`,
-                    flexDirection: `column`,
-                    justifyContent: `center`,
-                    zIndex: 2,
-                    height: `100%`,
-                    textAlign: 
-                      currenctLang === `ar` || currenctLang === `pr`
-                        ? `right`
-                        : `left`
-                  }}>
+                  <Text
+                    currenctLang={currenctLang}
+                    className="Text"
+                    style={{
+                      position: `relative`,
+                      display: `flex`,
+                      flexDirection: `column`,
+                      justifyContent: `center`,
+                      zIndex: 2,
+                      height: `100%`,
+                      textAlign:
+                        currenctLang === `ar` || currenctLang === `pr`
+                          ? `right`
+                          : `left`
+                    }}
+                  >
                     <Title
                       currenctLang={currenctLang}
                       dir={
@@ -255,11 +263,11 @@ const HeaderCarousel = ({ carouselItems }) => {
                         color: `#fff`,
                         fontSize: `50px`,
                         fontWeight: 300,
-                        textAlign: 
+                        textAlign:
                           currenctLang === `ar` || currenctLang === `pr`
                             ? `right`
                             : `left`,
-                        direction: 
+                        direction:
                           currenctLang === `ar` || currenctLang === `pr`
                             ? `rtl`
                             : `ltr`

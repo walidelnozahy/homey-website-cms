@@ -12,9 +12,7 @@ const LeftMenu = ({ t, mode }) => {
   console.log("lang", lang);
   return (
     <Menu mode={mode}>
-      <SubMenu
-        title={<Link to={toPath(lang, "projects")}>{t("projects")}</Link>}
-      >
+      <SubMenu key="sub1" title={t("projects")}>
         <Menu.Item key="projects">
           <Link to={toPath(lang, "projects")}>{t("projects")}</Link>
         </Menu.Item>
@@ -31,9 +29,7 @@ const LeftMenu = ({ t, mode }) => {
       <Menu.Item key="education">
         <Link to={toPath(lang, "education")}>{t("education")}</Link>
       </Menu.Item>
-      <SubMenu
-        title={<Link to={toPath(lang, "projects")}>{t("company")}</Link>}
-      >
+      <SubMenu key="sub2" title={t("company")}>
         <Menu.Item key="about">
           <Link to={toPath(lang, "about")}>{t("about us")}</Link>
         </Menu.Item>

@@ -4,8 +4,7 @@
   height: 90vh;
   width: 100vw;
   grid-auto-flow: dense;
-  background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
-    0% no-repeat padding-box;
+  background: transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0% 0% no-repeat padding-box;
 }
 
 .HeaderCarouselEach .HeaderCarouseLeft {
@@ -16,9 +15,11 @@
     text-align: center;
   }
 }
+
 .HeaderCarouselEach .HeaderCarouseLeft {
   position: relative;
 }
+
 .HeaderCarouselEach .Image {
   position: absolute;
   right: 0;
@@ -30,6 +31,7 @@
   background-size: cover;
   z-index: 0;
 }
+
 .HeaderCarouselEach .HeaderCarouseLeft .Text {
   position: relative;
   display: flex;
@@ -39,14 +41,17 @@
   height: 100%;
   text-align: center;
 }
-.HeaderCarouselEach .HeaderCarouseLeft .Title {
-}
+
+.HeaderCarouselEach .HeaderCarouseLeft .Title {}
+
 @media (max-width: 992px) {
   .HeaderCarouselEach {
-    display: flex;
+    display: none;
+    /* display: flex; */
     flex-direction: column-reverse;
     height: auto;
   }
+
   .HeaderCarouselEach .Image {
     position: relative;
     width: 100%;

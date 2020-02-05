@@ -9,8 +9,6 @@ import { getLangPath } from "../../../_utils/functions";
 import { ContactModal } from "homey-presentation";
 var emojiFlags = require("emoji-flags");
 
-const SubMenu = Menu.SubMenu;
-const MenuItemGroup = Menu.ItemGroup;
 const RightMenu = ({ t, mode }) => {
   const handleChangeLang = lng => {
     console.log("lng", lng);

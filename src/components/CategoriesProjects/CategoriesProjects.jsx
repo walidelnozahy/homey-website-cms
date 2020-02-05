@@ -3,12 +3,15 @@ import PropTypes from "prop-types";
 import { Link } from "gatsby";
 import { withTranslation } from "react-i18next";
 import { Container } from "../_common/Container/Container";
+import { toPath } from "../../_utils/functions";
+import i18n from "i18next";
 import styled from "styled-components";
 import company from "../../_company/company";
 
 import RenderImage from "../_common/Image/RenderImage";
 
 const CategoriesProjects = ({ t, projectCategories }) => {
+  const lang = i18n.language;
   const space = `70px;`;
 
   const CategoriesProjectsWrapper = styled.div`
@@ -106,7 +109,10 @@ const CategoriesProjects = ({ t, projectCategories }) => {
           {projectCategories.categories.map(
             ({ image, title, text, link }, key) => (
               <CategoriesProjectsEach key={key} data-aos="fade-up">
-                <Link to={`${link}`}>
+                <Link
+                  to={`/projects?category=${key}`}
+                  //  to={`${toPath(lang, `projects?category=${key}`)}`}
+                >
                   <CategoriesProjectsEachImage>
                     <RenderImage image={image} width="100%" />
                   </CategoriesProjectsEachImage>
