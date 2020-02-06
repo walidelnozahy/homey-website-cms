@@ -42,34 +42,28 @@ aboutCompany:
     قصاب حول خدمات الشركة وطرق الحصول على الجنسية التركية
   firstHeading: مدير شركة هومي يتحدث عن خدمات الشركة - قناة تي جي ار تي التركية
   mainImage: /img/2-1.jpg
-  secondDescription: >-
-    \- An investment in a commercial store in Turkey and obtain Turkish
-    citizenship and in partnership with the strongest Turkish and international 
-
-       brands in Turkey
+  secondDescription: >2-
+     تملك محل تجاري مؤجر لأهم الماركات و العلامات التجارية التركية و العالمية في أشهر المناطق الاستثمارية 
 
 
 
-    \- Your commercial store is rented to the most famous international and
-    Turkish brands and restaurants
-
-
-
-       In the heart of Istanbul and among the most luxurious centers and malls
-
-
-
-    \- Ready Title deed  and appropriate government evaluation to obtain Turkish
-    citizenship for you and your family
+    عقود تأجير طويلة الأمد ل 10 سنوات 
 
 
 
 
-    \- Guaranteed return monthly and long-term contracts
+    عائد إيجار مضمون يصل ل 10 بالمئة سنويا 
 
 
 
-       Upward profits guaranteed by the Turkish government
+
+    مقيم حكومياً و مناسب للحصول على الجنسية التركية 
+
+
+
+
+    ارتفاع سنوي على عائدات الإيجار تصل ل 18 بالمئة اعتماداً على قوانين الحكومة
+    التركية
   secondHeading: second heading
   videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
 ---
