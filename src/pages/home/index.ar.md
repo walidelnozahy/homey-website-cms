@@ -64,7 +64,7 @@ aboutCompany:
 
     ارتفاع سنوي على عائدات الإيجار تصل ل 18 بالمئة اعتماداً على قوانين الحكومة
     التركية
-  secondHeading: second heading
+  secondHeading: الاستثمار المضمون
   videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
 ---
 
