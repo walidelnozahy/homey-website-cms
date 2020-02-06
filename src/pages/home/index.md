@@ -32,7 +32,7 @@ projectCategories:
   subheading: the best investment possible
 aboutCompany:
   firstDescription: Homey Owner Talking about the company and its services
-  firstHeading: first heading
+  firstHeading: 'Interview With TGRT Channel '
   mainImage: /img/og-image.jpg
   secondDescription: >-
     Kaldi is the coffee store for everyone who believes that great coffee
