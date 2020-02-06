@@ -35,33 +35,22 @@ aboutCompany:
   firstHeading: 'Interview With TGRT Channel '
   mainImage: /img/2-1.jpg
   secondDescription: >-
-    \- An investment in a commercial store in Turkey and obtain Turkish
-    citizenship and in partnership with the strongest Turkish and international 
-
-       brands in Turkey
-
+    An investment in a commercial store in Turkey and obtain Turkish citizenship
+    and in partnership with the strongest Turkish and international brands in
+    Turkey
 
 
-    \- Your commercial store is rented to the most famous international and
-    Turkish brands and restaurants
+    Your commercial store is rented to the most famous international and Turkish
+    brands and restaurants
 
+     In the heart of Istanbul and among the most luxurious centers and malls
 
-
-       In the heart of Istanbul and among the most luxurious centers and malls
-
-
-
-    \- Ready Title deed  and appropriate government evaluation to obtain Turkish
+    Ready Title deed  and appropriate government evaluation to obtain Turkish
     citizenship for you and your family
 
 
-
-
-    \- Guaranteed return monthly and long-term contracts
-
-
-
-       Upward profits guaranteed by the Turkish government
+    Guaranteed return monthly and long-term contracts Upward profits guaranteed
+    by the Turkish government
   secondHeading: 'Safety Investment '
   testimonials:
     - description: >-
