@@ -62,7 +62,7 @@ aboutCompany:
 
 
        Upward profits guaranteed by the Turkish government
-  secondHeading: second heading
+  secondHeading: 'Safety Investment '
   testimonials:
     - description: >-
         It is a long established fact that a reader will be distracted by the
