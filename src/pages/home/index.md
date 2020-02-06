@@ -13,7 +13,7 @@ intro:
       text: 'Taksim Next To You '
     - image: /img/homey_real_estate_pjaxogpu7.jpg
       link: project slid 2
-      text: project slide 2 en
+      text: 'Government Project - Ready To Leave '
 projectCategories:
   categories:
     - image: /img/seaview.png
