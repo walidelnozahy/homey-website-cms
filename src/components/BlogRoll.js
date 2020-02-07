@@ -59,8 +59,8 @@ const BlogRoll = ({data}) => {
 
   const { edges: posts } = data.allMarkdownRemark
   const currentLang = i18n.language
-  const latestPost = posts && posts.shift() ? posts.shift().node : null
-    console.log('posts',posts)
+  const latestPost = posts && posts.shift() ? posts.shift() : null
+  
   
     
     return (
@@ -69,26 +69,26 @@ const BlogRoll = ({data}) => {
      
         <Container>
       <BlogRollWrapperInner> 
-        {latestPost ? 
+        {latestPost && latestPost.node? 
         
         
         <Link
-          to={latestPost.fields.slug}
+          to={latestPost.node.fields.slug}
           >
           <LatestPostWrapper>
             <LatestPostImage>
             <PreviewCompatibleImage
                 imageInfo={{
-                  image: latestPost.frontmatter.featuredimage,
-                  alt: `featured image thumbnail for post ${latestPost.frontmatter.title}`,
+                  image: latestPost.node.frontmatter.featuredimage,
+                  alt: `featured image thumbnail for post ${latestPost.node.frontmatter.title}`,
                 }}
               />
             </LatestPostImage>
               <Button style={{backgroundColor: company.colorPrimary, color: `#fff`, margin: `10px auto`}}>{t('read more')}</Button>
             <LatestPostText>
-              <H1>{latestPost.frontmatter.title}</H1>
-              <P><Icon type="calendar"/> {latestPost.frontmatter.date}</P>
-              <P>{truncate(latestPost.frontmatter.description, {
+              <H1>{latestPost.node.frontmatter.title}</H1>
+              <P><Icon type="calendar"/> {latestPost.node.frontmatter.date}</P>
+              <P>{truncate(latestPost.node.frontmatter.description, {
                       'length': 120,
                       'separator': ' '
                     })}</P>

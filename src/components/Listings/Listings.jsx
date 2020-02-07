@@ -14,7 +14,6 @@ const Listings = ({
     allProjects: { edges }
   }
 }) => {
-  console.log("edges", edges[0].node);
   const { t } = useTranslation();
   // const search =
   //   global && global.window
