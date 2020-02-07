@@ -148,6 +148,7 @@ const ListingsCarousel = ({
     }
   `;
   const lang = i18n.language;
+  console.log(lang, "langgggggggg");
   return (
     <ListingsCarouselWrapper dir="ltr">
       <Container>

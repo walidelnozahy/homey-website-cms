@@ -13,15 +13,16 @@ import HeaderSearch from "../components/HeaderSearch/HeaderSearch";
 import ProjectContent from "../components/ProjectContent/ProjectContent";
 
 const ProjectsPage = (props) => {
-  const { pageContext: {project, locale} } = props
-  
+  const { pageContext: {project, locale, path} } = props
+  console.log(props,'props project')
   const generalProps = {
     project,
     locale
   } 
   return (
-    <Layout>
+    <Layout locale={locale} path={props.uri} >
       <HeaderSearch props={{...generalProps}} />
+      
       <ProjectContent props={{...generalProps}}  />
       <SellProperty />
       <ContactSection />

@@ -1,6 +1,6 @@
 ---
 pageKey: page_services
-templateKey: services-page
+
 name: services
 locale: ar
 title: خدماتنا
@@ -27,4 +27,3 @@ services:
         ونظافة
       title: ادارة عقارات
 ---
-

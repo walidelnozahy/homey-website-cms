@@ -1,6 +1,6 @@
 ---
 pageKey: page_about
-templateKey: about-page
+
 name: about
 locale: en
 seo_title: about en

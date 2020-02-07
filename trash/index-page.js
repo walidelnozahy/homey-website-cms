@@ -2,18 +2,18 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import {  graphql } from 'gatsby'
 
-import Layout from '../components/Layout'
+import Layout from '../src/components/Layout'
 // import Features from '../components/Features'
 // import BlogRoll from '../components/BlogRoll'
-import HeaderCarousel from '../components/HeaderCarousel/HeaderCarousel'
-import CategoriesProjects from '../components/CategoriesProjects/CategoriesProjects'
-import WeOffer from '../components/WeOffer/WeOffer'
-import ContactSection from "../components/ContactSection/ContactSection";
-import SellProperty from "../components/SellProperty/SellProperty";
-import Services from "../components/Services/Services";
-import BlogRoll from '../components/BlogRoll'
-import RecentListings from '../components/RecentListings/RecentListings'
-import ImportantProjects from '../components/ImportantProjects/ImportantProjects'
+import HeaderCarousel from '../src/components/HeaderCarousel/HeaderCarousel'
+import CategoriesProjects from '../src/components/CategoriesProjects/CategoriesProjects'
+import WeOffer from '../src/components/WeOffer/WeOffer'
+import ContactSection from "../src/components/ContactSection/ContactSection";
+import SellProperty from "../src/components/SellProperty/SellProperty";
+import Services from "../src/components/Services/Services";
+import BlogRoll from '../src/components/BlogRoll'
+import RecentListings from '../src/components/RecentListings/RecentListings'
+import ImportantProjects from '../src/components/ImportantProjects/ImportantProjects'
 
 
  
@@ -128,13 +128,7 @@ export const pageQuery = graphql`
             description
             name
             title
-            image { 
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
-            }
+            
           }
           firstDescription
           firstHeading

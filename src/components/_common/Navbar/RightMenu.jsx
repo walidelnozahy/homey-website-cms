@@ -1,24 +1,25 @@
 import React from "react";
 import { Menu, Select } from "antd";
-import { navigate } from "gatsby";
+
 import PropTypes from "prop-types";
-import i18n from "i18next";
+import i18next from "i18next";
 import { withTranslation } from "react-i18next";
 import CurrencyDropdown from "../CurrencyDropdown/CurrencyDropdown";
-import { getLangPath } from "../../../_utils/functions";
+
 import { ContactModal } from "homey-presentation";
 var emojiFlags = require("emoji-flags");
 
-const RightMenu = ({ t, mode }) => {
-  const handleChangeLang = lng => {
-    console.log("lng", lng);
-    i18n.changeLanguage(lng);
-    const path = global && global.window ? global.window.location.pathname : "";
-    if (global && global.window) {
-      global.window.location = getLangPath(lng, path);
-    }
-    // navigate(getLangPath(lng, path));
-  };
+const RightMenu = ({ t, mode, handleChangeLang, locale }) => {
+  // const handleChangeLang = lng => {
+  //   console.log("lng", lng);
+  //   i18n.changeLanguage(lng);
+  //   // const path = global && global.window ? global.window.location.pathname : "";
+  //   // if (global && global.window) {
+  //   //   global.window.location = getLangPath(lng, path);
+  //   // }
+  //   navigate(getLangPath(lng, path));
+  // };
+
   return (
     <Menu mode={mode}>
       <Menu.Item key="currency">
@@ -27,9 +28,12 @@ const RightMenu = ({ t, mode }) => {
 
       <Menu.Item key="language">
         <Select
-          defaultValue={i18n.language}
+          defaultValue={locale}
           style={{ minWidth: `150px`, margin: `auto` }}
-          onChange={handleChangeLang}
+          onChange={e => {
+            console.log("clicked", e);
+            handleChangeLang(e);
+          }}
         >
           <Select.Option value="en">
             <span>{emojiFlags.countryCode("GB").emoji}</span>English

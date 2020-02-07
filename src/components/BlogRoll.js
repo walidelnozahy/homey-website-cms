@@ -59,17 +59,19 @@ const BlogRoll = ({data}) => {
 
   const { edges: posts } = data.allMarkdownRemark
   const currentLang = i18n.language
-  const latestPost = posts.shift().node
+  const latestPost = posts && posts.shift() ? posts.shift().node : null
     console.log('posts',posts)
   
     
     return (
       <BlogRollWrapper>
         <TitleYellow title="Blog & News" />
-        {/* <br />
-        <br /> */}
+     
         <Container>
       <BlogRollWrapperInner> 
+        {latestPost ? 
+        
+        
         <Link
           to={latestPost.fields.slug}
           >
@@ -93,6 +95,7 @@ const BlogRoll = ({data}) => {
             </LatestPostText>
           </LatestPostWrapper>
         </Link>
+        : null}
         <OtherPostsWrapper>
           <OtherPostsInner>
             <YellowTitle>{t('popular posts')}</YellowTitle>

@@ -1,6 +1,6 @@
 ---
 pageKey: page_education
-templateKey: education-page
+
 title: Our education pr
 name: education
 locale: pr
