@@ -1,6 +1,6 @@
 ---
 pageKey: page_services
-templateKey: services-page
+
 name: services
 locale: en
 title: Our services en

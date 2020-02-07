@@ -1,11 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import { HTMLContent } from '../components/Content'
-import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
-import OurPartners from '../components/OurPartners/OurPartners'
-import EducationContent from '../components/EducationContent/EducationContent'
+import Layout from '../src/components/Layout'
+import { HTMLContent } from '../src/components/Content'
+import HeaderPages from '../src/components/_common/HeaderPages/HeaderPages'
+import OurPartners from '../src/components/OurPartners/OurPartners'
+import EducationContent from '../src/components/EducationContent/EducationContent'
 
 export const EducationPageTemplate = ({ title, content, contentComponent,
   headerImage,

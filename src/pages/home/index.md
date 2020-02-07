@@ -1,6 +1,6 @@
 ---
-pageKey: page_index
-templateKey: index-page
+pageKey: page_home
+
 title: Home page en
 name: home
 locale: en
@@ -9,8 +9,8 @@ seo_desc: Home page en
 intro:
   blurbs:
     - image: /img/homey_real_estate_b_xlwp1mek.jpg
-      link: 'https://www.homey.com.tr/en/207'
-      text: 'Taksim Next To You '
+      link: "https://www.homey.com.tr/en/207"
+      text: "Taksim Next To You "
     - image: /img/homey_real_estate_pjaxogpu7.jpg
       link: project slid 2
       text: project slide 2 en
@@ -18,16 +18,16 @@ projectCategories:
   categories:
     - image: /img/seaview.png
       link: seaview
-      text: 'With Amazing View '
+      text: "With Amazing View "
       title: Sea View
     - image: /img/downtown.png
       link: downtown
-      text: 'City Center Project '
-      title: 'Down Town '
+      text: "City Center Project "
+      title: "Down Town "
     - image: /img/garanti.png
       link: garuanty
-      text: 'Rent Guarantee & Profit Guarantee '
-      title: 'Profit Guarantee '
+      text: "Rent Guarantee & Profit Guarantee "
+      title: "Profit Guarantee "
   heading: Our goal is to help you choose
   subheading: the best investment possible
 aboutCompany:
@@ -63,6 +63,5 @@ aboutCompany:
       image: /img/raslan.png
       title: Civil Engineer
       name: Mr Ahmed Mohamed
-  videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
+  videoLink: "https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s"
 ---
-

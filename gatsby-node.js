@@ -187,7 +187,7 @@ exports.onCreatePage = ({ page, actions }) => {
       const localizedPath = locales[lang].default
         ? page.path
         : locales[lang].path + page.path;
-        console.log('localizedPath',localizedPath)
+        
       return createPage({
         ...page,
         path: localizedPath,

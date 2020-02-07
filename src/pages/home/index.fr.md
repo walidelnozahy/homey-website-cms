@@ -1,6 +1,6 @@
 ---
-pageKey: page_index
-templateKey: index-page
+pageKey: page_home
+
 title: Home page fr
 name: home
 locale: fr

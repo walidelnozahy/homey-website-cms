@@ -93,7 +93,7 @@ const Services = ({ t }) => {
     font-weight: 100;
   `;
   return (
-    <LandingServices>
+    <LandingServices data-aos="fade-down">
       <TitleYellow title="our services" center />
       <br />
       <br />

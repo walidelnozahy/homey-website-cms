@@ -275,17 +275,17 @@ const HeaderCarousel = ({ carouselItems }) => {
                     >
                       {item.text}
                     </Title>
-                    <Link to={item.link}>
+                    <a href={item.link}>
                       <CustomButton text="more details" />
-                    </Link>
+                    </a>
                   </Text>
                 </HeaderCarouseLeft>
                 <HeaderCarouseRight data-aos="fade-left">
-                  <Link to={item.link}>
+                  <a href={item.link}>
                     {item.image ? (
                       <RenderImage image={item.image} width="100%" />
                     ) : null}
-                  </Link>
+                  </a>
                 </HeaderCarouseRight>
               </div>
             </div>

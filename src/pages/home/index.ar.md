@@ -1,6 +1,6 @@
 ---
-pageKey: page_index
-templateKey: index-page
+pageKey: page_home
+
 title: Home page ar
 name: home
 locale: ar
@@ -9,27 +9,27 @@ seo_desc: Home page
 intro:
   blurbs:
     - image: /img/homey_real_estate_b_xlwp1mek.jpg
-      link: 'https://www.homey.com.tr/en/207'
-      text: 'مشروع في منطقة تقسيم '
+      link: "https://www.homey.com.tr/en/207"
+      text: "مشروع في منطقة تقسيم "
     - image: /img/homey_real_estate_pjaxogpu7.jpg
-      link: 'https://www.homey.com.tr/en/194'
-      text: 'مشروع حكومي '
+      link: "https://www.homey.com.tr/en/194"
+      text: "مشروع حكومي "
 projectCategories:
   categories:
     - image: /img/seaview.png
       link: seaview
-      text: 'مشاريع ذات اطلالات بحرية مميزة '
-      title: 'اطلالات بحرية '
+      text: "مشاريع ذات اطلالات بحرية مميزة "
+      title: "اطلالات بحرية "
     - image: /img/downtown.png
       link: downtown
-      text: 'مشاريع تقع في وسط مدينة اسطنبول '
+      text: "مشاريع تقع في وسط مدينة اسطنبول "
       title: مركز المدينة
     - image: /img/garanti.png
       link: garuanty
-      text: 'مشاريع ضمان عائد ايجار وربح '
-      title: 'ضمان ربحي '
-  heading: 'ارضاء العميل هو هدفنا '
-  subheading: 'من خلال الخدمات والاستشارات التي نقدمها '
+      text: "مشاريع ضمان عائد ايجار وربح "
+      title: "ضمان ربحي "
+  heading: "ارضاء العميل هو هدفنا "
+  subheading: "من خلال الخدمات والاستشارات التي نقدمها "
 aboutCompany:
   firstDescription: >-
     في لقاء خاص أجرته قناة تي جي ار تي  التركية مع مدير شركة هومي  الأستاذ احمد
@@ -42,6 +42,5 @@ aboutCompany:
     profits are reinvested in their communities.
   secondHeading: second heading
   thirdHeading: third heading
-  videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
+  videoLink: "https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s"
 ---
-

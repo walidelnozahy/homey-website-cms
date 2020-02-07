@@ -117,7 +117,7 @@ const ImportantProjects = ({
   `;
 
   return (
-    <ImportantProjectsWrapper dir="ltr">
+    <ImportantProjectsWrapper dir="ltr" data-aos="fade-down">
       <Container>
         <TitleYellow title="important projects" center />
         <br />

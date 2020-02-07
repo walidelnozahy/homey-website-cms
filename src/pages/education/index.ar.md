@@ -1,6 +1,6 @@
 ---
 pageKey: page_education
-templateKey: education-page
+
 name: education
 locale: ar
 title: التعليم

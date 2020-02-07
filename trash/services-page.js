@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { graphql } from 'gatsby'
-import Layout from '../components/Layout'
-import  { HTMLContent } from '../components/Content'
-import HeaderPages from '../components/_common/HeaderPages/HeaderPages'
-import OurServices from '../components/OurServices/OurServices'
+import Layout from '../src/components/Layout'
+import  { HTMLContent } from '../src/components/Content'
+import HeaderPages from '../src/components/_common/HeaderPages/HeaderPages'
+import OurServices from '../src/components/OurServices/OurServices'
 
 export const ServicesPageTemplate = ({ title, content, contentComponent,
   headerImage,
