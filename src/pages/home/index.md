@@ -1,6 +1,5 @@
 ---
 pageKey: page_home
-
 title: Home page en
 name: home
 locale: en
@@ -18,22 +17,22 @@ projectCategories:
   categories:
     - image: /img/seaview.png
       link: seaview
-      text: "With Amazing View "
+      text: 'With Amazing View '
       title: Sea View
     - image: /img/downtown.png
       link: downtown
-      text: "City Center Project "
-      title: "Down Town "
+      text: 'City Center Project '
+      title: 'Down Town '
     - image: /img/garanti.png
       link: garuanty
-      text: "Rent Guarantee & Profit Guarantee "
-      title: "Profit Guarantee "
+      text: 'Rent Guarantee & Profit Guarantee '
+      title: 'Profit Guarantee '
   heading: Our goal is to help you choose
   subheading: the best investment possible
 aboutCompany:
   firstDescription: Homey Owner Talking about the company and its services
   firstHeading: 'Interview With TGRT Channel '
-  mainImage: /img/2-1.jpg
+  mainImage: /img/whatsapp-image-2020-02-07-at-18.25.41.jpeg
   secondDescription: >-
     An investment in a commercial store in Turkey and obtain Turkish citizenship
     and in partnership with the strongest Turkish and international brands in
@@ -71,5 +70,6 @@ aboutCompany:
       image: /img/raslan.png
       title: Civil Engineer
       name: Mr Ahmed Mohamed
-  videoLink: "https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s"
+  videoLink: 'https://www.youtube.com/watch?v=SJ_1BJWjWSs&t=14s'
 ---
+
