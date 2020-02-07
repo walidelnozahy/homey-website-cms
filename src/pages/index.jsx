@@ -1,9 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
-
 import Layout from "../components/Layout";
-// import Features from '../components/Features'
-// import BlogRoll from '../components/BlogRoll'
 import HeaderCarousel from "../components/HeaderCarousel/HeaderCarousel";
 import CategoriesProjects from "../components/CategoriesProjects/CategoriesProjects";
 import WeOffer from "../components/WeOffer/WeOffer";

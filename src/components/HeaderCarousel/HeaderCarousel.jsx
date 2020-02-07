@@ -226,7 +226,8 @@ const HeaderCarousel = ({ carouselItems }) => {
                   width: `100vw`,
                   gridAutoFlow: `dense`,
                   background: `transparent linear-gradient(180deg, #0f6193 0%, #124970 100%) 0%
-    0% no-repeat padding-box`
+    0% no-repeat padding-box`,
+                  textAlign: isMobile ? `center` : `auto`
                 }}
               >
                 <HeaderCarouseLeft
@@ -246,10 +247,11 @@ const HeaderCarousel = ({ carouselItems }) => {
                       justifyContent: `center`,
                       zIndex: 2,
                       height: `100%`,
-                      textAlign:
-                        currenctLang === `ar` || currenctLang === `pr`
-                          ? `right`
-                          : `left`
+                      textAlign: isMobile
+                        ? `center`
+                        : currenctLang === `ar` || currenctLang === `pr`
+                        ? `right`
+                        : `left`
                     }}
                   >
                     <Title
@@ -261,21 +263,28 @@ const HeaderCarousel = ({ carouselItems }) => {
                       }
                       style={{
                         color: `#fff`,
-                        fontSize: `50px`,
+                        fontSize: isMobile ? `30px` : `50px`,
                         fontWeight: 300,
-                        textAlign:
-                          currenctLang === `ar` || currenctLang === `pr`
-                            ? `right`
-                            : `left`,
-                        direction:
-                          currenctLang === `ar` || currenctLang === `pr`
-                            ? `rtl`
-                            : `ltr`
+                        textAlign: isMobile
+                          ? `center`
+                          : currenctLang === `ar` || currenctLang === `pr`
+                          ? `right`
+                          : `left`,
+                        direction: isMobile
+                          ? `center`
+                          : currenctLang === `ar` || currenctLang === `pr`
+                          ? `rtl`
+                          : `ltr`
                       }}
                     >
                       {item.text}
                     </Title>
-                    <a href={item.link}>
+                    <a
+                      href={item.link}
+                      style={{
+                        margin: isMobile ? `center` : ``
+                      }}
+                    >
                       <CustomButton text="more details" />
                     </a>
                   </Text>
