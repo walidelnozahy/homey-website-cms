@@ -8,12 +8,12 @@ seo_title: Home page en
 seo_desc: Home page en
 intro:
   blurbs:
-    - image: /img/homey_real_estate_b_xlwp1mek.jpg
-      link: "https://www.homey.com.tr/en/207"
-      text: "Taksim Next To You "
-    - image: /img/homey_real_estate_pjaxogpu7.jpg
-      link: project slid 2
-      text: project slide 2 en
+    - image: /img/untitled-1artboard-1-copy.jpg
+      link: 'https://www.homey.com.tr/en/207'
+      text: 'Sea View - Government Project '
+    - image: /img/untitled-1artboard-4-copy.jpg
+      link: 'https://www.homey.com.tr/en/221'
+      text: 'Down Town - 100 M To Metro Station '
 projectCategories:
   categories:
     - image: /img/seaview.png
@@ -31,19 +31,27 @@ projectCategories:
   heading: Our goal is to help you choose
   subheading: the best investment possible
 aboutCompany:
-  firstDescription: >-
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-  firstHeading: first heading
-  mainImage: /img/og-image.jpg
+  firstDescription: Homey Owner Talking about the company and its services
+  firstHeading: 'Interview With TGRT Channel '
+  mainImage: /img/2-1.jpg
   secondDescription: >-
-    Kaldi is the coffee store for everyone who believes that great coffee
-    shouldn't just taste good, it should do good too. We source all of our beans
-    directly from small scale sustainable farmers and make sure part of the
-    profits are reinvested in their communities.
-  secondHeading: second heading
+    An investment in a commercial store in Turkey and obtain Turkish citizenship
+    and in partnership with the strongest Turkish and international brands in
+    Turkey
+
+
+    Your commercial store is rented to the most famous international and Turkish
+    brands and restaurants
+
+     In the heart of Istanbul and among the most luxurious centers and malls
+
+    Ready Title deed  and appropriate government evaluation to obtain Turkish
+    citizenship for you and your family
+
+
+    Guaranteed return monthly and long-term contracts Upward profits guaranteed
+    by the Turkish government
+  secondHeading: 'Safety Investment '
   testimonials:
     - description: >-
         It is a long established fact that a reader will be distracted by the
