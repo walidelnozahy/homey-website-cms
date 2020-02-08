@@ -32,7 +32,7 @@ projectCategories:
 aboutCompany:
   firstDescription: Homey Owner Talking about the company and its services
   firstHeading: 'Interview With TGRT Channel '
-  mainImage: /img/whatsapp-image-2020-02-07-at-18.34.20.jpeg
+  mainImage: /img/whatsapp-image-2020-02-08-at-11.26.05.jpeg
   secondDescription: >-
     An investment in a commercial store in Turkey and obtain Turkish citizenship
     and in partnership with the strongest Turkish and international brands in
