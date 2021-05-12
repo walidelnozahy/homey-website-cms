@@ -42,7 +42,7 @@
     "react-player": "^1.14.2",
     "real-estate-utils": "^1.0.2",
     "styled-components": "^4.4.1",
-    "swiper": "^5.2.1",
+    "swiper": "^6.5.1",
     "uuid": "^3.2.1"
   },
   "keywords": [
